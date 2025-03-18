@@ -19,7 +19,7 @@ p and *: Open Sans, Lato, sans-serif
   --main-white: #f0f0f0;
   --main-blue: #1b263b;
   --sub-blue: #415a77;
-  --body-col: #fff;
+  --body-col: #f0f0f0;
   --font-col: #000;
   --header-h: clamp(60px, 20vw, 70px);
   --footer-h: clamp(60px, 20vw, 70px);
@@ -85,7 +85,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 10px;
+  gap: 20px;
   list-style: none;
 }
 
@@ -95,6 +95,7 @@ header {
 
 .nav-link {
   color: var(--main-white);
+  text-decoration: none;
 }
 
 /* remove this */
@@ -114,8 +115,8 @@ a {
   color: var(--main-white);
 }
 
-.welcome-section h2 {
-}
+/* .welcome-section h2 {
+} */
 
 .projects {
   margin: 100px auto;
@@ -189,6 +190,10 @@ a {
 .contact-header {
   text-align: center;
   color: var(--main-white);
+}
+
+.contact-header p {
+  font-style: italic;
 }
 
 .contact-links {
