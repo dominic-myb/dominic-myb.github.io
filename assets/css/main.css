@@ -115,8 +115,17 @@ a {
   color: var(--main-white);
 }
 
-/* .welcome-section h2 {
-} */
+.welcome-section h2 {
+  padding: 10px;
+  font-size: clamp(2.5rem, calc(7vw + 1rem), 5rem);
+}
+
+.welcome-section p {
+  font-style: italic;
+  color: red;
+  padding: 10px;
+  font-size: clamp(1.6rem, calc(1vw + 1rem), 2.5rem);
+}
 
 .projects {
   margin: 100px auto;
