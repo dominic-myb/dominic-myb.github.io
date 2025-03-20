@@ -13,16 +13,30 @@ h1 - h6: Montserrat, Helvetica, sans-serif
 p and *: Open Sans, Lato, sans-serif
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
   --main-white: #f0f0f0;
+  --sub-white: #f3e5ab;
   --main-blue: #1b263b;
   --sub-blue: #415a77;
   --body-col: #f0f0f0;
   --font-col: #000;
   --header-h: clamp(60px, 20vw, 70px);
   --footer-h: clamp(60px, 20vw, 70px);
+  --fs-xl: clamp(2rem, calc(5vw + 1rem), 5rem);
+  --fs-700: clamp(2rem, calc(5vw + 1rem), 4rem);
+  --fs-500: clamp(1.8rem, calc(4vw + 1rem), 2.5rem);
+  --fs-400: clamp(1.6rem, calc(1vw + 1rem), 2rem);
+
+  --ff-logo: 'Caveat', Arial, sans-serif;
+  --ff-main: 'Montserrat', 'Helvetica', sans-serif;
+  --ff-sub: 'Open Sans', 'Lato', sans-serif;
+
+  --typewriter-speed: 1s;
+  --typewriter-chars: 6;
+
+  --name: ' I am Dominic Esguerra';
 }
 
 *,
@@ -36,6 +50,7 @@ p and *: Open Sans, Lato, sans-serif
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -55,7 +70,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  font-family: var(--ff-main);
 }
 
 header {
@@ -70,7 +85,7 @@ header {
 .logo {
   padding: 0;
   margin: auto 0;
-  font-family: 'Caveat', Arial, sans-serif;
+  font-family: var(--ff-logo);
 }
 
 .navbar {
@@ -106,6 +121,7 @@ a {
 
 .welcome-section {
   height: calc(100vh - var(--header-h));
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -116,15 +132,91 @@ a {
 }
 
 .welcome-section h2 {
+  /* background: #000; */
+  position: relative;
+  font-size: var(--fs-xl);
+  white-space: nowrap;
+  position: relative;
+}
+
+.welcome-section h2::before,
+.welcome-section h2::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.welcome-section h2::before {
+  background-color: var(--main-blue);
+  animation: typing 4s steps(21) forwards;
+}
+
+.welcome-section h2::after {
+  width: 4rem;
+  position: absolute;
+  top: 70px;
+  background: var(--main-white);
+  animation: blink 700ms forwards infinite, typing 4s steps(21) forwards;
+}
+
+@keyframes typing {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes greet {
+  0% {
+    content: 'Hello,';
+  }
+  10% {
+    content: 'Kumusta,';
+  }
+  20% {
+    content: 'こんにちは,';
+  }
+  30% {
+    content: '안녕하세요,';
+  }
+  40% {
+    content: 'Bonjour,';
+  }
+  50% {
+    content: 'Hallo,';
+  }
+  60% {
+    content: 'Hola,';
+  }
+  70% {
+    content: '你好,';
+  }
+  80% {
+    content: 'Привет,';
+  }
+  90% {
+    content: 'Ciao,';
+  }
+  100% {
+    content: 'Ciao,';
+  }
+}
+
+.welcome-section h2 {
   padding: 10px;
-  font-size: clamp(2.5rem, calc(7vw + 1rem), 5rem);
+  font-size: var(--fs-xl);
 }
 
 .welcome-section p {
   font-style: italic;
-  color: red;
+  color: var(--sub-white);
   padding: 10px;
-  font-size: clamp(1.6rem, calc(1vw + 1rem), 2.5rem);
+  font-size: var(--fs-400);
 }
 
 .projects {
@@ -133,13 +225,14 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
 .projects h2 {
   padding-bottom: 100px;
   text-decoration: underline;
   color: var(--main-white);
-  font-size: 3.2rem;
+  font-size: var(--fs-500);
   text-align: center;
 }
 
@@ -163,6 +256,13 @@ a {
   height: 80%;
 }
 
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
 .project-link {
   height: 20%;
   display: flex;
@@ -174,7 +274,7 @@ a {
 
 .project-link a {
   font-size: 2.5rem;
-  font-family: 'Caveat', Arial, sans-serif;
+  font-family: var(--ff-logo);
   color: #000;
   text-decoration: none;
 }
@@ -214,7 +314,7 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 20px;
 }
@@ -225,7 +325,7 @@ a {
 }
 
 .contact h2 {
-  font-size: 5rem;
+  font-size: var(--fs-700);
 }
 
 @media screen and (max-width: 450px) {
