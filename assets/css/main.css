@@ -1,18 +1,3 @@
-/* 
-COLORS THEME
-dark
-1. #0D1B2A
-2. #1B263B
-light
-3. #415A77
-4. #778DA9
-
-FONTS THEME:
-LOGO: Caveat, Arial, sans-serif
-h1 - h6: Montserrat, Helvetica, sans-serif
-p and *: Open Sans, Lato, sans-serif
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
@@ -32,11 +17,6 @@ p and *: Open Sans, Lato, sans-serif
   --ff-logo: 'Caveat', Arial, sans-serif;
   --ff-main: 'Montserrat', 'Helvetica', sans-serif;
   --ff-sub: 'Open Sans', 'Lato', sans-serif;
-
-  --typewriter-speed: 1s;
-  --typewriter-chars: 6;
-
-  --name: ' I am Dominic Esguerra';
 }
 
 *,
@@ -88,7 +68,7 @@ header {
   font-family: var(--ff-logo);
 }
 
-.navbar {
+#navbar {
   top: 0;
   padding: 0;
   margin: auto 0;
@@ -113,12 +93,6 @@ header {
   text-decoration: none;
 }
 
-/* remove this */
-a {
-  color: var(--main-white);
-}
-/*  */
-
 .welcome-section {
   height: calc(100vh - var(--header-h));
   min-height: 100vh;
@@ -131,27 +105,26 @@ a {
   color: var(--main-white);
 }
 
-.welcome-section h2 {
-  /* background: #000; */
+.welcome-section h1 {
   position: relative;
   font-size: var(--fs-xl);
   white-space: nowrap;
   position: relative;
 }
 
-.welcome-section h2::before,
-.welcome-section h2::after {
+.welcome-section h1::before,
+.welcome-section h1::after {
   content: '';
   position: absolute;
   inset: 0;
 }
 
-.welcome-section h2::before {
+.welcome-section h1::before {
   background-color: var(--main-blue);
   animation: typing 4s steps(21) forwards;
 }
 
-.welcome-section h2::after {
+.welcome-section h1::after {
   width: 4rem;
   position: absolute;
   top: 70px;
@@ -171,43 +144,7 @@ a {
   }
 }
 
-@keyframes greet {
-  0% {
-    content: 'Hello,';
-  }
-  10% {
-    content: 'Kumusta,';
-  }
-  20% {
-    content: 'こんにちは,';
-  }
-  30% {
-    content: '안녕하세요,';
-  }
-  40% {
-    content: 'Bonjour,';
-  }
-  50% {
-    content: 'Hallo,';
-  }
-  60% {
-    content: 'Hola,';
-  }
-  70% {
-    content: '你好,';
-  }
-  80% {
-    content: 'Привет,';
-  }
-  90% {
-    content: 'Ciao,';
-  }
-  100% {
-    content: 'Ciao,';
-  }
-}
-
-.welcome-section h2 {
+.welcome-section h1 {
   padding: 10px;
   font-size: var(--fs-xl);
 }
@@ -322,6 +259,7 @@ a {
 .contact-links ul li a {
   text-decoration: none;
   font-size: 2.5rem;
+  color: var(--main-white);
 }
 
 .contact h2 {
