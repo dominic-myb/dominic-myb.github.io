@@ -22,22 +22,36 @@ html {
   font-family: 'Open Sans', Helvetica, sans-serif !important;
 }
 
-.border-circle {
+.profile-pic-container {
+  border: 3px solid transparent;
   position: relative;
+  border-radius: 50%;
 }
 
-.border-circle::before {
+.profile-pic-container:hover {
+  border: 3px solid transparent;
+}
+
+.profile-pic-container:hover::before {
   content: '';
   position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: conic-gradient(red, blue);
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  z-index: -1;
-  padding: 10px;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
   border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: greenyellow;
+  animation: border-animation 1s ease-in infinite;
+}
+
+@keyframes border-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .wave {
