@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+html {
+  scroll-behavior: smooth;
+}
+
+.no-select {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Standard syntax */
+}
+
+.lato {
+  font-family: 'Lato', Helvetica, sans-serif !important;
+}
+
+.montserrat {
+  font-family: 'Montserrat', Helvetica, sans-serif !important;
+}
+
+.open-sans {
+  font-family: 'Open Sans', Helvetica, sans-serif !important;
+}
+
+.border-circle {
+  position: relative;
+}
+
+.border-circle::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(red, blue);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.wave {
+  display: inline-block;
+  cursor: pointer;
+  animation: wave-animation 2.5s;
+  transform-origin: 70% 70%;
+}
+
+.wave:hover {
+  animation: wave-animation 2.5s infinite;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(14deg);
+  }
+}
