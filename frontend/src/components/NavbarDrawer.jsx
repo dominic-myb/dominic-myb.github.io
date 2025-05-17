@@ -1,58 +1,36 @@
-import { Drawer, DrawerOverlay, DrawerContent, DrawerHeader, DrawerBody, VStack, HStack, Link, Button, useColorModeValue, useColorMode } from '@chakra-ui/react';
-import { SunIcon, MoonIcon } from '@chakra-ui/icons';
+import {
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerHeader,
+  DrawerBody,
+  VStack,
+} from '@chakra-ui/react';
+
+import { NavigationLink } from './Navbar';
 
 function NavbarDrawer({ isOpen, onClose }) {
-  const { colorMode, toggleColorMode } = useColorMode();
+  function toCapitalize(str) {
+    if (!str) return '';
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  }
 
   return (
     <Drawer placement={'right'} onClose={onClose} isOpen={isOpen}>
       <DrawerOverlay />
       <DrawerContent>
-        <DrawerHeader borderBottomWidth='1px'>Menu</DrawerHeader>
+        <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
         <DrawerBody>
           <VStack spacing={4} py={4}>
-            <Link
-              className={'no-select'}
-              href={'#about'}
-              fontSize={'18px'}
-              fontWeight={600}
-              padding={'8px 15px'}
-              borderRadius={'50px'}
-              _hover={{ backgroundColor: useColorModeValue('gray.800', 'gray.100'), color: useColorModeValue('gray.100', 'gray.800') }}
-              onClick={onClose}
-            >
-              About
-            </Link>
-
-            <Link
-              className={'no-select'}
-              href={'#projects'}
-              fontSize={'18px'}
-              fontWeight={600}
-              padding={'8px 15px'}
-              borderRadius={'50px'}
-              _hover={{ backgroundColor: useColorModeValue('gray.800', 'gray.100'), color: useColorModeValue('gray.100', 'gray.800') }}
-              onClick={onClose}
-            >
-              Projects
-            </Link>
-
-            <Link
-              className={'no-select'}
-              href={'#contact'}
-              fontSize={'18px'}
-              fontWeight={600}
-              padding={'8px 15px'}
-              borderRadius={'50px'}
-              _hover={{ backgroundColor: useColorModeValue('gray.800', 'gray.100'), color: useColorModeValue('gray.100', 'gray.800') }}
-              onClick={onClose}
-            >
-              Contact
-            </Link>
-
-            <Button onClick={toggleColorMode}>
-              {colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
-            </Button>
+            {[{ name: 'about' }, { name: 'projects' }, { name: 'contact' }].map(
+              (link, index) => (
+                <NavigationLink
+                  key={index}
+                  linkName={toCapitalize(link.name)}
+                  onClick={onClose}
+                />
+              )
+            )}
           </VStack>
         </DrawerBody>
       </DrawerContent>
