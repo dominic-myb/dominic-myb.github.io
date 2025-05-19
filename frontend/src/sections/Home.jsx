@@ -18,7 +18,7 @@ function Home() {
       <Navbar />
       <VStack>
         <About />
-        {/* <Projects /> */}
+        <Projects />
         {/* <Contact /> */}
       </VStack>
     </Container>

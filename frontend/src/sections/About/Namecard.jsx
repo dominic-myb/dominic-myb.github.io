@@ -49,16 +49,16 @@ function Namecard() {
     >
       <VStack
         h="full"
-        justifyContent="center"
-        p={5}
-        mx="auto"
-        gap={10}
+        p={10}
         py={{ base: 8, sm: 10, md: 10, lg: 4 }}
+        mx="auto"
+        justifyContent="center"
+        gap={10}
       >
         <Stack
           direction={{
-            base: 'column',
-            sm: 'column',
+            base: 'row',
+            sm: 'row',
             md: 'column',
             lg: 'row',
           }}
@@ -72,16 +72,16 @@ function Namecard() {
             <Image
               src={profilePic}
               alt="profile-picture"
-              boxSize={{ base: '100px', sm: '150px', md: '200px', lg: '150px' }}
-              maxWidth={200}
+              boxSize={{ base: '150px' }}
+              maxWidth={150}
               borderRadius="full"
               objectFit="cover"
             />
           </Box>
           <VStack
             alignItems={{
-              base: 'center',
-              sm: 'center',
+              base: 'flex-start',
+              sm: 'flex-start',
               md: 'center',
               lg: 'flex-start',
             }}
@@ -91,7 +91,7 @@ function Namecard() {
               <Heading
                 as="h1"
                 className="lato"
-                fontSize={{ base: '28px', sm: '38px' }}
+                fontSize={{ base: '28px', sm: '38px', md: '32px' }}
               >
                 Hi, I'm Dominic<span className="wave">👋</span>
               </Heading>
@@ -100,7 +100,7 @@ function Namecard() {
               <FaLocationDot />
               <Text
                 className="open-sans"
-                fontSize={{ base: '14px', sm: '18px' }}
+                fontSize={{ base: '14px', sm: '18px', md: '16px' }}
               >
                 Cavite, Philippines
               </Text>
@@ -109,7 +109,7 @@ function Namecard() {
               <AiFillCode />
               <Text
                 className="open-sans"
-                fontSize={{ base: '14px', sm: '18px' }}
+                fontSize={{ base: '14px', sm: '18px', md: '16px' }}
               >
                 Web Developer | MERN Stack
               </Text>
