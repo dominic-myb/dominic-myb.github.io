@@ -38,20 +38,19 @@ function Techstacks() {
         md: 1,
         lg: 2,
       })}
-      p={4}
       borderRadius="2xl"
       bg={useColorModeValue('#e5ded2', 'gray.700')}
     >
       <VStack
-        w={{ base: '90%', sm: '90%', md: '90%', lg: 'full' }}
-        h="full"
         mx="auto"
+        p={5}
+        py={4}
       >
-        <Text as="h2" className="open-sans" fontSize={22}>
+        <Text as="h2" className="lato" fontSize={22}>
           Tech Stack
         </Text>
         <SimpleGrid
-          columns={{ base: 3, sm: 4, md: 5, lg: 4 }}
+          columns={{ base: 3, sm: 5, md: 3, lg: 4 }}
           gap={4}
           w="full"
           placeItems="center"
@@ -82,7 +81,7 @@ function Techstacks() {
                 <Image
                   src={tech.src}
                   alt={tech.alt}
-                  boxSize={{ base: '70%', sm: '80%' }}
+                  boxSize={{ base: '70%' }}
                   objectFit="contain"
                 />
               </Box>
