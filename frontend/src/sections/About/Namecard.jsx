@@ -11,7 +11,6 @@ import {
   useBreakpointValue,
   useColorModeValue,
 } from '@chakra-ui/react';
-
 import { AiFillCode } from 'react-icons/ai';
 import { FaLocationDot } from 'react-icons/fa6';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -19,8 +18,23 @@ import { SiLeetcode } from 'react-icons/si';
 import { IoMdDownload } from 'react-icons/io';
 import profilePic from '../../assets/profile-picture.jpg';
 import CV from '../../assets/downloads/DOMINIC-ESGUERRA-CV.pdf';
+import { useEffect, useRef } from 'react';
 
 function Namecard() {
+  const waveRef = useRef(null);
+  useEffect(() => {
+    const interval = setInterval(()=>{
+      const wave = waveRef.current;
+      if (wave) {
+        wave.classList.add('hand-wave');
+        setTimeout(() => {
+          wave.classList.remove('hand-wave');
+        }, 1000);
+      }
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
+
   function downloadCV() {
     const link = document.createElement('a');
     link.href = CV;
@@ -93,7 +107,10 @@ function Namecard() {
                 className="lato"
                 fontSize={{ base: '28px', sm: '38px', md: '32px' }}
               >
-                Hi, I'm Dominic<span className="wave">👋</span>
+                Hi, I'm Dominic
+                <span ref={waveRef} className="wave">
+                  👋
+                </span>
               </Heading>
             </HStack>
             <HStack gap={1}>
