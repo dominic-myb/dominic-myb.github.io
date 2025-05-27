@@ -41,11 +41,7 @@ function Techstacks() {
       borderRadius="2xl"
       bg={useColorModeValue('#e5ded2', 'gray.700')}
     >
-      <VStack
-        mx="auto"
-        p={5}
-        py={4}
-      >
+      <VStack mx="auto" p={5} py={4}>
         <Text as="h2" className="lato" fontSize={22}>
           Tech Stack
         </Text>
@@ -79,10 +75,12 @@ function Techstacks() {
                 _hover={{ transform: 'translateY(-10px)' }}
               >
                 <Image
+                  className="techstacks moveup"
                   src={tech.src}
                   alt={tech.alt}
                   boxSize={{ base: '70%' }}
                   objectFit="contain"
+                  style={{animationDelay: `${index}00ms`}}
                 />
               </Box>
             </Tooltip>
