@@ -1,6 +1,8 @@
 import { Container, Grid, useBreakpointValue } from '@chakra-ui/react';
 import Namecard from './Namecard';
 import Techstacks from './Techstacks';
+import Background from './Background';
+import './about.css';
 
 function About() {
   return (
@@ -10,7 +12,7 @@ function About() {
           base: 'repeat(1, 1fr)',
           sm: 'repeat(1, 1fr)',
           md: 'repeat(1, 1fr)',
-          lg: 'repeat(2, 1fr)',
+          lg: 'repeat(5, 1fr)',
         })}
         templateColumns={useBreakpointValue({
           base: '1fr',
@@ -22,6 +24,7 @@ function About() {
       >
         <Namecard />
         <Techstacks />
+        <Background />
       </Grid>
     </Container>
   );
