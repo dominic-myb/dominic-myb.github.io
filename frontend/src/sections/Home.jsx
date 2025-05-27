@@ -1,8 +1,4 @@
-import {
-  Container,
-  VStack,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { Container, VStack, useColorModeValue } from '@chakra-ui/react';
 import { Navbar } from '../components/Navbar';
 import About from './About/About';
 import Projects from './Projects/Projects';
@@ -13,6 +9,7 @@ function Home() {
     <Container
       maxW="container.xxl"
       minW="container.sm"
+      h="container.xxl"
       bg={useColorModeValue('#e5ded2', '#1A212D')}
     >
       <Navbar />
