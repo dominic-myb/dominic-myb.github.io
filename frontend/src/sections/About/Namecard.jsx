@@ -58,7 +58,7 @@ function Namecard() {
         md: 1,
         lg: 3,
       })}
-      borderRadius="2xl"
+      borderRadius="lg"
       bg={useColorModeValue('#e5ded2', 'gray.700')}
     >
       <VStack

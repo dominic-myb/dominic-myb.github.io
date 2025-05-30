@@ -14,7 +14,7 @@ function ProjectCard({ name, image }) {
     <Container
       h="300px"
       bg={useColorModeValue('#e5ded2', 'gray.700')}
-      borderRadius="2xl"
+      borderRadius="lg"
     >
       <Stack
         flexDirection="column"
