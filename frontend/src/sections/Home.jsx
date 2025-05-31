@@ -16,7 +16,7 @@ function Home() {
       <VStack>
         <About />
         <Projects />
-        {/* <Contact /> */}
+        <Contact />
       </VStack>
     </Container>
   );
