@@ -18,20 +18,30 @@ import { SiLeetcode } from 'react-icons/si';
 import { IoMdDownload } from 'react-icons/io';
 import profilePic from '../../assets/profile-picture.jpg';
 import CV from '../../assets/downloads/DOMINIC-ESGUERRA-CV.pdf';
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
+
+function ProfilePic(){
+  return;
+}
+
+function Details() {
+  return;
+}
+
+function SocialLink({ link, Component }) {
+  return (
+    <Button onClick={() => window.open(link, '_blank')}>
+      <Component size="20"/>
+    </Button>
+  );
+}
 
 function Namecard() {
-  const waveRef = useRef(null);
+  const [isWaving, setIsWaving] = useState(true);
   useEffect(() => {
-    const interval = setInterval(()=>{
-      const wave = waveRef.current;
-      if (wave) {
-        wave.classList.add('hand-wave');
-        setTimeout(() => {
-          wave.classList.remove('hand-wave');
-        }, 1000);
-      }
-    }, 7000);
+    const interval = setInterval(() => {
+      setIsWaving((prev) => !prev);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -108,7 +118,10 @@ function Namecard() {
                 fontSize={{ base: '28px', sm: '38px', md: '32px' }}
               >
                 Hi, I'm Dominic
-                <span ref={waveRef} className="wave">
+                <span
+                  cursor="pointer"
+                  className={`wave ${isWaving ? 'hand-wave' : ''}`}
+                >
                   👋
                 </span>
               </Heading>
@@ -138,32 +151,23 @@ function Namecard() {
               gap={2}
               pt={2}
             >
-              <Button
-                onClick={() =>
-                  window.open('https://github.com/dominic-myb', '_blank')
-                }
-              >
-                <FaGithub size="20" />
-              </Button>
-
-              <Button
-                onClick={() =>
-                  window.open('https://leetcode.com/desguerra246/', '_blank')
-                }
-              >
-                <SiLeetcode size="20" />
-              </Button>
-
-              <Button
-                onClick={() =>
-                  window.open(
-                    'https://www.linkedin.com/in/dominic-esguerra/',
-                    '_blank'
-                  )
-                }
-              >
-                <FaLinkedin size="20" />
-              </Button>
+              {[
+                { link: 'https://github.com/dominic-myb', component: FaGithub },
+                {
+                  link: 'https://leetcode.com/desguerra246/',
+                  component: SiLeetcode,
+                },
+                {
+                  link: 'https://www.linkedin.com/in/dominic-esguerra/',
+                  component: FaLinkedin,
+                },
+              ].map((item, idx) => (
+                <SocialLink
+                  key={idx}
+                  link={item.link}
+                  Component={item.component}
+                ></SocialLink>
+              ))}
               <Button onClick={() => downloadCV()}>
                 <IoMdDownload />
                 <Text> &nbsp;Resumé</Text>
