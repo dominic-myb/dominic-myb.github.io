@@ -8,36 +8,43 @@ import {
   Image,
   useBreakpointValue,
   useColorModeValue,
-} from "@chakra-ui/react";
-
-import html5 from "../../assets/techstack/html-5.svg";
-import css3 from "../../assets/techstack/css-3.svg";
-import javascript from "../../assets/techstack/javascript.svg";
-import react from "../../assets/techstack/react.svg";
-import nodejs from "../../assets/techstack/nodejs-icon.svg";
-import mongodb from "../../assets/techstack/mongodb-icon.svg";
-import mysql from "../../assets/techstack/mysql.svg";
-import php from "../../assets/techstack/php.svg";
-import cpp from "../../assets/techstack/c-plusplus.svg";
-import jquery from "../../assets/techstack/jquery.svg";
-import figma from "../../assets/techstack/figma.svg";
-
-import { useEffect, useRef } from "react";
+} from '@chakra-ui/react';
+import html5 from '../../assets/techstack/html-5.svg';
+import css3 from '../../assets/techstack/css-3.svg';
+import javascript from '../../assets/techstack/javascript.svg';
+import react from '../../assets/techstack/react.svg';
+import nodejs from '../../assets/techstack/nodejs-icon.svg';
+import mongodb from '../../assets/techstack/mongodb-icon.svg';
+import mysql from '../../assets/techstack/mysql.svg';
+import php from '../../assets/techstack/php.svg';
+import cpp from '../../assets/techstack/c-plusplus.svg';
+import jquery from '../../assets/techstack/jquery.svg';
+import figma from '../../assets/techstack/figma.svg';
+import { useState, useEffect } from 'react';
 
 function Techstacks() {
-  const moveup_anim = useRef(null);
+  const techStacks = [
+    { src: html5, alt: 'HTML5' },
+    { src: css3, alt: 'CSS3' },
+    { src: javascript, alt: 'JavaScript' },
+    { src: react, alt: 'React' },
+    { src: nodejs, alt: 'Node.js' },
+    { src: mongodb, alt: 'MongoDB' },
+    { src: mysql, alt: 'MySQL' },
+    { src: php, alt: 'PHP' },
+    { src: cpp, alt: 'C++' },
+    { src: jquery, alt: 'jQuery' },
+    { src: figma, alt: 'Figma' },
+  ];
+
+  const [isAnimated, setIsAnimated] = useState(true);
   useEffect(() => {
     const interval = setInterval(() => {
-      const wave = moveup_anim.current;
-      if (wave) {
-        wave.classList.add("moveup--loop");
-        setTimeout(() => {
-          wave.classList.remove("moveup--loop");
-        }, 1000);
-      }
-    }, 7000);
+      setIsAnimated((prev) => !prev);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
+
   return (
     <GridItem
       className="block"
@@ -54,7 +61,7 @@ function Techstacks() {
         lg: 2,
       })}
       borderRadius="lg"
-      bg={useColorModeValue("#e5ded2", "gray.700")}
+      bg={useColorModeValue('#e5ded2', 'gray.700')}
     >
       <VStack mx="auto" p={5} py={4}>
         <Text as="h2" className="lato" fontSize={22}>
@@ -66,35 +73,22 @@ function Techstacks() {
           w="full"
           placeItems="center"
         >
-          {[
-            { src: html5, alt: "HTML5" },
-            { src: css3, alt: "CSS3" },
-            { src: javascript, alt: "JavaScript" },
-            { src: react, alt: "React" },
-            { src: nodejs, alt: "Node.js" },
-            { src: mongodb, alt: "MongoDB" },
-            { src: mysql, alt: "MySQL" },
-            { src: php, alt: "PHP" },
-            { src: cpp, alt: "C++" },
-            { src: jquery, alt: "jQuery" },
-            { src: figma, alt: "Figma" },
-          ].map((tech, index) => (
+          {techStacks.map((tech, index) => (
             <Tooltip key={index} label={tech.alt} placement="top" hasArrow>
               <Box
-                boxSize="20"
-                cursor="pointer"
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
+                boxSize="20"
+                cursor="pointer"
                 transition="transform 0.3s ease-in-out"
-                _hover={{ transform: "translateY(-10px)" }}
+                _hover={{ transform: 'translateY(-10px)' }}
               >
                 <Image
-                  className="moveup"
-                  ref={moveup_anim}
+                  className={isAnimated ? 'moveup' : ''}
                   src={tech.src}
                   alt={tech.alt}
-                  boxSize={{ base: "70%" }}
+                  boxSize={{ base: '70%' }}
                   objectFit="contain"
                   style={{ animationDelay: `${index}00ms` }}
                 />
