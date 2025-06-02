@@ -73,8 +73,8 @@ function Techstacks() {
           w="full"
           placeItems="center"
         >
-          {techStacks.map((tech, index) => (
-            <Tooltip key={index} label={tech.alt} placement="top" hasArrow>
+          {techStacks.map((item, idx) => (
+            <Tooltip key={idx} label={item.alt} placement="top" hasArrow>
               <Box
                 display="flex"
                 alignItems="center"
@@ -86,11 +86,11 @@ function Techstacks() {
               >
                 <Image
                   className={isAnimated ? 'moveup' : ''}
-                  src={tech.src}
-                  alt={tech.alt}
+                  src={item.src}
+                  alt={item.alt}
                   boxSize={{ base: '70%' }}
                   objectFit="contain"
-                  style={{ animationDelay: `${index}00ms` }}
+                  style={{ animationDelay: `${idx}00ms` }}
                 />
               </Box>
             </Tooltip>

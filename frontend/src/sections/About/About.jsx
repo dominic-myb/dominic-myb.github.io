@@ -24,7 +24,7 @@ function About() {
       >
         <Namecard />
         <Techstacks />
-        <Background />
+        {/* <Background /> */}
       </Grid>
     </Container>
   );
