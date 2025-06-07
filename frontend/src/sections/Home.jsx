@@ -13,9 +13,9 @@ function Home() {
       bg={useColorModeValue('#e5ded2', '#1A212D')}
     >
       <Navbar />
-      <VStack>
+      <VStack gap={4}>
         <About />
-        <Projects />
+        {/* <Projects /> */}
         <Contact />
       </VStack>
     </Container>
