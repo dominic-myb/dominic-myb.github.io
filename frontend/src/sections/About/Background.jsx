@@ -11,30 +11,17 @@ import {
   useColorModeValue,
   useBreakpointValue,
 } from '@chakra-ui/react';
-
 const data = [{ tabTitle: 'Education' }, { tabTitle: 'Experience' }];
 
-function BackgroundCard(props) {
-  const { isHidden, title, length, desc, isLeft, icons = [] } = props;
-  return <Box></Box>;
-}
-
-function Education() {
+function CustomTabPanel() {
   return (
-    <TabPanel display="flex" justifyContent="center" alignItems="center">
-      <SimpleGrid className="timeline" columns="4" spacing="4"></SimpleGrid>
+    <TabPanel>
+      <SimpleGrid columns={4} spacing={4}>
+        <Text>Hello</Text>
+      </SimpleGrid>
     </TabPanel>
   );
 }
-
-function Experience() {
-  return (
-    <TabPanel display="flex" justifyContent="center" alignItems="center">
-      <SimpleGrid className="timeline" columns="2" spacing="4"></SimpleGrid>
-    </TabPanel>
-  );
-}
-
 function BackgroundTabs({ tabTitle }) {
   <Tabs
     isFitted
@@ -56,7 +43,7 @@ function BackgroundTabs({ tabTitle }) {
       justifyContent="center"
       alignItems="center"
     >
-      {}
+      <CustomTabPanel />
     </TabPanels>
   </Tabs>;
 }
@@ -79,7 +66,9 @@ function Background() {
       })}
       borderRadius="lg"
       bg={useColorModeValue('#e5ded2', 'gray.700')}
-    ></GridItem>
+    >
+      <BackgroundTabs tabTitle={data} />
+    </GridItem>
   );
 }
 
