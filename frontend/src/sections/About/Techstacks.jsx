@@ -9,34 +9,11 @@ import {
   useBreakpointValue,
   useColorModeValue,
 } from '@chakra-ui/react';
-import html5 from '../../assets/techstack/html-5.svg';
-import css3 from '../../assets/techstack/css-3.svg';
-import javascript from '../../assets/techstack/javascript.svg';
-import react from '../../assets/techstack/react.svg';
-import nodejs from '../../assets/techstack/nodejs-icon.svg';
-import mongodb from '../../assets/techstack/mongodb-icon.svg';
-import mysql from '../../assets/techstack/mysql.svg';
-import php from '../../assets/techstack/php.svg';
-import cpp from '../../assets/techstack/c-plusplus.svg';
-import jquery from '../../assets/techstack/jquery.svg';
-import figma from '../../assets/techstack/figma.svg';
 import { useState, useEffect } from 'react';
+import { techstackImgMap } from '@/assets/techstack';
+import techstackData from '@/assets/data/techstack.json';
 
 function Techstacks() {
-  const techStacks = [
-    { src: html5, alt: 'HTML5' },
-    { src: css3, alt: 'CSS3' },
-    { src: javascript, alt: 'JavaScript' },
-    { src: react, alt: 'React' },
-    { src: nodejs, alt: 'Node.js' },
-    { src: mongodb, alt: 'MongoDB' },
-    { src: mysql, alt: 'MySQL' },
-    { src: php, alt: 'PHP' },
-    { src: cpp, alt: 'C++' },
-    { src: jquery, alt: 'jQuery' },
-    { src: figma, alt: 'Figma' },
-  ];
-
   const [isAnimated, setIsAnimated] = useState(true);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,6 +21,11 @@ function Techstacks() {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
+  const techstacks = techstackData.map(({ key, alt }) => ({
+    src: techstackImgMap[key],
+    alt,
+  }));
 
   return (
     <GridItem
@@ -73,8 +55,8 @@ function Techstacks() {
           w="full"
           placeItems="center"
         >
-          {techStacks.map((item, idx) => (
-            <Tooltip key={idx} label={item.alt} placement="top" hasArrow>
+          {techstacks.map(({ src, alt }, idx) => (
+            <Tooltip key={idx} label={alt} placement="top" hasArrow>
               <Box
                 display="flex"
                 alignItems="center"
@@ -86,8 +68,8 @@ function Techstacks() {
               >
                 <Image
                   className={isAnimated ? 'moveup' : ''}
-                  src={item.src}
-                  alt={item.alt}
+                  src={src}
+                  alt={alt}
                   boxSize={{ base: '70%' }}
                   objectFit="contain"
                   style={{ animationDelay: `${idx}00ms` }}
