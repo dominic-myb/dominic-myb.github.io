@@ -12,6 +12,7 @@ import {
 import { useState, useEffect } from 'react';
 import { techstackImgMap } from '@/assets/techstack';
 import techstackData from '@/assets/data/techstack.json';
+import { colorMap } from '@/assets/color';
 
 function Techstacks() {
   const [isAnimated, setIsAnimated] = useState(true);
@@ -42,8 +43,16 @@ function Techstacks() {
         md: 1,
         lg: 2,
       })}
-      borderRadius="lg"
-      bg={useColorModeValue('#e5ded2', 'gray.700')}
+      borderRadius="xl"
+      bg={useColorModeValue(
+        'rgba(255, 255, 255, 0.35)',
+        'rgba(255, 255, 255, 0.05)'
+      )}
+      backdropFilter="blur(12px)"
+      border={`1px solid ${useColorModeValue(
+        'rgba(0, 0, 0, 1)',
+        'rgba(255, 255, 255, 0.1)'
+      )}`}
     >
       <VStack mx="auto" p={5} py={4}>
         <Text as="h2" className="lato" fontSize={22}>
@@ -65,14 +74,17 @@ function Techstacks() {
                 cursor="pointer"
                 transition="transform 0.3s ease-in-out"
                 _hover={{ transform: 'translateY(-10px)' }}
+                bg="rgba(255, 255, 255, 0.1)"
+                p={2}
+                borderRadius="md"
+                className={isAnimated ? 'moveup' : ''}
+                style={{ animationDelay: `${idx}00ms` }}
               >
                 <Image
-                  className={isAnimated ? 'moveup' : ''}
                   src={src}
                   alt={alt}
                   boxSize={{ base: '70%' }}
                   objectFit="contain"
-                  style={{ animationDelay: `${idx}00ms` }}
                 />
               </Box>
             </Tooltip>
