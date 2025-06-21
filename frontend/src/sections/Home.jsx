@@ -3,6 +3,7 @@ import { Navbar } from '../components/Navbar';
 import About from './About/About';
 import Projects from './Projects/Projects';
 import Contact from './Contact/Contact';
+import { colorMap } from '@/assets/color';
 
 function Home() {
   return (
@@ -10,7 +11,10 @@ function Home() {
       maxW="container.xxl"
       minW="container.sm"
       h="container.xxl"
-      bg={useColorModeValue('#e5ded2', '#1A212D')}
+      bg={useColorModeValue(
+        colorMap.light.background,
+        colorMap.dark.background
+      )}
     >
       <Navbar />
       <VStack gap={4}>
