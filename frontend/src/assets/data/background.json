@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Education",
+    "background": [
+      {
+        "title": "Cavite State University - CCAT",
+        "subtitle": "Graduated Cum Laude",
+        "year": 2024
+      },
+      {
+        "title": "Amaya School of Home Industries",
+        "subtitle": "Graduated with Honors",
+        "year": 2020
+      }
+    ]
+  },
+  {
+    "title": "Experience",
+    "background": [
+      {
+        "title": "Department of Computer Studies - CvSU CCAT",
+        "subtitle": "IT Lab Support",
+        "year": 2024
+      },
+      {
+        "title": "Department of Agriculture - Tanza LGU",
+        "subtitle": "Data Encoder",
+        "year": 2019
+      }
+    ]
+  }
+]
