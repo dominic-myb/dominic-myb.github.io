@@ -1,0 +1,15 @@
+[
+  { "key": "html5", "alt": "HTML5" },
+  { "key": "css3", "alt": "CSS3" },
+  { "key": "javascript", "alt": "JavaScript" },
+  { "key": "react", "alt": "React" },
+  { "key": "nodejs", "alt": "Node.js" },
+  { "key": "mongodb", "alt": "MongoDB" },
+  { "key": "mysql", "alt": "MySQL" },
+  { "key": "php", "alt": "PHP" },
+  { "key": "cpp", "alt": "C++" },
+  { "key": "jquery", "alt": "jQuery" },
+  { "key": "figma", "alt": "Figma" },
+  { "key": "godot", "alt": "Godot" },
+  { "key": "bootstrap", "alt": "BootStrap" }
+]

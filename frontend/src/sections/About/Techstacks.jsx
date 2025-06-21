@@ -9,34 +9,12 @@ import {
   useBreakpointValue,
   useColorModeValue,
 } from '@chakra-ui/react';
-import html5 from '../../assets/techstack/html-5.svg';
-import css3 from '../../assets/techstack/css-3.svg';
-import javascript from '../../assets/techstack/javascript.svg';
-import react from '../../assets/techstack/react.svg';
-import nodejs from '../../assets/techstack/nodejs-icon.svg';
-import mongodb from '../../assets/techstack/mongodb-icon.svg';
-import mysql from '../../assets/techstack/mysql.svg';
-import php from '../../assets/techstack/php.svg';
-import cpp from '../../assets/techstack/c-plusplus.svg';
-import jquery from '../../assets/techstack/jquery.svg';
-import figma from '../../assets/techstack/figma.svg';
 import { useState, useEffect } from 'react';
+import { techstackImgMap } from '@/assets/techstack';
+import techstackData from '@/assets/data/techstack.json';
+import { colorMap } from '@/assets/color';
 
 function Techstacks() {
-  const techStacks = [
-    { src: html5, alt: 'HTML5' },
-    { src: css3, alt: 'CSS3' },
-    { src: javascript, alt: 'JavaScript' },
-    { src: react, alt: 'React' },
-    { src: nodejs, alt: 'Node.js' },
-    { src: mongodb, alt: 'MongoDB' },
-    { src: mysql, alt: 'MySQL' },
-    { src: php, alt: 'PHP' },
-    { src: cpp, alt: 'C++' },
-    { src: jquery, alt: 'jQuery' },
-    { src: figma, alt: 'Figma' },
-  ];
-
   const [isAnimated, setIsAnimated] = useState(true);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,6 +22,11 @@ function Techstacks() {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
+  const techstacks = techstackData.map(({ key, alt }) => ({
+    src: techstackImgMap[key],
+    alt,
+  }));
 
   return (
     <GridItem
@@ -60,8 +43,16 @@ function Techstacks() {
         md: 1,
         lg: 2,
       })}
-      borderRadius="lg"
-      bg={useColorModeValue('#e5ded2', 'gray.700')}
+      borderRadius="xl"
+      bg={useColorModeValue(
+        'rgba(255, 255, 255, 0.35)',
+        'rgba(255, 255, 255, 0.05)'
+      )}
+      backdropFilter="blur(12px)"
+      border={`1px solid ${useColorModeValue(
+        'rgba(0, 0, 0, 1)',
+        'rgba(255, 255, 255, 0.1)'
+      )}`}
     >
       <VStack mx="auto" p={5} py={4}>
         <Text as="h2" className="lato" fontSize={22}>
@@ -73,8 +64,8 @@ function Techstacks() {
           w="full"
           placeItems="center"
         >
-          {techStacks.map((tech, index) => (
-            <Tooltip key={index} label={tech.alt} placement="top" hasArrow>
+          {techstacks.map(({ src, alt }, idx) => (
+            <Tooltip key={idx} label={alt} placement="top" hasArrow>
               <Box
                 display="flex"
                 alignItems="center"
@@ -83,14 +74,17 @@ function Techstacks() {
                 cursor="pointer"
                 transition="transform 0.3s ease-in-out"
                 _hover={{ transform: 'translateY(-10px)' }}
+                bg="rgba(255, 255, 255, 0.1)"
+                p={2}
+                borderRadius="md"
+                className={isAnimated ? 'moveup' : ''}
+                style={{ animationDelay: `${idx}00ms` }}
               >
                 <Image
-                  className={isAnimated ? 'moveup' : ''}
-                  src={tech.src}
-                  alt={tech.alt}
+                  src={src}
+                  alt={alt}
                   boxSize={{ base: '70%' }}
                   objectFit="contain"
-                  style={{ animationDelay: `${index}00ms` }}
                 />
               </Box>
             </Tooltip>

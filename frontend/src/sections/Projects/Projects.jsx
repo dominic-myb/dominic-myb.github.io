@@ -1,20 +1,30 @@
-import { Container, Heading } from '@chakra-ui/react';
+import { Container, Heading, SimpleGrid, Box } from '@chakra-ui/react';
 import ProjectCard from './ProjectCard';
-import dara from '../../assets/project-img/project-dara.jpg';
+import projectData from '@/assets/data/project.json';
+import { projectImgMap } from '@/assets/projects';
 
 function Projects() {
-  const projects = [
-    {
-      name: 'The Adventures of Dara',
-      image: dara,
-    },
-  ];
+
+    const projects = projectData.map(({ key, alt }) => ({
+    src: projectImgMap[key],
+    alt
+  }));
+
   return (
     <Container id="projects" maxW="container.lg">
-      <Heading as="h2">Projects</Heading>
-      {projects.map((project, index) => (
-        <ProjectCard key={index} name={project.name} image={project.image} />
-      ))}
+      <Box w="full">
+        <SimpleGrid columns={2} gap={4}>
+          {projectData.map((item, idx) => (
+            <ProjectCard
+              key={idx}
+              image={item.image}
+              name={item.name}
+              link={item.link}
+              tools={item.tools}
+            />
+          ))}
+        </SimpleGrid>
+      </Box>
     </Container>
   );
 }

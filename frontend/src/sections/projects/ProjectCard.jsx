@@ -1,5 +1,13 @@
-import React from 'react';
-import { Stack, Container, Heading, useColorModeValue } from '@chakra-ui/react';
+import {
+  Stack,
+  Container,
+  Heading,
+  useColorModeValue,
+  Text,
+  Box,
+  Link,
+} from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 function toKebabCase(str) {
   return str
@@ -9,22 +17,38 @@ function toKebabCase(str) {
     .replace(/\s+/g, '-');
 }
 
-function ProjectCard({ name, image }) {
+function ProjectCard({ image, name, link, tools }) {
   return (
     <Container
-      h="300px"
+      h="350px"
+      p="4"
+      gap="4"
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      borderRadius="xl"
       bg={useColorModeValue('#e5ded2', 'gray.700')}
-      borderRadius="lg"
+      border="1px solid transparent"
+      _hover={{ border: '1px solid red' }}
     >
-      <Stack
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="center"
-        p={10}
-      >
-        <img src={image} alt={toKebabCase(name)} />
-        <Heading as="h2">{name}</Heading>
-      </Stack>
+      <Box h="full">
+        <img
+          src={image}
+          alt={toKebabCase(name)}
+          style={{ borderRadius: 'var(--chakra-radii-2xl)' }}
+        />
+      </Box>
+      <Box h="full" px="2">
+        <Heading size="md">
+          <Link href={link} isExternal>
+            {name} <ExternalLinkIcon mx="2px" position="relative" top="-2px" />
+          </Link>
+        </Heading>
+
+        {tools.map((item, idx) => (
+          <Text key={idx}>{item}</Text>
+        ))}
+      </Box>
     </Container>
   );
 }

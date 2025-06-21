@@ -11,27 +11,21 @@ import {
   useBreakpointValue,
   useColorModeValue,
 } from '@chakra-ui/react';
+
 import { AiFillCode } from 'react-icons/ai';
 import { FaLocationDot } from 'react-icons/fa6';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 import { IoMdDownload } from 'react-icons/io';
-import profilePic from '../../assets/profile-picture.jpg';
-import CV from '../../assets/downloads/DOMINIC-ESGUERRA-CV.pdf';
+
+import profilePic from '@/assets/profile-picture.jpg';
+import CV from '@/assets/downloads/DOMINIC-ESGUERRA-CV.pdf';
 import { useEffect, useState } from 'react';
-
-function ProfilePic(){
-  return;
-}
-
-function Details() {
-  return;
-}
 
 function SocialLink({ link, Component }) {
   return (
     <Button onClick={() => window.open(link, '_blank')}>
-      <Component size="20"/>
+      <Component size="20" />
     </Button>
   );
 }
@@ -68,8 +62,10 @@ function Namecard() {
         md: 1,
         lg: 3,
       })}
-      borderRadius="lg"
-      bg={useColorModeValue('#e5ded2', 'gray.700')}
+      borderRadius="xl"
+      bg="rgba(255, 255, 255, 0.05)"
+      backdropFilter="blur(12px)"
+      border="1px solid rgba(255, 255, 255, 0.1)"
     >
       <VStack
         h="full"

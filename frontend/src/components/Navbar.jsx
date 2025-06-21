@@ -13,6 +13,7 @@ import {
 
 import { SunIcon, MoonIcon, HamburgerIcon } from '@chakra-ui/icons';
 import NavbarDrawer from './NavbarDrawer';
+import { colorMap } from '@/assets/color';
 
 function Logo() {
   return (
@@ -101,7 +102,10 @@ function Navbar() {
       pos="sticky"
       top={0}
       zIndex={100}
-      bg={useColorModeValue('#e5ded2', '#1A212D')}
+      bg={useColorModeValue(
+        colorMap.light.background,
+        colorMap.dark.background
+      )}
     >
       <Container maxW="container.lg" py={5}>
         <Flex
