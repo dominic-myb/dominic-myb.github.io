@@ -1,33 +1,26 @@
 import {
   Container,
-  Flex,
+  Heading,
   HStack,
   Link,
   Button,
-  useColorModeValue,
-  useColorMode,
   IconButton,
   useDisclosure,
-  Heading,
-} from '@chakra-ui/react';
-
-import { SunIcon, MoonIcon, HamburgerIcon } from '@chakra-ui/icons';
-import NavbarDrawer from './NavbarDrawer';
-import { colorMap } from '@/assets/color';
+  useColorModeValue,
+  useColorMode,
+} from "@chakra-ui/react";
+import { SunIcon, MoonIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { colorMap } from "@/assets/color";
+import NavbarDrawer from "./NavbarDrawer";
+import "./index.css";
 
 function Logo() {
   return (
     <Heading
       as="h1"
-      className="no-select"
-      fontSize={{ base: '24', sm: '28' }}
-      fontWeight="bold"
-      textTransform="lowercase"
-      textAlign="center"
-      bgGradient={useColorModeValue(
-        'linear-gradient(to-r, #ff4f64, #6936c2)',
-        'linear(to-r, #00b09b, #96c93d)'
-      )}
+      className="logo no-select"
+      fontSize="28"
+      bgGradient={useColorModeValue(colorMap.light.logo, colorMap.dark.logo)}
       bgClip="text"
     >
       dominic-esguerra
@@ -38,19 +31,22 @@ function Logo() {
 function NavigationLink({ linkName }) {
   return (
     <Link
-      className="no-select"
+      className="nav-link no-select"
       href={`#${linkName.toLowerCase()}`}
-      fontSize={{ base: '16', md: '17', lg: '18' }} //
-      fontWeight={600}
-      padding="8px 15px"
-      borderRadius="50px"
+      fontSize={{ base: 16, lg: 18 }}
       _hover={{
-        backgroundColor: useColorModeValue('gray.800', 'gray.100'),
-        color: useColorModeValue('gray.100', 'gray.800'),
+        backgroundColor: useColorModeValue(
+          colorMap.dark.font,
+          colorMap.light.font
+        ),
+        color: useColorModeValue(colorMap.light.font, colorMap.dark.font),
       }}
       _focus={{
-        backgroundColor: useColorModeValue('gray.800', 'gray.200'),
-        color: useColorModeValue('gray.100', 'gray.800'),
+        backgroundColor: useColorModeValue(
+          colorMap.dark.font,
+          colorMap.light.font
+        ),
+        color: useColorModeValue(colorMap.light.font, colorMap.dark.font),
       }}
     >
       {linkName}
@@ -61,13 +57,13 @@ function NavigationLink({ linkName }) {
 function Navigations() {
   return (
     <HStack
-      display={{ base: 'none', md: 'flex' }}
-      spacing={{ base: 4, md: 6, lg: 10 }}
+      display={{ base: "none", md: "flex" }}
       justifyContent="flex-end"
+      gap="6"
     >
-      {[{ name: 'about' }, { name: 'projects' }, { name: 'contact' }].map(
-        (link, index) => (
-          <NavigationLink key={index} linkName={link.name.toLowerCase()} />
+      {[{ name: "about" }, { name: "projects" }, { name: "contact" }].map(
+        (link, idx) => (
+          <NavigationLink key={idx} linkName={link.name.toLowerCase()} />
         )
       )}
     </HStack>
@@ -82,10 +78,10 @@ function Navbar() {
     return (
       <HStack>
         <Button onClick={toggleColorMode}>
-          {colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+          {colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
         </Button>
         <IconButton
-          display={{ base: 'flex', md: 'none' }}
+          display={{ base: "flex", md: "none" }}
           icon={<HamburgerIcon />}
           onClick={onOpen}
           aria-label="Open menu"
@@ -97,26 +93,21 @@ function Navbar() {
 
   return (
     <Container
-      h={20}
+      className="navbar"
       maxW="container.xl"
-      pos="sticky"
-      top={0}
-      zIndex={100}
       bg={useColorModeValue(
         colorMap.light.background,
         colorMap.dark.background
       )}
     >
-      <Container maxW="container.lg" py={5}>
-        <Flex
-          alignItems="center"
-          justifyContent="space-between"
-          flexDirection={{ base: 'row', md: 'row' }}
-        >
+      <Container maxW="container.lg" py={4}>
+        <HStack justifyContent="space-between">
           <Logo />
-          <Navigations />
-          <NavButtons />
-        </Flex>
+          <HStack gap="6">
+            <Navigations />
+            <NavButtons />
+          </HStack>
+        </HStack>
       </Container>
       <NavbarDrawer isOpen={isOpen} onClose={onClose} />
     </Container>
