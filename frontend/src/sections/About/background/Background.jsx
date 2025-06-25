@@ -13,6 +13,7 @@ function Background() {
       className="block"
       rowSpan={useBreakpointValue({
         base: 1,
+        md: 2,
         lg: 3,
       })}
       colSpan={useBreakpointValue({

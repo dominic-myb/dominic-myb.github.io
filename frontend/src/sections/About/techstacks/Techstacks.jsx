@@ -47,21 +47,17 @@ function Techstacks() {
         colorMap.dark.cardBorder
       )}`}
     >
-      <VStack mx="auto" p={5} py={4}>
+      <VStack mx="auto" padding="4">
         <Heading as="h2" className="lato" size="md">
           Tech Stack
         </Heading>
-        <SimpleGrid
-          columns={{ base: 3, sm: 5, md: 3, lg: 4 }}
-          gap={4}
-          w="full"
-          placeItems="center"
-        >
+        <SimpleGrid columns={{ base: 5, md: 4 }} gap="4" placeItems="center">
           {techstacks.map(({ src, alt }, idx) => (
             <Tooltip key={idx} label={alt} placement="top" hasArrow>
               <Box
-                className={`techstack ${isAnimated ? "moveup" : ""}`}
+                padding="2"
                 boxSize="20"
+                className={`techstack ${isAnimated ? "moveup" : ""}`}
                 _hover={{ transform: "translateY(-10px)" }}
                 bg={useColorModeValue(
                   colorMap.light.buttonBg,
@@ -71,12 +67,7 @@ function Techstacks() {
                 style={{ animationDelay: `${idx}00ms` }}
                 transition="transform 0.3s ease-in-out"
               >
-                <Image
-                  src={src}
-                  alt={alt}
-                  boxSize={{ base: "70%" }}
-                  objectFit="contain"
-                />
+                <Image src={src} alt={alt} boxSize="65%" objectFit="contain" />
               </Box>
             </Tooltip>
           ))}

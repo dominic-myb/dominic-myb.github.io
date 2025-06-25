@@ -9,8 +9,6 @@ function Home() {
   return (
     <Container
       maxW="container.xxl"
-      minW="container.sm"
-      h="container.xxl"
       bg={useColorModeValue(
         colorMap.light.background,
         colorMap.dark.background

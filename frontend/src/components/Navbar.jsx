@@ -20,6 +20,7 @@ function Logo() {
       as="h1"
       className="logo no-select"
       fontSize="28"
+      cursor="pointer"
       bgGradient={useColorModeValue(colorMap.light.logo, colorMap.dark.logo)}
       bgClip="text"
     >
@@ -94,13 +95,13 @@ function Navbar() {
   return (
     <Container
       className="navbar"
-      maxW="container.xl"
+      maxW="container.xxl"
       bg={useColorModeValue(
         colorMap.light.background,
         colorMap.dark.background
       )}
     >
-      <Container maxW="container.lg" py={4}>
+      <Container maxW="container.lg" py="4">
         <HStack justifyContent="space-between">
           <Logo />
           <HStack gap="6">
