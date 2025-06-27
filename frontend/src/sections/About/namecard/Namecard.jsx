@@ -17,10 +17,12 @@ function Namecard() {
       className="block"
       rowSpan={useBreakpointValue({
         base: 1,
+        md: 2,
         lg: 2,
       })}
       colSpan={useBreakpointValue({
         base: 1,
+        md: 2,
         lg: 3,
       })}
       borderRadius="xl"
@@ -30,10 +32,11 @@ function Namecard() {
         colorMap.dark.cardBorder
       )}`}
     >
-      <VStack h="full" justifyContent="center">
+      <VStack h="full" justifyContent="center" padding="4">
         <Stack
           direction={{
-            base: "row",
+            base: "column",
+            sm: "row",
             md: "column",
             lg: "row",
           }}
@@ -45,7 +48,8 @@ function Namecard() {
           <NamecardImage />
           <VStack
             alignItems={{
-              base: "flex-start",
+              base: "center",
+              sm:"flex-start",
               md: "center",
               lg: "flex-start",
             }}
