@@ -8,6 +8,7 @@ import {
   useDisclosure,
   useColorModeValue,
   useColorMode,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { colorMap } from "@/assets/color";
@@ -19,7 +20,7 @@ function Logo() {
     <Heading
       as="h1"
       className="logo no-select"
-      fontSize="28"
+      fontSize={useBreakpointValue({ base: 24, md: 28 })}
       cursor="pointer"
       bgGradient={useColorModeValue(colorMap.light.logo, colorMap.dark.logo)}
       bgClip="text"
@@ -102,7 +103,7 @@ function Navbar() {
       )}
     >
       <Container maxW="container.lg" py="4">
-        <HStack justifyContent="space-between">
+        <HStack justifyContent="space-between" flexDirection="row">
           <Logo />
           <HStack gap="6">
             <Navigations />
