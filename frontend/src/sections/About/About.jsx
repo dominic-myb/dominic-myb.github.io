@@ -9,13 +9,13 @@ function About() {
     <Container id="about" maxW="container.lg">
       <Grid
         templateRows={useBreakpointValue({
-          base: "repeat(3, 1fr)",
-          md: "repeat(2, 1fr)",
-          lg: "repeat(5, 1fr)",
+          base: "repeat(5, 1fr)",
+          md: "repeat(7, 1fr)",
+          lg: "repeat(7, 1fr)",
         })}
         templateColumns={useBreakpointValue({
           base: "1fr",
-          md: "repeat(2, 1fr)",
+          md: "repeat(4, 1fr)",
           lg: "repeat(5, 1fr)",
         })}
         gap={4}
