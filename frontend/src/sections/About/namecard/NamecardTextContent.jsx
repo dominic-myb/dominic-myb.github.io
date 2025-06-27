@@ -18,7 +18,7 @@ function NamecardTextContent() {
         <Heading
           as="h1"
           className="lato"
-          fontSize={{ base: "38px", md: "32px" }}
+          fontSize={{ base: "28px", md: "32px" }}
         >
           Hi, I'm Dominic
           <span
@@ -31,13 +31,19 @@ function NamecardTextContent() {
       </HStack>
       <HStack gap={1}>
         <FaLocationDot />
-        <Text className="open-sans" fontSize={{ base: "18px", md: "16px" }}>
+        <Text
+          className="open-sans"
+          fontSize={{ base: "16px", md: "18px" }}
+        >
           Cavite, Philippines
         </Text>
       </HStack>
       <HStack gap={1}>
         <AiFillCode />
-        <Text className="open-sans" fontSize={{ base: "18px", md: "16px" }}>
+        <Text
+          className="open-sans"
+          fontSize={{ base: "16px", md: "18px" }}
+        >
           Web Developer | MERN Stack
         </Text>
       </HStack>
