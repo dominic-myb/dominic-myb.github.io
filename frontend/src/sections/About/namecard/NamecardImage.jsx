@@ -7,7 +7,7 @@ function NamecardImage() {
       <Image
         src={ProfilePicture}
         alt="profile-picture"
-        boxSize={{ base: '150px' }}
+        boxSize={{ base: '100px', md: '150px' }}
         maxWidth={150}
         borderRadius="full"
         objectFit="cover"
