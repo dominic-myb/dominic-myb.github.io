@@ -34,10 +34,12 @@ function Techstacks() {
       className="block"
       rowSpan={useBreakpointValue({
         base: 1,
+        md: 2,
         lg: 2,
       })}
       colSpan={useBreakpointValue({
         base: 1,
+        md: 2,
         lg: 2,
       })}
       borderRadius="xl"
@@ -51,7 +53,7 @@ function Techstacks() {
         <Heading as="h2" className="lato" size="md">
           Tech Stack
         </Heading>
-        <SimpleGrid columns={{ base: 5, md: 4 }} gap="4" placeItems="center">
+        <SimpleGrid columns={{ base: 4, md: 4 }} gap="4" placeItems="center">
           {techstacks.map(({ src, alt }, idx) => (
             <Tooltip key={idx} label={alt} placement="top" hasArrow>
               <Box
