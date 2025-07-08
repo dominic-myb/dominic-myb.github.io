@@ -6,6 +6,7 @@ export const colorMap = {
     cardBg: "rgba(0, 0, 0, 0.05)",
     cardBorder: "rgba(0, 0, 0, 0.125)",
     buttonBg: "rgba(0, 0, 0, 0.125)",
+    line: "linear-gradient(to-b, #ff4f64, #6936c2)",
   },
   dark: {
     logo: "linear(to-r, #00b09b, #96c93d)",
@@ -14,5 +15,6 @@ export const colorMap = {
     cardBg: "rgba(255, 255, 255, 0.05)",
     cardBorder: "rgba(255, 255, 255, 0.125)",
     buttonBg: "rgba(255, 255, 255, 0.125)",
+    line: "linear(to-b, #00b09b, #96c93d)",
   },
 };
