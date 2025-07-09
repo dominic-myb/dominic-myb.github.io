@@ -1,7 +1,10 @@
+/* about section css */
+
+/* start of background css */
+/* the line in professional background */
 .timeline-container {
   position: relative;
 }
-
 .timeline-container::after {
   content: "";
   position: absolute;
@@ -13,14 +16,12 @@
   margin-left: -3px;
   border-radius: 10px;
 }
-
 .timeline-item {
   padding: 10px 40px;
   position: relative;
   width: 50%;
   box-sizing: border-box;
 }
-
 .timeline-item::after {
   content: "";
   position: absolute;
@@ -33,15 +34,12 @@
   background-color: white;
   border: 4px solid #3b82f6;
 }
-
 .left {
   left: 0;
 }
-
 .right {
   left: 50%;
 }
-
 .left::before {
   content: " ";
   position: absolute;
@@ -53,7 +51,6 @@
   border-width: 10px 0 10px 10px;
   border-color: transparent transparent transparent #fff;
 }
-
 .right::before {
   content: " ";
   position: absolute;
@@ -65,11 +62,9 @@
   border-width: 10px 10px 10px 0;
   border-color: transparent #fff transparent transparent;
 }
-
 .right::after {
   left: -16px;
 }
-
 .timeline-content {
   padding: 20px 25px;
   background-color: white;
@@ -78,12 +73,10 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-
 .timeline-content:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
-
 .timeline-date {
   display: inline-block;
   padding: 5px 15px;
@@ -94,48 +87,64 @@
   font-weight: 500;
   margin-bottom: 10px;
 }
-
 .timeline-title {
   margin: 0;
   color: #1e40af;
   font-weight: 600;
 }
-
 .timeline-subtitle {
   color: #6b7280;
   margin-top: 5px;
   font-size: 0.9rem;
 }
-
 .timeline-description {
   margin-top: 10px;
   color: #4b5563;
   font-size: 0.95rem;
 }
 
-@media screen and (max-width: 768px) {
-  .timeline-container::after {
-    left: 31px;
-  }
+/* start of namecard css */
+/* avatar photo */
+.avatar-container {
+  border: 3px solid transparent;
+  position: relative;
+  border-radius: 50%;
+}
+.avatar-container:hover {
+  border: 3px solid transparent;
+}
+.avatar-container:hover::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: greenyellow;
+  animation: border-animation 1s ease-in infinite;
+}
 
-  .timeline-item {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-  }
+/* hand emoji */
+.wave {
+  display: inline-block;
+  cursor: pointer;
+  animation: wave-animation 2.5s;
+  transform-origin: 70% 70%;
+}
+.wave:hover,
+.hand-wave {
+  animation: wave-animation 2.5s infinite;
+}
 
-  .timeline-item::before {
-    left: 60px;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent #fff transparent transparent;
-  }
-
-  .left::after,
-  .right::after {
-    left: 18px;
-  }
-
-  .right {
-    left: 0;
-  }
+/* start of techstacks css */
+.techstack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.moveup {
+  animation: moveup 1s ease-in-out forwards;
 }
