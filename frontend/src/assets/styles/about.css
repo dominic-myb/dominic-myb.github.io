@@ -140,11 +140,17 @@
 
 /* start of techstacks css */
 .techstack {
-  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out !important;
 }
+
+/* important to remove delays in hovering animation */
+.techstack:hover {
+  transform: translateY(-10px) !important;
+}
+
 .moveup {
   animation: moveup 1s ease-in-out forwards;
 }
