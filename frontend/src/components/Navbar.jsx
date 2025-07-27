@@ -1,29 +1,40 @@
 import {
   Container,
   Heading,
+  VStack,
   HStack,
   Link,
   Button,
   IconButton,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerHeader,
+  DrawerBody,
   useDisclosure,
   useColorModeValue,
   useColorMode,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon, HamburgerIcon } from "@chakra-ui/icons";
-import { colorMap } from "@/assets/color";
-import NavbarDrawer from "./NavbarDrawer";
-import "./index.css";
+import { colorMap } from "@/assets/data/constants.js";
+import "@/assets/styles/navbar.css";
+
+const navTitles = [
+  { name: "about" },
+  { name: "projects" },
+  { name: "contact" },
+];
 
 function Logo() {
   return (
     <Heading
       as="h1"
+      bgClip="text"
+      cursor="pointer"
       className="logo no-select"
       fontSize={useBreakpointValue({ base: 24, md: 28 })}
-      cursor="pointer"
       bgGradient={useColorModeValue(colorMap.light.logo, colorMap.dark.logo)}
-      bgClip="text"
     >
       dominic-esguerra
     </Heading>
@@ -61,18 +72,40 @@ function Navigations() {
     <HStack
       display={{ base: "none", md: "flex" }}
       justifyContent="flex-end"
-      gap="6"
+      gap={6}
     >
-      {[{ name: "about" }, { name: "projects" }, { name: "contact" }].map(
-        (link, idx) => (
-          <NavigationLink key={idx} linkName={link.name.toLowerCase()} />
-        )
-      )}
+      {navTitles.map((link, idx) => (
+        <NavigationLink key={idx} linkName={link.name.toLowerCase()} />
+      ))}
     </HStack>
   );
 }
 
-function Navbar() {
+function NavbarDrawer({ isOpen, onClose }) {
+  return (
+    <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
+      <DrawerOverlay />
+      <DrawerContent>
+        <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
+        <DrawerBody>
+          <VStack spacing={4} py={4}>
+            {navTitles.map(
+              (link, index) => (
+                <NavigationLink
+                  key={index}
+                  linkName={link.name.toLowerCase()}
+                  onClick={onClose}
+                />
+              )
+            )}
+          </VStack>
+        </DrawerBody>
+      </DrawerContent>
+    </Drawer>
+  );
+}
+
+export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -102,10 +135,10 @@ function Navbar() {
         colorMap.dark.background
       )}
     >
-      <Container maxW="container.lg" py="4">
+      <Container maxW="container.lg" py={4}>
         <HStack justifyContent="space-between" flexDirection="row">
           <Logo />
-          <HStack gap="6">
+          <HStack gap={6}>
             <Navigations />
             <NavButtons />
           </HStack>
@@ -115,5 +148,3 @@ function Navbar() {
     </Container>
   );
 }
-
-export { Navbar, NavigationLink };
