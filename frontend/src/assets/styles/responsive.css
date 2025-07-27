@@ -1,0 +1,29 @@
+/* Default (mobile-first) styles are written in base files */
+/* This overrides for wider screens */
+
+@media screen and (max-width: 768px) {
+  .timeline-container::after {
+    left: 31px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timeline-item::before {
+    left: 60px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #fff transparent transparent;
+  }
+
+  .left::after,
+  .right::after {
+    left: 18px;
+  }
+
+  .right {
+    left: 0;
+  }
+}
