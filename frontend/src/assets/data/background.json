@@ -1,32 +1,30 @@
-[
-  {
-    "title": "Education",
-    "background": [
-      {
-        "title": "Cavite State University - CCAT",
-        "subtitle": "Graduated Cum Laude",
-        "year": 2024
-      },
-      {
-        "title": "Amaya School of Home Industries",
-        "subtitle": "Graduated with Honors",
-        "year": 2020
-      }
-    ]
-  },
-  {
-    "title": "Experience",
-    "background": [
-      {
-        "title": "Department of Computer Studies - CvSU CCAT",
-        "subtitle": "IT Lab Support",
-        "year": 2024
-      },
-      {
-        "title": "Department of Agriculture - Tanza LGU",
-        "subtitle": "Data Encoder",
-        "year": 2019
-      }
-    ]
-  }
-]
+{
+  "title": "Professional Timeline",
+  "subtitle": "Education & Professional Timeline",
+  "timeline": [
+    {
+      "date": 2024,
+      "title": "BS Information Technology",
+      "subtitle": "Cavite State University - CCAT",
+      "desc": "Graduated Cum Laude" 
+    },
+    {
+      "date": 2024,
+      "title": "IT Lab Support",
+      "subtitle": "Department of Computer Studies - CvSU CCAT",
+      "desc": "Sample" 
+    },
+    {
+      "date": 2020,
+      "title": "Computer System Servicing - Grade 12",
+      "subtitle": "Amaya School of Home Industries",
+      "desc": "Graduated with Honors" 
+    },
+    {
+      "date": 2019,
+      "title": "Data Encoder",
+      "subtitle": "Department of Agriculture - Tanza LGU",
+      "desc": "Sample" 
+    }
+  ]
+}
