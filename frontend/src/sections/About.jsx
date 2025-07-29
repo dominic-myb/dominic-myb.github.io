@@ -10,9 +10,9 @@ import textContent from "@/assets/data/namecard-desc.json";
 import socialLinks from "@/assets/data/icons.json";
 
 import "@/assets/styles/about.css";
-import avatar from "@/assets/img/avatar.jpg";
 
 export default function About() {
+  const avatar = "/public/assets/images/avatar.jpg";
   return (
     <Container id="about" maxW="container.lg">
       <AboutLayout
