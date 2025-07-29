@@ -1,4 +1,4 @@
-import resume from "@/assets/pdf/Dominic-Esguerra-CV.pdf";
+const resume = "/public/assets/pdf/Dominic-Esguerra-CV.pdf";
 
 const handleDownload = async (filename = "file.pdf") => {
   try {
