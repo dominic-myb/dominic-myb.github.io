@@ -1,10 +1,9 @@
 import {
   Container,
+  VStack,
+  Heading,
   Text,
   useColorModeValue,
-  Box,
-  Heading,
-  VStack,
 } from "@chakra-ui/react";
 import { colorMap } from "@/assets/data/constants.js";
 
@@ -35,15 +34,14 @@ export default function ContactLayout({ children }) {
             possible.
           </Text>
         </VStack>
-        <Box
-          w="60%"
+        <Container
           my={10}
           p={6}
           borderRadius="xl"
           border={`1px solid ${borderColor}`}
         >
           {children}
-        </Box>
+        </Container>
       </VStack>
     </Container>
   );
