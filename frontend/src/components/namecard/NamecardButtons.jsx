@@ -10,9 +10,13 @@ import { handleDownload } from "@/utils/downloads";
 import { iconMap } from "@/assets/icons";
 
 function DownloadPDFButton() {
+  const download = {
+    url: "/assets/pdf/Dominic-Esguerra-CV.pdf",
+    filename: "Dominic-Esguerra-CV.pdf",
+  };
   return (
     <Tooltip label="Download my resume (PDF)" placement="bottom" hasArrow>
-      <Button onClick={() => handleDownload("Dominic-Esguerra-CV.pdf")}>
+      <Button onClick={() => handleDownload(download)}>
         <IoMdDownload />
         <Text>&nbsp;Resumé</Text>
       </Button>
