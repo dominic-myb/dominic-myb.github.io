@@ -1,18 +1,18 @@
 import {
   VStack,
   Heading,
+  Input,
+  Textarea,
   FormControl,
   FormLabel,
   FormErrorMessage,
   FormHelperText,
-  Input,
-  Textarea,
 } from "@chakra-ui/react";
 
 export default function ContactForm() {
   return (
     <FormControl>
-      <VStack gap={4}>
+      <VStack alignItems="stretch" gap={4}>
         <Heading as="h1" fontSize={28}>
           Send a Message
         </Heading>
