@@ -12,7 +12,7 @@ import socialLinks from "@/assets/data/icons.json";
 import "@/assets/styles/about.css";
 
 export default function About() {
-  const avatar = "/public/assets/images/avatar.jpg";
+  const avatar = "/assets/images/avatar.jpg";
   return (
     <Container id="about" maxW="container.lg">
       <AboutLayout
