@@ -14,8 +14,7 @@ export default function Techstacks() {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-
-  const iconsPath = "/assets/icons/";
+  
   const toolNames = [
     "html5",
     "css3",
@@ -31,19 +30,18 @@ export default function Techstacks() {
     "godot",
     "bootstrap",
   ];
-  const filetype = ".svg";
 
   return (
     <VStack mx="auto" p={4}>
-      <Heading fontSize={28}>Techstacks</Heading>
+      <Heading fontSize={24}>Techstacks</Heading>
       <SimpleGrid columns={4} gap={4} placeItems="center">
         {toolNames.map((img, idx) => (
           <TechstackIcons
             key={img}
             flexClass={`techstack ${isAnimated ? "moveup" : ""}`}
-            imgPath={`${iconsPath}${img}${filetype}`}
+            imgPath={`/assets/icons/${img}.svg`}
             imgName={img}
-            imgAlt={`${img}${filetype}`}
+            imgAlt={`${img}.svg`}
             imgIdx={idx}
           />
         ))}
