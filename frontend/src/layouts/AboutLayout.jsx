@@ -25,13 +25,13 @@ export default function AboutLayout({ cards }) {
     useBreakpointValue({
       base: "repeat(5, 1fr)",
       md: "repeat(7, 1fr)",
-      lg: "repeat(7, 1fr)",
+      lg: "repeat(4, 1fr)",
     }) ?? "repeat(5, 1fr)";
   const cols =
     useBreakpointValue({
       base: "1fr",
       md: "repeat(4, 1fr)",
-      lg: "repeat(5, 1fr)",
+      lg: "repeat(3, 1fr)",
     }) ?? "1fr";
 
   return (
