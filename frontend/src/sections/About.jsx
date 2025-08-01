@@ -4,17 +4,40 @@ import AboutLayout from "@/layouts/AboutLayout";
 import Namecard from "@/components/namecard/Namecard";
 import Techstacks from "@/components/techstacks/Techstacks";
 import Background from "@/components/background/Background";
+import Certificate from "@/components/certificates/Certificate";
 
 import background from "@/assets/data/background.json";
-import textContent from "@/assets/data/namecard-desc.json";
-import socialLinks from "@/assets/data/icons.json";
+import certs from "@/assets/data/certificates.json";
 
 import "@/assets/styles/about.css";
 
+const avatar = "/assets/images/avatar.jpg";
+const textContent = {
+  greet: "Hi, I'm Dominic",
+  icon: "👋",
+  location: "Cavite, Philippines",
+  profession: "IT | Web Developer | MERN Stack",
+};
+const socialLinks = [
+  {
+    label: "Github",
+    icon: "FaGithub",
+    link: "https://github.com/dominic-myb",
+  },
+  {
+    label: "Leetcode",
+    icon: "SiLeetcode",
+    link: "https://leetcode.com/desguerra246/",
+  },
+  {
+    label: "LinkedIn",
+    icon: "FaLinkedin",
+    link: "https://www.linkedin.com/in/dominic-esguerra/",
+  },
+];
 export default function About() {
-  const avatar = "/assets/images/avatar.jpg";
   return (
-    <Container id="about" maxW="container.lg">
+    <Container id="about" maxW="container.lg" scrollMarginTop="75px">
       <AboutLayout
         cards={[
           <Namecard
@@ -30,6 +53,7 @@ export default function About() {
             subtitle={background.subtitle}
             timeline={background.timeline}
           />,
+          <Certificate cert={certs}/>,
         ]}
       />
     </Container>
