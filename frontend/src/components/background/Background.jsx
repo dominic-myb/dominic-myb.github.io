@@ -1,6 +1,7 @@
 import {
   Container,
   Box,
+  VStack,
   Heading,
   Text,
   useColorModeValue,
@@ -8,9 +9,19 @@ import {
 import { colorMap } from "@/assets/data/constants.js";
 
 function BackgroundTile({ idx, timeline }) {
+  const isLeft = idx % 2 === 0;
+  const _className = isLeft ? "left" : "right";
+  const _borderColor = isLeft
+    ? "transparent transparent transparent rgba(255, 255, 255, 0.08)"
+    : "transparent rgba(255, 255, 255, 0.08) transparent transparent";
   return (
-    <Box className={`timeline-item ${idx % 2 === 0 ? "left" : "right"}`}>
-      <Box className="timeline-content">
+    <Box
+      className={`timeline-item ${_className}`}
+      _before={{
+        borderColor: _borderColor,
+      }}
+    >
+      <Box className="timeline-content" borderRadius="xl">
         <Box
           as="span"
           className="timeline-date"
@@ -25,7 +36,9 @@ function BackgroundTile({ idx, timeline }) {
           {timeline.title}
         </Heading>
         <Text className="timeline-subtitle">{timeline.subtitle}</Text>
-        <Text className="timeline-description">{timeline.description}</Text>
+        <Text className="timeline-description" fontStyle="italic">
+          {timeline.description}
+        </Text>
       </Box>
     </Box>
   );
@@ -33,12 +46,13 @@ function BackgroundTile({ idx, timeline }) {
 
 export default function Background({ title, subtitle, timeline }) {
   return (
-    <Container maxW="container.lg" p={5}>
-      <Box textAlign="center" my={4}>
-        <Heading>{title}</Heading>
+    <Container maxW="container.lg">
+      <VStack textAlign="center" my={6}>
+        <Heading fontSize={30}>{title}</Heading>
         <Text>{subtitle}</Text>
-      </Box>
+      </VStack>
       <Box
+        my={4}
         className="timeline-container"
         _after={{
           bgGradient: useColorModeValue(
