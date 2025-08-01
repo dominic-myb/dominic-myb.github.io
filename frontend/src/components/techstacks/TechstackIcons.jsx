@@ -19,7 +19,7 @@ export default function TechstackIcons({ imgPath, imgName, imgAlt, imgIdx, flexC
   return (
     <Tooltip label={toCapitalize(imgName)} placement="top" hasArrow>
       <Flex {...flexStyles}>
-        <Image src={imgPath} alt={imgAlt} boxSize="65%" objectFit="contain" />
+        <Image src={imgPath} alt={imgAlt} boxSize="65%" objectFit="contain" loading="lazy"/>
       </Flex>
     </Tooltip>
   );

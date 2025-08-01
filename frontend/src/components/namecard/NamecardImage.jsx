@@ -10,6 +10,7 @@ export default function NamecardImage({avatar}) {
         maxWidth="150"
         borderRadius="full"
         objectFit="cover"
+        loading="lazy"
       />
     </Box>
   );
