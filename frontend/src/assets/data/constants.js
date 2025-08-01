@@ -19,13 +19,11 @@ const colorMap = {
   },
 };
 
-// [1] Namecard
-// [2] Techstack
-// [3] Background
 const aboutGridSize = [
-  { rowSpan: { base: 1, md: 2, lg: 2 }, colSpan: { base: 1, md: 2, lg: 3 } },
-  { rowSpan: { base: 1, md: 2, lg: 2 }, colSpan: { base: 1, md: 2, lg: 2 } },
-  { rowSpan: { base: 3, md: 5, lg: 5 }, colSpan: { base: 1, md: 4, lg: 5 } },
+  { rowSpan: { base: 1, md: 2, lg: 1 }, colSpan: { base: 1, md: 2, lg: 3 } },
+  { rowSpan: { base: 1, md: 2, lg: 1 }, colSpan: { base: 1, md: 2, lg: 2 } },
+  { rowSpan: { base: 2, md: 4, lg: 2 }, colSpan: { base: 1, md: 4, lg: 5 } },
+  { rowSpan: { base: 1, md: 1, lg: 1 }, colSpan: { base: 1, md: 4, lg: 5 } },
 ];
 
 export { colorMap, aboutGridSize };
