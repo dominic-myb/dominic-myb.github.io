@@ -6,25 +6,25 @@
       "date": 2024,
       "title": "BS Information Technology",
       "subtitle": "Cavite State University - CCAT",
-      "desc": "Graduated Cum Laude" 
+      "description": "Graduated Cum Laude"
     },
     {
       "date": 2024,
       "title": "IT Lab Support",
-      "subtitle": "Department of Computer Studies - CvSU CCAT",
-      "desc": "Sample" 
+      "subtitle": "Department of Computer Studies (DCS)",
+      "description": "Assisted with computer setup, basic troubleshooting, and software installation in lab sessions."
     },
     {
       "date": 2020,
-      "title": "Computer System Servicing - Grade 12",
+      "title": "Senior High School – Computer System Servicing",
       "subtitle": "Amaya School of Home Industries",
-      "desc": "Graduated with Honors" 
+      "description": "Graduated with Honors"
     },
     {
       "date": 2019,
       "title": "Data Encoder",
       "subtitle": "Department of Agriculture - Tanza LGU",
-      "desc": "Sample" 
+      "description": "Encoded farmer and crop data into the database and supported basic office documentation tasks."
     }
   ]
 }
