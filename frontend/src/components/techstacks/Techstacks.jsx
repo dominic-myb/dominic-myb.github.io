@@ -1,8 +1,4 @@
-import {
-  VStack,
-  Heading,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { VStack, Heading, SimpleGrid } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import TechstackIcons from "./TechstackIcons";
 
@@ -14,7 +10,7 @@ export default function Techstacks() {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-  
+
   const toolNames = [
     "html5",
     "css3",
@@ -33,7 +29,7 @@ export default function Techstacks() {
 
   return (
     <VStack mx="auto" p={4}>
-      <Heading fontSize={24}>Techstacks</Heading>
+      <Heading fontSize="3xl">Techstacks</Heading>
       <SimpleGrid columns={4} gap={4} placeItems="center">
         {toolNames.map((img, idx) => (
           <TechstackIcons
