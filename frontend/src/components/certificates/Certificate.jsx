@@ -4,7 +4,7 @@ import CertificateCard from "./CertificateCard";
 export default function Certificate({ cert }) {
   return (
     <VStack>
-      <Heading mt={6} fontSize={30}>
+      <Heading mt={6} fontSize="3xl">
         My Certificates
       </Heading>
       <SimpleGrid columns={3} p={6}>
