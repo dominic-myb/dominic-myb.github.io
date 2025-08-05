@@ -1,17 +1,12 @@
-import { Container, VStack, useColorModeValue } from "@chakra-ui/react";
+import { Container, VStack } from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
 import MainFooter from "@/components/MainFooter";
-import { colorMap } from "@/assets/data/constants";
+import { useThemeColor } from "@/assets/colors";
 
 export default function MainLayout({ children }) {
+  const bg = useThemeColor("bg");
   return (
-    <Container
-      maxW="container.xxl"
-      bg={useColorModeValue(
-        colorMap.light.background,
-        colorMap.dark.background
-      )}
-    >
+    <Container maxW="container.xxl" bg={bg}>
       <Navbar />
       <VStack as="main" gap={4}>
         {children}
