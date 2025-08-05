@@ -1,25 +1,33 @@
-import { Tooltip, Flex, Image, useColorModeValue } from "@chakra-ui/react";
-import { colorMap } from "@/assets/data/constants";
+import { Tooltip, Flex, Image } from "@chakra-ui/react";
+import { useThemeColor } from "@/assets/colors";
 import { toCapitalize } from "@/utils/formatters";
 
-export default function TechstackIcons({ imgPath, imgName, imgAlt, imgIdx, flexClass }) {
-  const _animDelay = `${imgIdx}00ms`;
-  const _bg = useColorModeValue(
-    colorMap.light.buttonBg,
-    colorMap.dark.buttonBg
-  );
+export default function TechstackIcons({
+  imgPath,
+  imgName,
+  imgAlt,
+  imgIdx,
+  flexClass,
+}) {
+  const btnBg = useThemeColor("btnBg");
   const flexStyles = {
     className: flexClass,
     p: 2,
     boxSize: 20,
     borderRadius: "md",
-    bg: _bg,
-    style: { animationDelay: _animDelay },
+    bg: btnBg,
+    style: { animationDelay: `${imgIdx}00ms` },
   };
   return (
     <Tooltip label={toCapitalize(imgName)} placement="top" hasArrow>
       <Flex {...flexStyles}>
-        <Image src={imgPath} alt={imgAlt} boxSize="65%" objectFit="contain" loading="lazy"/>
+        <Image
+          src={imgPath}
+          alt={imgAlt}
+          boxSize="65%"
+          objectFit="contain"
+          loading="lazy"
+        />
       </Flex>
     </Tooltip>
   );
