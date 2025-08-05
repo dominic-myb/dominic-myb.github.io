@@ -2,8 +2,10 @@ import { HStack, Heading, Text, Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { AiFillCode } from "react-icons/ai";
 import { FaLocationDot } from "react-icons/fa6";
+import { useThemeColor } from "@/assets/colors";
 
 export default function NamecardTextContent({ textContent }) {
+  const [titleFont, bodyFont] = useThemeColor(["titleFont", "bodyFont"]);
   const [isWaving, setIsWaving] = useState(true);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,6 +21,7 @@ export default function NamecardTextContent({ textContent }) {
           as="h1"
           className="lato"
           fontSize={{ base: "28px", md: "32px" }}
+          color={titleFont}
         >
           {textContent.greet}
           <Box
@@ -30,15 +33,23 @@ export default function NamecardTextContent({ textContent }) {
           </Box>
         </Heading>
       </HStack>
-      <HStack gap={1}>
+      <HStack spacing={1}>
         <FaLocationDot />
-        <Text className="open-sans" fontSize={{ base: "16px", md: "18px" }}>
+        <Text
+          className="open-sans"
+          fontSize={{ base: "16px", md: "18px" }}
+          color={bodyFont}
+        >
           {textContent.location}
         </Text>
       </HStack>
-      <HStack gap={1}>
+      <HStack spacing={1}>
         <AiFillCode />
-        <Text className="open-sans" fontSize={{ base: "16px", md: "18px" }}>
+        <Text
+          className="open-sans"
+          fontSize={{ base: "16px", md: "18px" }}
+          color={bodyFont}
+        >
           {textContent.profession}
         </Text>
       </HStack>
