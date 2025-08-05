@@ -1,29 +1,16 @@
-import {
-  Container,
-  VStack,
-  Heading,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { colorMap } from "@/assets/data/constants.js";
+import { Container, VStack, Heading, Text } from "@chakra-ui/react";
+import { useThemeColor } from "@/assets/colors";
 
 export default function ContactLayout({ children }) {
-  const borderColor = useColorModeValue(
-    colorMap.light.cardBorder,
-    colorMap.dark.cardBorder
-  );
-  const backgroundColor = useColorModeValue(
-    colorMap.light.cardBg,
-    colorMap.dark.cardBg
-  );
-  const cardStyles = {
-    bg: backgroundColor,
-    border: `1px solid ${borderColor}`,
-    borderRadius: "xl",
-  };
+  const [cardBd, cardBg] = useThemeColor(["cardBd", "cardBg"]);
   return (
     <Container id="contact" maxW="container.lg" scrollMarginTop="75px">
-      <VStack maxW="container.lg" {...cardStyles}>
+      <VStack
+        maxW="container.lg"
+        bg={cardBg}
+        borderRadius="xl"
+        border={`1px solid ${cardBd}`}
+      >
         <VStack mt={8} gap={4}>
           <Heading as="h1" fontSize={36}>
             Get in Touch
@@ -38,7 +25,7 @@ export default function ContactLayout({ children }) {
           my={10}
           p={6}
           borderRadius="xl"
-          border={`1px solid ${borderColor}`}
+          border={`1px solid ${cardBd}`}
         >
           {children}
         </Container>
