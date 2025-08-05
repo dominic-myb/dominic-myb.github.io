@@ -1,25 +1,13 @@
-import {
-  Box,
-  Grid,
-  GridItem,
-  useColorModeValue,
-  useBreakpointValue,
-} from "@chakra-ui/react";
-import { colorMap, aboutGridSize } from "@/assets/data/constants";
+import { Box, Grid, GridItem, useBreakpointValue } from "@chakra-ui/react";
+import { aboutGridSize } from "@/assets/data/constants";
+import { useThemeColor } from "@/assets/colors";
 
 export default function AboutLayout({ cards }) {
-  const bgColor = useColorModeValue(
-    colorMap.light.cardBg,
-    colorMap.dark.cardBg
-  );
-  const borderColor = useColorModeValue(
-    colorMap.light.cardBorder,
-    colorMap.dark.cardBorder
-  );
+  const [cardBg, cardBd] = useThemeColor(["cardBg", "cardBd"]);
   const cardStyles = {
     borderRadius: "xl",
-    bg: `${bgColor}`,
-    border: `1px solid ${borderColor}`,
+    bg: cardBg,
+    border: `1px solid ${cardBd}`,
   };
   const rows =
     useBreakpointValue({
