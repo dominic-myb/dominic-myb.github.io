@@ -19,9 +19,9 @@ export default function NamecardTextContent({ textContent }) {
       <HStack>
         <Heading
           as="h1"
-          className="lato"
           fontSize={{ base: "28px", md: "32px" }}
           color={titleFont}
+          fontWeight={700}
         >
           {textContent.greet}
           <Box
@@ -35,21 +35,13 @@ export default function NamecardTextContent({ textContent }) {
       </HStack>
       <HStack spacing={1}>
         <FaLocationDot />
-        <Text
-          className="open-sans"
-          fontSize={{ base: "16px", md: "18px" }}
-          color={bodyFont}
-        >
+        <Text fontSize={{ base: "16px", md: "18px" }} color={bodyFont}>
           {textContent.location}
         </Text>
       </HStack>
       <HStack spacing={1}>
         <AiFillCode />
-        <Text
-          className="open-sans"
-          fontSize={{ base: "16px", md: "18px" }}
-          color={bodyFont}
-        >
+        <Text fontSize={{ base: "16px", md: "18px" }} color={bodyFont}>
           {textContent.profession}
         </Text>
       </HStack>
