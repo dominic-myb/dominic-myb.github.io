@@ -27,6 +27,8 @@ export default function TechstackIcons({
           boxSize="65%"
           objectFit="contain"
           loading="lazy"
+          draggable="false"
+          className="no-select"
         />
       </Flex>
     </Tooltip>
