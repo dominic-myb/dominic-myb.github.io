@@ -11,7 +11,7 @@ export default function ProjectLayout({ children }) {
     <Container id="projects" maxW="container.lg" scrollMarginTop="75px">
       <VStack bg={cardBg} border={`1px solid ${cardBd}`} borderRadius="xl">
         <Heading mt={6} fontSize="3xl" color={titleFont}>
-          My Projects
+          Projects
         </Heading>
         <SimpleGrid p={6} columns={2} gap={6}>
           {children}
