@@ -26,11 +26,11 @@ function DownloadPDFButton() {
 }
 
 function SocialLink({ label, icon, link }) {
-  const size = useBreakpointValue({ base: 15, md: 20 });
+  const size = useBreakpointValue({ base: 3, md: 4 });
   return (
     <Tooltip label={label} placement="bottom" hasArrow>
       <Button onClick={() => window.open(link, "_blank")}>
-        <Icon as={icon} size={size} />
+        <Icon as={icon} boxSize={size} />
       </Button>
     </Tooltip>
   );
