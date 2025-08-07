@@ -3,6 +3,7 @@ import {
   Button,
   Text,
   Tooltip,
+  Icon,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { IoMdDownload } from "react-icons/io";
@@ -24,12 +25,12 @@ function DownloadPDFButton() {
   );
 }
 
-function SocialLink({ label, Icon, link }) {
-  const size = useBreakpointValue({ base: 15, md: 20 });
+function SocialLink({ label, icon, link }) {
+  const size = useBreakpointValue({ base: 3, md: 4 });
   return (
     <Tooltip label={label} placement="bottom" hasArrow>
       <Button onClick={() => window.open(link, "_blank")}>
-        <Icon size={size} />
+        <Icon as={icon} boxSize={size} />
       </Button>
     </Tooltip>
   );
@@ -44,8 +45,8 @@ export default function NamecardButtons({ socialLinks }) {
 
   return (
     <HStack w="full" flexDirection="row" alignItems="center" gap={2} pt={2}>
-      {socials.map(({ label, icon, link }, idx) => (
-        <SocialLink key={idx} label={label} Icon={icon} link={link} />
+      {socials.map(({ label, icon, link }) => (
+        <SocialLink key={label} label={label} icon={icon} link={link} />
       ))}
       <DownloadPDFButton />
     </HStack>

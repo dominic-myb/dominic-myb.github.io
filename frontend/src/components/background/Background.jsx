@@ -1,14 +1,8 @@
-import {
-  Container,
-  Box,
-  VStack,
-  Heading,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { colorMap } from "@/assets/data/constants.js";
+import { Container, Box, VStack, Heading, Text } from "@chakra-ui/react";
+import { useThemeColor } from "@/assets/colors";
 
 function BackgroundTile({ idx, timeline }) {
+  const logo = useThemeColor("logo");
   const isLeft = idx % 2 === 0;
   const _className = isLeft ? "left" : "right";
   const _borderColor = isLeft
@@ -22,14 +16,7 @@ function BackgroundTile({ idx, timeline }) {
       }}
     >
       <Box className="timeline-content" borderRadius="xl">
-        <Box
-          as="span"
-          className="timeline-date"
-          bgGradient={useColorModeValue(
-            colorMap.light.logo,
-            colorMap.dark.logo
-          )}
-        >
+        <Box as="span" className="timeline-date" bgGradient={logo}>
           {timeline.date}
         </Box>
         <Heading as="h3" size="md" className="timeline-title">
@@ -45,6 +32,7 @@ function BackgroundTile({ idx, timeline }) {
 }
 
 export default function Background({ title, subtitle, timeline }) {
+  const line = useThemeColor("line");
   return (
     <Container maxW="container.lg">
       <VStack textAlign="center" my={6}>
@@ -55,10 +43,7 @@ export default function Background({ title, subtitle, timeline }) {
         my={4}
         className="timeline-container"
         _after={{
-          bgGradient: useColorModeValue(
-            colorMap.light.line,
-            colorMap.dark.line
-          ),
+          bgGradient: line,
         }}
       >
         {timeline.map((item, idx) => (

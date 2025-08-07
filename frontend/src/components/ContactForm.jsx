@@ -53,7 +53,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <VStack alignItems="stretch" spacing={4} mb={4}>
+      <VStack alignItems="stretch" spacing={4}>
         <Heading as="h1" fontSize={28}>
           Send a Message
         </Heading>
@@ -103,6 +103,7 @@ export default function ContactForm() {
           size="lg"
           colorScheme="teal"
           rightIcon={<IoSend />}
+          borderRadius="xl"
         >
           Send
         </Button> 

@@ -12,12 +12,12 @@ import {
   DrawerHeader,
   DrawerBody,
   useDisclosure,
-  useColorModeValue,
   useColorMode,
+  useColorModeValue,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon, HamburgerIcon } from "@chakra-ui/icons";
-import { colorMap } from "@/assets/data/constants.js";
+import { useThemeColor, colorMap } from "@/assets/colors";
 import "@/assets/styles/navbar.css";
 
 const navTitles = [
@@ -27,6 +27,7 @@ const navTitles = [
 ];
 
 function Logo() {
+  const logo = useThemeColor("logo");
   return (
     <Heading
       as="h1"
@@ -34,7 +35,7 @@ function Logo() {
       cursor="pointer"
       className="logo no-select"
       fontSize={useBreakpointValue({ base: 24, md: 28 })}
-      bgGradient={useColorModeValue(colorMap.light.logo, colorMap.dark.logo)}
+      bgGradient={logo}
     >
       dominic-esguerra
     </Heading>
@@ -49,17 +50,17 @@ function NavigationLink({ linkName }) {
       fontSize={{ base: 16, lg: 18 }}
       _hover={{
         backgroundColor: useColorModeValue(
-          colorMap.dark.font,
-          colorMap.light.font
+          colorMap.font.dark,
+          colorMap.font.light
         ),
-        color: useColorModeValue(colorMap.light.font, colorMap.dark.font),
+        color: useColorModeValue(colorMap.font.light, colorMap.font.dark),
       }}
       _focus={{
         backgroundColor: useColorModeValue(
-          colorMap.dark.font,
-          colorMap.light.font
+          colorMap.font.dark,
+          colorMap.font.light
         ),
-        color: useColorModeValue(colorMap.light.font, colorMap.dark.font),
+        color: useColorModeValue(colorMap.font.light, colorMap.font.dark),
       }}
     >
       {linkName}
@@ -82,22 +83,24 @@ function Navigations() {
 }
 
 function NavbarDrawer({ isOpen, onClose }) {
+  const bg = useThemeColor("bg");
   return (
-    <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
+    <Drawer placement="right" onClose={onClose} isOpen={isOpen} bg={bg}>
       <DrawerOverlay />
-      <DrawerContent>
+      <DrawerContent
+        bg={"rgba(255, 255, 255, 0.08)"}
+        backdropFilter="blur(30px)"
+      >
         <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
         <DrawerBody>
           <VStack spacing={4} py={4}>
-            {navTitles.map(
-              (link, index) => (
-                <NavigationLink
-                  key={index}
-                  linkName={link.name.toLowerCase()}
-                  onClick={onClose}
-                />
-              )
-            )}
+            {navTitles.map((link, index) => (
+              <NavigationLink
+                key={index}
+                linkName={link.name.toLowerCase()}
+                onClick={onClose}
+              />
+            ))}
           </VStack>
         </DrawerBody>
       </DrawerContent>
@@ -108,6 +111,7 @@ function NavbarDrawer({ isOpen, onClose }) {
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const bg = useThemeColor("bg");
 
   function NavButtons() {
     return (
@@ -127,14 +131,7 @@ export default function Navbar() {
   }
 
   return (
-    <Container
-      className="navbar"
-      maxW="container.xxl"
-      bg={useColorModeValue(
-        colorMap.light.background,
-        colorMap.dark.background
-      )}
-    >
+    <Container className="navbar" maxW="container.xxl" bg={bg}>
       <Container maxW="container.lg" py={4}>
         <HStack justifyContent="space-between" flexDirection="row">
           <Logo />

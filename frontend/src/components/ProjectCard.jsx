@@ -1,30 +1,18 @@
-import {
-  VStack,
-  HStack,
-  Link,
-  Text,
-  Image,
-  Tooltip,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { colorMap } from "@/assets/data/constants";
+import { VStack, HStack, Link, Text, Image, Tooltip } from "@chakra-ui/react";
+import { useThemeColors } from "@/assets/colors";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 export default function ProjectCard({ cardImage, cardTitle }) {
-  const _bg = useColorModeValue(colorMap.light.cardBg, colorMap.dark.cardBg);
-  const _border = `1px solid ${useColorModeValue(
-    colorMap.light.cardBorder,
-    colorMap.dark.cardBorder
-  )}`;
+  const colors = useThemeColors();
   return (
     <VStack
       borderRadius="xl"
-      bg={_bg}
+      bg={colors.cardBg}
       p={6}
       spacing={2}
       alignItems="stretch"
       boxShadow="lg"
       backdropFilter="blur(10px)"
-      border={_border}
+      border={`1px solid ${colors.cardBd}`}
     >
       <Image
         src={cardImage}
@@ -35,14 +23,16 @@ export default function ProjectCard({ cardImage, cardTitle }) {
       />
       <VStack spacing={1} alignItems="strech">
         <HStack>
-          <Link fontSize="xl" fontWeight="bold">
+          <Link fontSize="xl" fontWeight="bold" color={colors.titleFont}>
             {cardTitle}
             <ExternalLinkIcon boxSize={4} mx={1} mt="-4px" />
           </Link>
         </HStack>
-        <Text fontSize="sm">A 2D platformer built in Godot featuring</Text>
+        <Text fontSize="sm" color={colors.bodyFont}>
+          A 2D platformer built in Godot featuring
+        </Text>
         <HStack spacing={1}>
-          <Text fontSize="sm" color="gray.500">
+          <Text fontSize="sm" color={colors.smallFont}>
             Built with:
           </Text>
           <Tooltip label="Godot" hasArrow>
