@@ -111,7 +111,7 @@ function NavbarDrawer({ isOpen, onClose }) {
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  // const bg = useThemeColor("bg");
+  const bg = useThemeColor("bg");
 
   function NavButtons() {
     return (
@@ -131,7 +131,7 @@ export default function Navbar() {
   }
 
   return (
-    <Container className="navbar" maxW="container.xxl">
+    <Container className="navbar" maxW="container.xxl" bg={bg}>
       <Container maxW="container.lg" py={4}>
         <HStack justifyContent="space-between" flexDirection="row">
           <Logo />
