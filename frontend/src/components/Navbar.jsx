@@ -18,7 +18,6 @@ import {
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { useThemeColor, colorMap } from "@/assets/colors";
-import "@/assets/styles/navbar.css";
 
 const navTitles = [
   { name: "about" },
