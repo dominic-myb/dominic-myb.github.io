@@ -17,31 +17,27 @@ export default function NamecardTextContent({ textContent }) {
   return (
     <>
       <HStack>
-        <Heading
-          as="h1"
-          fontSize={{ base: "28px", md: "32px" }}
-          color={titleFont}
-          fontWeight={700}
-        >
+        <Heading as="h1" fontSize="32px" color={titleFont} fontWeight={600}>
           {textContent.greet}
           <Box
             as="span"
             cursor="pointer"
             className={`wave ${isWaving ? "hand-wave" : ""}`}
+            fontSize="32px"
           >
             {textContent.icon}
           </Box>
         </Heading>
       </HStack>
       <HStack spacing={1}>
-        <FaLocationDot />
-        <Text fontSize={{ base: "16px", md: "18px" }} color={bodyFont}>
+        <FaLocationDot size={15} />
+        <Text fontSize={{ base: "16px" }} color={bodyFont} fontWeight={300}>
           {textContent.location}
         </Text>
       </HStack>
       <HStack spacing={1}>
-        <AiFillCode />
-        <Text fontSize={{ base: "16px", md: "18px" }} color={bodyFont}>
+        <AiFillCode size={15} />
+        <Text fontSize={{ base: "16px" }} color={bodyFont} fontWeight={300}>
           {textContent.profession}
         </Text>
       </HStack>
