@@ -16,7 +16,7 @@ const textContent = {
   greet: "Hi, I'm Dominic",
   icon: "👋",
   location: "Cavite, Philippines",
-  profession: "IT | Web Developer | MERN Stack",
+  profession: "IT Grad | Junior Web Developer",
 };
 const socialLinks = [
   {
