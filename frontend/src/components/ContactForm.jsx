@@ -12,6 +12,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { IoSend } from "react-icons/io5";
+import { useThemeColor, useThemeConstantColor } from "@/assets/colors";
 
 export default function ContactForm() {
   const [email, setEmail] = useState("");
@@ -22,6 +23,9 @@ export default function ContactForm() {
 
   const isEmailInvalid = email && !emailRegex.test(email);
   const toast = useToast();
+
+  const [primary, accent] = useThemeColor(["primary", "accent"]);
+  const btnColor = useThemeConstantColor("titleFont", "dark");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -101,12 +105,14 @@ export default function ContactForm() {
         <Button
           type="submit"
           size="lg"
-          colorScheme="teal"
+          bg={primary}
+          color={btnColor}
           rightIcon={<IoSend />}
           borderRadius="xl"
+          _hover={{ bg: accent }}
         >
           Send
-        </Button> 
+        </Button>
       </VStack>
     </form>
   );
