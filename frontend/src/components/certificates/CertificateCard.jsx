@@ -13,10 +13,10 @@ export default function CertificateCard({ title, platform, link }) {
       px={8}
     >
       <VStack spacing={2} alignItems="stretch">
-        <Text fontSize="md" fontWeight="bold" color={titleFont}>
+        <Text fontSize="md" fontWeight={600} color={titleFont}>
           {title}
         </Text>
-        <Text fontSize="sm" fontStyle="italic" color={smallFont}>
+        <Text fontSize="sm" fontStyle="italic" color={smallFont} fontWeight={400}>
           {platform}
         </Text>
       </VStack>
