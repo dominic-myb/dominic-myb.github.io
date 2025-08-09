@@ -56,17 +56,17 @@ function NavigationLink({ linkName }) {
       borderRadius="xl"
       _hover={{
         backgroundColor: useColorModeValue(
-          colorMap.font.dark,
-          colorMap.font.light
+          colorMap.invertColor.dark,
+          colorMap.invertColor.light
         ),
-        color: useColorModeValue(colorMap.font.light, colorMap.font.dark),
+        color: useColorModeValue(colorMap.invertColor.light, colorMap.invertColor.dark),
       }}
       _focus={{
         backgroundColor: useColorModeValue(
-          colorMap.font.dark,
-          colorMap.font.light
+          colorMap.invertColor.dark,
+          colorMap.invertColor.light
         ),
-        color: useColorModeValue(colorMap.font.light, colorMap.font.dark),
+        color: useColorModeValue(colorMap.invertColor.light, colorMap.invertColor.dark),
       }}
     >
       {linkName}
