@@ -19,7 +19,13 @@ export default function TechstackIcons({
     style: { animationDelay: `${imgIdx}00ms` },
   };
   return (
-    <Tooltip label={toCapitalize(imgName)} placement="top" hasArrow>
+    <Tooltip
+      label={toCapitalize(imgName)}
+      placement="top"
+      fontWeight={600}
+      fontStyle="italic"
+      hasArrow
+    >
       <Flex {...flexStyles}>
         <Image
           src={imgPath}
