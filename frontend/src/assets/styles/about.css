@@ -81,7 +81,7 @@
 .timeline-date {
   display: inline-block;
   padding: 5px 15px;
-  background-color: #3b82f6;
+  background-color: 	hsl(243, 68%, 52%);
   color: white;
   border-radius: 20px;
   font-size: 0.85rem;
