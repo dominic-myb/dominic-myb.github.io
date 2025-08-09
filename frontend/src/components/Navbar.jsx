@@ -18,7 +18,6 @@ import {
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { useThemeColor, colorMap } from "@/assets/colors";
-import "@/assets/styles/navbar.css";
 
 const navTitles = [
   { name: "about" },
@@ -33,9 +32,12 @@ function Logo() {
       as="h1"
       bgClip="text"
       cursor="pointer"
-      className="logo no-select"
+      className="no-select"
       fontSize={useBreakpointValue({ base: 24, md: 28 })}
+      fontWeight={700}
       bgGradient={logo}
+      textTransform="lowercase"
+      textAlign="center"
     >
       dominic-esguerra
     </Heading>
@@ -45,22 +47,26 @@ function Logo() {
 function NavigationLink({ linkName }) {
   return (
     <Link
-      className="nav-link no-select"
+      className="no-select"
       href={`#${linkName.toLowerCase()}`}
+      px="16px"
+      py="8px"
       fontSize={{ base: 16, lg: 18 }}
+      fontWeight={600}
+      borderRadius="xl"
       _hover={{
         backgroundColor: useColorModeValue(
-          colorMap.font.dark,
-          colorMap.font.light
+          colorMap.invertColor.dark,
+          colorMap.invertColor.light
         ),
-        color: useColorModeValue(colorMap.font.light, colorMap.font.dark),
+        color: useColorModeValue(colorMap.invertColor.light, colorMap.invertColor.dark),
       }}
       _focus={{
         backgroundColor: useColorModeValue(
-          colorMap.font.dark,
-          colorMap.font.light
+          colorMap.invertColor.dark,
+          colorMap.invertColor.light
         ),
-        color: useColorModeValue(colorMap.font.light, colorMap.font.dark),
+        color: useColorModeValue(colorMap.invertColor.light, colorMap.invertColor.dark),
       }}
     >
       {linkName}
@@ -131,7 +137,7 @@ export default function Navbar() {
   }
 
   return (
-    <Container className="navbar" maxW="container.xxl" bg={bg}>
+    <Container top={0} zIndex={100} pos="sticky" maxW="container.xxl" bg={bg}>
       <Container maxW="container.lg" py={4}>
         <HStack justifyContent="space-between" flexDirection="row">
           <Logo />

@@ -2,12 +2,24 @@ import { Box, Grid, GridItem, useBreakpointValue } from "@chakra-ui/react";
 import { useThemeColor } from "@/assets/colors";
 
 export default function AboutLayout({ cards }) {
-  const [cardBg, cardBd] = useThemeColor(["cardBg", "cardBd"]);
-  const cardStyles = {
-    borderRadius: "xl",
-    bg: cardBg,
-    border: `1px solid ${cardBd}`,
-  };
+  const [cardBg, cardBd, bg] = useThemeColor(["cardBg", "cardBd", "bg"]);
+  const cardStyles = [
+    {
+      borderRadius: "xl",
+      bg: bg,
+      border: `1px solid ${cardBd}`,
+    },
+    {
+      borderRadius: "xl",
+      bg: cardBg,
+    },
+    {},
+    {
+      // border: `1px solid ${cardBd}`,
+      borderRadius: "xl",
+      bg: cardBg
+    },
+  ];
   const rows =
     useBreakpointValue({
       base: "repeat(5, 1fr)",
@@ -34,7 +46,7 @@ export default function AboutLayout({ cards }) {
           key={idx}
           rowSpan={size.rowSpan}
           colSpan={size.colSpan}
-          {...cardStyles}
+          {...cardStyles[idx]}
         >
           {Array.isArray(cards) ? cards[idx] : cards || <Box>No Card</Box>}
         </GridItem>

@@ -2,7 +2,12 @@ import { Container, Box, VStack, Heading, Text } from "@chakra-ui/react";
 import { useThemeColor } from "@/assets/colors";
 
 function BackgroundTile({ idx, timeline }) {
-  const logo = useThemeColor("logo");
+  const [accent, titleFont, bodyFont, smallFont] = useThemeColor([
+    "accent",
+    "titleFont",
+    "bodyFont",
+    "smallFont",
+  ]);
   const isLeft = idx % 2 === 0;
   const _className = isLeft ? "left" : "right";
   const _borderColor = isLeft
@@ -16,14 +21,32 @@ function BackgroundTile({ idx, timeline }) {
       }}
     >
       <Box className="timeline-content" borderRadius="xl">
-        <Box as="span" className="timeline-date" bgGradient={logo}>
+        <Box
+          as="span"
+          className="timeline-date"
+          bg={accent}
+          color={titleFont}
+        >
           {timeline.date}
         </Box>
-        <Heading as="h3" size="md" className="timeline-title">
+        <Heading as="h3" size="md" className="timeline-title" color={titleFont}>
           {timeline.title}
         </Heading>
-        <Text className="timeline-subtitle">{timeline.subtitle}</Text>
-        <Text className="timeline-description" fontStyle="italic">
+        <Text
+          className="timeline-subtitle"
+          color={bodyFont}
+          fontSize="sm"
+          fontWeight={400}
+        >
+          {timeline.subtitle}
+        </Text>
+        <Text
+          className="timeline-description"
+          color={smallFont}
+          fontSize="sm"
+          fontWeight={400}
+          fontStyle="italic"
+        >
           {timeline.description}
         </Text>
       </Box>
@@ -32,7 +55,7 @@ function BackgroundTile({ idx, timeline }) {
 }
 
 export default function Background({ title, subtitle, timeline }) {
-  const line = useThemeColor("line");
+  const accent = useThemeColor("accent");
   return (
     <Container maxW="container.lg">
       <VStack textAlign="center" my={6}>
@@ -43,7 +66,7 @@ export default function Background({ title, subtitle, timeline }) {
         my={4}
         className="timeline-container"
         _after={{
-          bgGradient: line,
+          backgroundColor: accent,
         }}
       >
         {timeline.map((item, idx) => (

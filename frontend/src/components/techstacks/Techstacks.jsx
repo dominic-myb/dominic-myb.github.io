@@ -29,7 +29,7 @@ export default function Techstacks() {
 
   return (
     <VStack mx="auto" p={4}>
-      <Heading fontSize="3xl">Techstacks</Heading>
+      <Heading fontSize="2xl" fontWeight={500}>Techstacks</Heading>
       <SimpleGrid columns={4} gap={4} placeItems="center">
         {toolNames.map((img, idx) => (
           <TechstackIcons
