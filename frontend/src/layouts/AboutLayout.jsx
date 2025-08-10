@@ -5,19 +5,25 @@ export default function AboutLayout({ cards }) {
   const [cardBg, cardBd, bg] = useThemeColor(["cardBg", "cardBd", "bg"]);
   const cardStyles = [
     {
+      // namecard
       borderRadius: "xl",
       bg: bg,
       border: `1px solid ${cardBd}`,
     },
     {
+      // techstack
       borderRadius: "xl",
       bg: cardBg,
     },
-    {},
     {
-      // border: `1px solid ${cardBd}`,
+      // timeline
       borderRadius: "xl",
-      bg: cardBg
+      border: `1px solid ${cardBd}`,
+    },
+    {
+      // certificates
+      borderRadius: "xl",
+      bg: cardBg,
     },
   ];
   const rows =
