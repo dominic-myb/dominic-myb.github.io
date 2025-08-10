@@ -7,7 +7,7 @@ export default function Certificate({ cert }) {
       <Heading mt={6} fontSize="2xl" fontWeight={600}>
         Certificates
       </Heading>
-      <SimpleGrid columns={{ base: 1, md: 3 }} p={6}>
+      <SimpleGrid columns={{ base: 1, md: 3 }} p={6} gap={6}>
         {cert.map(({ title, platform, link }, idx) => (
           <CertificateCard
             key={idx}

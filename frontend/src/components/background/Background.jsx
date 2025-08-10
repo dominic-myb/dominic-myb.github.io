@@ -59,8 +59,8 @@ export default function Background({ title, subtitle, timeline }) {
   return (
     <Container maxW="container.lg">
       <VStack textAlign="center" my={6}>
-        <Heading fontSize="3xl">{title}</Heading>
-        <Text fontSize="md">{subtitle}</Text>
+        <Heading fontSize="3xl" fontWeight={600}>{title}</Heading>
+        <Text fontSize="md" fontWeight={300}>{subtitle}</Text>
       </VStack>
       <Box
         my={4}
