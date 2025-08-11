@@ -28,11 +28,11 @@ export default function ProjectCard({ cardImage, cardTitle }) {
             <ExternalLinkIcon boxSize={4} mx={1} mt="-4px" />
           </Link>
         </HStack>
-        <Text fontSize="sm" color={colors.bodyFont}>
+        <Text fontSize="sm" color={colors.bodyFont} fontWeight={300}>
           A 2D platformer built in Godot featuring
         </Text>
         <HStack spacing={1}>
-          <Text fontSize="sm" color={colors.smallFont}>
+          <Text fontSize="sm" color={colors.smallFont} fontWeight={300}>
             Built with:
           </Text>
           <Tooltip label="Godot" hasArrow>
