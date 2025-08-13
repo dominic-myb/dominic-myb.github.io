@@ -1,13 +1,15 @@
 import { Container, Box, VStack, Heading, Text } from "@chakra-ui/react";
-import { useThemeColor } from "@/assets/colors";
+import { useThemeColor, useThemeConstantColor } from "@/assets/colors";
 
 function BackgroundTile({ idx, timeline }) {
-  const [accent, titleFont, bodyFont, smallFont] = useThemeColor([
+  const [accent, titleFont, bodyFont, smallFont, secondary] = useThemeColor([
     "accent",
     "titleFont",
     "bodyFont",
     "smallFont",
+    "secondary"
   ]);
+  const dateCol = useThemeConstantColor("titleFont", "dark");
   const isLeft = idx % 2 === 0;
   const _className = isLeft ? "left" : "right";
   const _borderColor = isLeft
@@ -20,12 +22,12 @@ function BackgroundTile({ idx, timeline }) {
         borderColor: _borderColor,
       }}
     >
-      <Box className="timeline-content" borderRadius="xl">
+      <Box className="timeline-content" borderRadius="xl" bg={secondary}>
         <Box
           as="span"
           className="timeline-date"
           bg={accent}
-          color={titleFont}
+          color={dateCol}
         >
           {timeline.date}
         </Box>
