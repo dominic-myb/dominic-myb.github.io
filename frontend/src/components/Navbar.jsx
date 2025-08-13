@@ -39,7 +39,7 @@ function Logo() {
       textTransform="lowercase"
       textAlign="center"
     >
-      dominic-esguerra
+      _dominic
     </Heading>
   );
 }
