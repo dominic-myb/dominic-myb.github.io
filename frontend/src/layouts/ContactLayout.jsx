@@ -10,7 +10,7 @@ export default function ContactLayout({ children }) {
   ]);
   return (
     <Container id="contact" maxW="container.lg" scrollMarginTop="75px">
-      <VStack maxW="container.lg" bg={cardBg} borderRadius="xl">
+      <VStack maxW="container.lg" bg={cardBg} borderRadius="xl" boxShadow="lg">
         <VStack mt={8} gap={4}>
           <Heading as="h1" fontSize="3xl" color={titleFont}>
             Get in Touch
