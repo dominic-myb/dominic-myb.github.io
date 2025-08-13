@@ -7,23 +7,27 @@ export default function AboutLayout({ cards }) {
     {
       // namecard
       borderRadius: "xl",
-      bg: bg,
       border: `1px solid ${cardBd}`,
+      boxShadow: "md"
     },
     {
       // techstack
       borderRadius: "xl",
-      bg: cardBg,
+      border: `1px solid ${cardBd}`,
+      boxShadow: "md"
     },
     {
       // timeline
       borderRadius: "xl",
       border: `1px solid ${cardBd}`,
+      boxShadow: "md"
     },
     {
       // certificates
       borderRadius: "xl",
       bg: cardBg,
+      border: `1px solid ${cardBd}`,
+      boxShadow: "md"
     },
   ];
   const rows =
