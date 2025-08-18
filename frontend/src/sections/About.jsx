@@ -3,9 +3,7 @@ import { Container } from "@chakra-ui/react";
 import AboutLayout from "@/layouts/AboutLayout";
 import Namecard from "@/components/namecard/Namecard";
 import Techstacks from "@/components/techstacks/Techstacks";
-import Background from "@/components/background/Background";
 import Certificate from "@/components/certificates/Certificate";
-import AboutMe from "@/components/aboutme/AboutMe";
 import TimelineLayout from "@/layouts/TimelineLayout";
 
 import background from "@/assets/data/background.json";
