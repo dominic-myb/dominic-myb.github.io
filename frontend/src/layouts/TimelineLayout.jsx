@@ -1,4 +1,5 @@
 import { Container, Box, VStack, Heading, Text } from "@chakra-ui/react";
+import TimelineCard from "@/components/TimelineCard";
 import { useThemeColor } from "@/assets/colors";
 
 const TimelineHeader = ({ title, subtitle }) => (
@@ -27,7 +28,7 @@ const TimelineLayout = ({ title, subtitle, timeline }) => {
       <TimelineHeader title={title} subtitle={subtitle} />
       <TimelineContainer>
         {timeline.map((item, idx) => (
-          <BackgroundTile key={idx} idx={idx} timeline={item}></BackgroundTile>
+          <TimelineCard key={idx} idx={idx} timeline={item}></TimelineCard>
         ))}
       </TimelineContainer>
     </Container>
