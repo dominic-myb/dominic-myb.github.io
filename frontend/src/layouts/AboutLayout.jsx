@@ -2,32 +2,32 @@ import { Box, Grid, GridItem, useBreakpointValue } from "@chakra-ui/react";
 import { useThemeColor } from "@/assets/colors";
 
 export default function AboutLayout({ cards }) {
-  const [cardBg, cardBd, bg] = useThemeColor(["cardBg", "cardBd", "bg"]);
+  const [cardBg, cardBd] = useThemeColor(["cardBg", "cardBd"]);
   const cardStyles = [
     {
       // namecard
       borderRadius: "xl",
       border: `1px solid ${cardBd}`,
-      boxShadow: "md"
+      boxShadow: "md",
     },
     {
       // techstack
       borderRadius: "xl",
       border: `1px solid ${cardBd}`,
-      boxShadow: "md"
+      boxShadow: "md",
     },
     {
       // timeline
       borderRadius: "xl",
       border: `1px solid ${cardBd}`,
-      boxShadow: "md"
+      boxShadow: "md",
     },
     {
       // certificates
       borderRadius: "xl",
       bg: cardBg,
       border: `1px solid ${cardBd}`,
-      boxShadow: "md"
+      boxShadow: "md",
     },
   ];
   const rows =
@@ -42,7 +42,7 @@ export default function AboutLayout({ cards }) {
       md: "repeat(4, 1fr)",
       lg: "repeat(3, 1fr)",
     }) ?? "1fr";
-  const aboutGridSize = [
+  const gridCellSpan = [
     { rowSpan: { base: 1, md: 2, lg: 1 }, colSpan: { base: 1, md: 2, lg: 3 } },
     { rowSpan: { base: 1, md: 2, lg: 1 }, colSpan: { base: 1, md: 2, lg: 2 } },
     { rowSpan: { base: 2, md: 4, lg: 2 }, colSpan: { base: 1, md: 4, lg: 5 } },
@@ -51,7 +51,7 @@ export default function AboutLayout({ cards }) {
 
   return (
     <Grid templateRows={rows} templateColumns={cols} gap={4}>
-      {aboutGridSize.map((size, idx) => (
+      {gridCellSpan.map((size, idx) => (
         <GridItem
           key={idx}
           rowSpan={size.rowSpan}
