@@ -5,6 +5,8 @@ import Namecard from "@/components/namecard/Namecard";
 import Techstacks from "@/components/techstacks/Techstacks";
 import Background from "@/components/background/Background";
 import Certificate from "@/components/certificates/Certificate";
+import AboutMe from "@/components/aboutme/AboutMe";
+import TimelineLayout from "@/layouts/TimelineLayout";
 
 import background from "@/assets/data/background.json";
 import certs from "@/assets/data/certificates.json";
@@ -47,13 +49,13 @@ export default function About() {
             socialLinks={socialLinks}
           />,
           <Techstacks key="techstacks" />,
-          <Background
-            key="background"
+          <TimelineLayout
+            key="timeline"
             title={background.title}
             subtitle={background.subtitle}
             timeline={background.timeline}
           />,
-          <Certificate cert={certs}/>,
+          <Certificate cert={certs} />,
         ]}
       />
     </Container>
