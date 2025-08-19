@@ -7,10 +7,8 @@ import "@/assets/styles/animations.css";
 
 export default function App() {
   return (
-    <div>
-      <Routes>
-        <Route path={"/"} element={<Home />}></Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path={"/"} element={<Home />}></Route>
+    </Routes>
   );
 }
