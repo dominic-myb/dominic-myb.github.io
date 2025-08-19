@@ -1,3 +1,4 @@
+import "./index.css";
 import { Text, Button, VStack } from "@chakra-ui/react";
 import { useThemeColor } from "@/assets/colors";
 
@@ -13,10 +14,18 @@ export default function CertificateCard({ title, platform, link }) {
       px={8}
     >
       <VStack spacing={2} alignItems="stretch">
-        <Text fontSize="md" fontWeight={600} color={titleFont}>
+        <Text
+          className="certificate-card__title"
+          fontSize="md"
+          color={titleFont}
+        >
           {title}
         </Text>
-        <Text fontSize="sm" fontStyle="italic" color={smallFont} fontWeight={400}>
+        <Text
+          className="certificate-card__platform"
+          fontSize="sm"
+          color={smallFont}
+        >
           {platform}
         </Text>
       </VStack>
