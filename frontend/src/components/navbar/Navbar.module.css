@@ -1,0 +1,24 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar_wrapper {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  cursor: pointer;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.navlink {
+  padding: 8px 16px;
+  font-weight: 600;
+}
