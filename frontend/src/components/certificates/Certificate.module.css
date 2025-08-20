@@ -1,0 +1,13 @@
+/* Certificate */
+.title {
+  font-weight: 600;
+}
+
+/* Certificate Card */
+.card_title {
+  font-weight: 600;
+}
+.card_platform {
+  font-style: italic;
+  font-weight: 400;
+}
