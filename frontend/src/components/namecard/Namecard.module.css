@@ -1,0 +1,91 @@
+/* Namecard */
+.container {
+  height: 100%;
+  justify-content: center;
+}
+.wrapper {
+  overflow: hidden;
+  align-items: center;
+}
+
+/* Buttons */
+.buttons_container {
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Image */
+.image_container {
+  border: 3px solid transparent;
+  position: relative;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.image_container:hover {
+  border: 3px solid transparent;
+}
+.image_container:hover::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: greenyellow;
+  animation: border-animation 1s ease-in infinite;
+}
+.image_avatar {
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+/* TextContent */
+.hand {
+  display: inline-block;
+  cursor: pointer;
+  animation: wave-animation 2.5s;
+  transform-origin: 70% 70%;
+}
+.hand:hover,
+.hand_wave {
+  animation: wave-animation 2.5s infinite;
+}
+
+@keyframes border-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(14deg);
+  }
+}
