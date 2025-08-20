@@ -9,8 +9,9 @@ import {
 import { IoMdDownload } from "react-icons/io";
 import { handleDownload } from "@/utils/downloads";
 import { iconMap } from "@/assets/icons";
+import styles from "./Namecard.module.css";
 
-function DownloadPDFButton() {
+const DownloadPDFButton = () => {
   const download = {
     url: "/assets/pdf/Dominic-Esguerra-CV.pdf",
     filename: "Dominic-Esguerra-CV.pdf",
@@ -23,9 +24,9 @@ function DownloadPDFButton() {
       </Button>
     </Tooltip>
   );
-}
+};
 
-function SocialLink({ label, icon, link }) {
+const SocialLink = ({ label, icon, link }) => {
   const size = useBreakpointValue({ base: 3, md: 4 });
   return (
     <Tooltip label={label} placement="bottom" hasArrow>
@@ -34,9 +35,9 @@ function SocialLink({ label, icon, link }) {
       </Button>
     </Tooltip>
   );
-}
+};
 
-export default function NamecardButtons({ socialLinks }) {
+const NamecardButtons = ({ socialLinks }) => {
   const socials = socialLinks.map(({ label, icon, link }) => ({
     label,
     icon: iconMap[icon],
@@ -44,11 +45,13 @@ export default function NamecardButtons({ socialLinks }) {
   }));
 
   return (
-    <HStack w="full" flexDirection="row" alignItems="center" gap={2} pt={2}>
+    <HStack className={styles.buttons_container} gap={2} pt={2}>
       {socials.map(({ label, icon, link }) => (
         <SocialLink key={label} label={label} icon={icon} link={link} />
       ))}
       <DownloadPDFButton />
     </HStack>
   );
-}
+};
+
+export default NamecardButtons;
