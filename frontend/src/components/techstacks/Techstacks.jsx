@@ -1,8 +1,9 @@
 import { VStack, Heading, SimpleGrid } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import TechstackIcons from "./TechstackIcons";
+import styles from "./Techstacks.module.css";
 
-export default function Techstacks() {
+const Techstacks = () => {
   const [isAnimated, setIsAnimated] = useState(true);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,12 +30,14 @@ export default function Techstacks() {
 
   return (
     <VStack mx="auto" p={4}>
-      <Heading fontSize="2xl" fontWeight={500}>Techstacks</Heading>
+      <Heading fontSize="2xl" className="fw-500">
+        Techstacks
+      </Heading>
       <SimpleGrid columns={4} gap={4} placeItems="center">
         {toolNames.map((img, idx) => (
           <TechstackIcons
             key={img}
-            flexClass={`techstack ${isAnimated ? "moveup" : ""}`}
+            flexClass={`${styles.techstack} ${isAnimated ? styles.moveup : ""}`}
             imgPath={`/assets/icons/${img}.svg`}
             imgName={img}
             imgAlt={`${img}.svg`}
@@ -45,3 +48,5 @@ export default function Techstacks() {
     </VStack>
   );
 }
+
+export default Techstacks;
