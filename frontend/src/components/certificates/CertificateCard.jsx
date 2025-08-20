@@ -1,8 +1,8 @@
-import "./index.css";
 import { Text, Button, VStack } from "@chakra-ui/react";
 import { useThemeColor } from "@/assets/colors";
+import styles from "./Certificate.module.css";
 
-export default function CertificateCard({ title, platform, link }) {
+const CertificateCard = ({ title, platform, link }) => {
   const [titleFont, smallFont] = useThemeColor(["titleFont", "smallFont"]);
   return (
     <Button
@@ -14,21 +14,15 @@ export default function CertificateCard({ title, platform, link }) {
       px={8}
     >
       <VStack spacing={2} alignItems="stretch">
-        <Text
-          className="certificate-card__title"
-          fontSize="md"
-          color={titleFont}
-        >
+        <Text className={styles.card_title} fontSize="md" color={titleFont}>
           {title}
         </Text>
-        <Text
-          className="certificate-card__platform"
-          fontSize="sm"
-          color={smallFont}
-        >
+        <Text className={styles.card_platform} fontSize="sm" color={smallFont}>
           {platform}
         </Text>
       </VStack>
     </Button>
   );
-}
+};
+
+export default CertificateCard;
