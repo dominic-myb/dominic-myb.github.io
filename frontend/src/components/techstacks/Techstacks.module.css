@@ -1,0 +1,33 @@
+/* start of techstacks css */
+.techstack {
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out !important;
+}
+
+/* important to remove delays in hovering animation */
+.techstack:hover {
+  transform: translateY(-10px) !important;
+}
+
+.moveup {
+  animation: moveup 1s ease-in-out forwards;
+}
+
+/* Techstack Icons */
+.icon_image {
+  object-fit: contain;
+}
+
+@keyframes moveup {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
