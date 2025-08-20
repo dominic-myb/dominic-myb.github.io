@@ -1,17 +1,17 @@
 import { Box, Image } from "@chakra-ui/react";
+import styles from "./Namecard.module.css";
 
-export default function NamecardImage({avatar}) {
-  return (
-    <Box className="avatar-container" cursor="pointer">
-      <Image
-        src={avatar}
-        alt="My Avatar"
-        boxSize={{ base: "100px", md: "150px" }}
-        maxWidth="150"
-        borderRadius="full"
-        objectFit="cover"
-        loading="lazy"
-      />
-    </Box>
-  );
-}
+const NamecardImage = ({ avatar }) => (
+  <Box className={styles.image_container}>
+    <Image
+      src={avatar}
+      alt="My Avatar"
+      loading="lazy"
+      className={styles.image_avatar}
+      maxWidth={150}
+      boxSize={{ base: "100px", md: "150px" }}
+    />
+  </Box>
+);
+
+export default NamecardImage;
