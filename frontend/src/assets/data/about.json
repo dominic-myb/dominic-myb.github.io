@@ -1,0 +1,105 @@
+{
+  "background": {
+    "title": "Timeline",
+    "subtitle": "Education & Professional Timeline",
+    "timeline": [
+      {
+        "date": 2024,
+        "title": "BS Information Technology",
+        "subtitle": "Cavite State University - CCAT",
+        "description": "Graduated Cum Laude"
+      },
+      {
+        "date": 2024,
+        "title": "IT Lab Support",
+        "subtitle": "Department of Computer Studies (DCS)",
+        "description": "Assisted with computer setup, basic troubleshooting, and software installation in lab sessions."
+      },
+      {
+        "date": 2020,
+        "title": "Senior High School – Computer System Servicing",
+        "subtitle": "Amaya School of Home Industries",
+        "description": "Graduated with Honors"
+      },
+      {
+        "date": 2019,
+        "title": "Data Encoder",
+        "subtitle": "Department of Agriculture - Tanza LGU",
+        "description": "Encoded farmer and crop data into the database and supported basic office documentation tasks."
+      }
+    ]
+  },
+  "certificates": [
+    {
+      "title": "Responsive Web Design",
+      "platform": "freeCodeCamp",
+      "link": "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design"
+    },
+    {
+      "title": "Responsive Web Design",
+      "platform": "freeCodeCamp",
+      "link": "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design"
+    },
+    {
+      "title": "Responsive Web Design",
+      "platform": "freeCodeCamp",
+      "link": "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design"
+    },
+    {
+      "title": "Responsive Web Design",
+      "platform": "freeCodeCamp",
+      "link": "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design"
+    },
+    {
+      "title": "Responsive Web Design",
+      "platform": "freeCodeCamp",
+      "link": "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design"
+    },
+    {
+      "title": "Responsive Web Design",
+      "platform": "freeCodeCamp",
+      "link": "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design"
+    }
+  ],
+  "gridCellSpan": [
+    {
+      "rowSpan": { "base": 1, "md": 2, "lg": 1 },
+      "colSpan": { "base": 1, "md": 2, "lg": 3 }
+    },
+    {
+      "rowSpan": { "base": 1, "md": 2, "lg": 1 },
+      "colSpan": { "base": 1, "md": 2, "lg": 2 }
+    },
+    {
+      "rowSpan": { "base": 2, "md": 4, "lg": 2 },
+      "colSpan": { "base": 1, "md": 4, "lg": 5 }
+    },
+    {
+      "rowSpan": { "base": 1, "md": 1, "lg": 1 },
+      "colSpan": { "base": 1, "md": 4, "lg": 5 }
+    }
+  ],
+  "socialLinks": [
+    {
+      "label": "Github",
+      "icon": "FaGithub",
+      "link": "https://github.com/dominic-myb"
+    },
+    {
+      "label": "Leetcode",
+      "icon": "SiLeetcode",
+      "link": "https://leetcode.com/desguerra246/"
+    },
+    {
+      "label": "LinkedIn",
+      "icon": "FaLinkedin",
+      "link": "https://www.linkedin.com/in/dominic-esguerra/"
+    }
+  ],
+  "textContent": {
+    "greet": "Hi, I'm Dominic",
+    "icon": "👋",
+    "location": "Cavite, Philippines",
+    "profession": "IT Grad | Junior Web Developer"
+  }
+}
