@@ -1,14 +1,9 @@
 import { Tooltip, Flex, Image } from "@chakra-ui/react";
 import { useThemeColor } from "@/assets/colors";
 import { toCapitalize } from "@/utils/formatters";
+import styles from "./Techstacks.module.css";
 
-export default function TechstackIcons({
-  imgPath,
-  imgName,
-  imgAlt,
-  imgIdx,
-  flexClass,
-}) {
+const TechstackIcons = ({ imgPath, imgName, imgAlt, imgIdx, flexClass }) => {
   const btnBg = useThemeColor("btnBg");
   const flexStyles = {
     className: flexClass,
@@ -20,23 +15,23 @@ export default function TechstackIcons({
   };
   return (
     <Tooltip
+      className="fw-600 italic"
       label={toCapitalize(imgName)}
       placement="top"
-      fontWeight={600}
-      fontStyle="italic"
       hasArrow
     >
       <Flex {...flexStyles}>
         <Image
+          className={`${styles.icon_image} no-select`}
           src={imgPath}
           alt={imgAlt}
           boxSize="65%"
-          objectFit="contain"
-          loading="lazy"
           draggable="false"
-          className="no-select"
+          loading="lazy"
         />
       </Flex>
     </Tooltip>
   );
-}
+};
+
+export default TechstackIcons;
