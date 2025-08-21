@@ -81,3 +81,30 @@
   font-weight: 400;
   margin-top: 5px;
 }
+
+@media screen and (max-width: 768px) {
+  .container::after {
+    left: 31px;
+  }
+
+  .item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .item::before {
+    left: 60px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #fff transparent transparent;
+  }
+
+  .left::after,
+  .right::after {
+    left: 18px;
+  }
+
+  .right {
+    left: 0;
+  }
+}
