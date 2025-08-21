@@ -82,7 +82,7 @@
   "socialLinks": [
     {
       "label": "Github",
-      "icon": "FaGithub",
+      "icon": "SiGithub",
       "link": "https://github.com/dominic-myb"
     },
     {
@@ -92,14 +92,14 @@
     },
     {
       "label": "LinkedIn",
-      "icon": "FaLinkedin",
+      "icon": "SiLinkedin",
       "link": "https://www.linkedin.com/in/dominic-esguerra/"
     }
   ],
   "textContent": {
     "greet": "Hi, I'm Dominic",
     "icon": "👋",
-    "location": "Cavite, Philippines",
-    "profession": "IT Grad | Junior Web Developer"
+    "location": "From Cavite, Philippines",
+    "profession": "IT Grad, Web Development"
   }
 }
