@@ -1,15 +1,15 @@
+import "@/assets/styles/about.css";
 import { Container } from "@chakra-ui/react";
 
 import AboutLayout from "@/layouts/AboutLayout";
-import Namecard from "@/components/namecard/Namecard";
-import Techstacks from "@/components/techstacks/Techstacks";
-import Certificate from "@/components/certificates/Certificate";
 import TimelineLayout from "@/layouts/TimelineLayout";
+import { Namecard } from "@/components/namecard";
+import { Techstacks } from "@/components/techstacks";
+import { Certificate } from "@/components/certificates";
 
 import background from "@/assets/data/background.json";
 import certs from "@/assets/data/certificates.json";
 
-import "@/assets/styles/about.css";
 
 const avatar = "/assets/images/avatar.jpg";
 const textContent = {
@@ -37,7 +37,7 @@ const socialLinks = [
 ];
 export default function About() {
   return (
-    <Container id="about" maxW="container.lg" scrollMarginTop="75px">
+    <Container as="section" id="about" maxW="container.lg" scrollMarginTop="75px">
       <AboutLayout
         cards={[
           <Namecard
