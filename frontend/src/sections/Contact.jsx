@@ -3,7 +3,7 @@ import ContactForm from "@/components/ContactForm";
 
 export default function Contact() {
   return (
-    <ContactLayout>
+    <ContactLayout as="section">
       <ContactForm />
     </ContactLayout>
   );
