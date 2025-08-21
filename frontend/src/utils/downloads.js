@@ -5,7 +5,7 @@
  * @param {string} options.url - The URL of the file to download.
  * @param {string} [options.filename="file.pdf"] - The desired name for the downloaded file.
  */
-async function handleDownload({ url, filename }) {
+const handleDownload = async ({ url, filename }) => {
   try {
     if (!url || typeof url !== "string") {
       console.error("Invalid URL provided for download.");

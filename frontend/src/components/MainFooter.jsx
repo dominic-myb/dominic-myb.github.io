@@ -1,7 +1,7 @@
 import { VStack, Text } from "@chakra-ui/react";
 import { useThemeColor } from "@/assets/colors";
 
-export default function MainFooter() {
+const MainFooter = () => {
   const [bg, bodyFont, smallFont] = useThemeColor(["bg", "bodyFont", "smallFont"]);
   return (
     <VStack as="footer" bg={bg} py={4} textAlign="center">
@@ -15,3 +15,5 @@ export default function MainFooter() {
     </VStack>
   );
 }
+
+export default MainFooter;

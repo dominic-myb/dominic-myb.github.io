@@ -14,7 +14,7 @@ import {
 import { IoSend } from "react-icons/io5";
 import { useThemeColor, useThemeConstantColor } from "@/assets/colors";
 
-export default function ContactForm() {
+const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
@@ -116,4 +116,6 @@ export default function ContactForm() {
       </VStack>
     </form>
   );
-}
+};
+
+export default ContactForm;
