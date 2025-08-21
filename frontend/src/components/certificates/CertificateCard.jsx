@@ -6,18 +6,17 @@ const CertificateCard = ({ title, platform, link }) => {
   const [titleFont, smallFont] = useThemeColor(["titleFont", "smallFont"]);
   return (
     <Button
+      className={styles.card_button}
       as="a"
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      py={10}
-      px={8}
     >
-      <VStack spacing={2} alignItems="stretch">
-        <Text className={styles.card_title} fontSize="md" color={titleFont}>
+      <VStack className={styles.card_wrapper}> 
+        <Text className={styles.card_title} color={titleFont}>
           {title}
         </Text>
-        <Text className={styles.card_platform} fontSize="sm" color={smallFont}>
+        <Text className={styles.card_platform} color={smallFont}>
           {platform}
         </Text>
       </VStack>

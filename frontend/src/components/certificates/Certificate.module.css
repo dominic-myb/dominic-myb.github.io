@@ -1,13 +1,32 @@
 /* Certificate */
 .title {
   font-weight: 600;
+  margin-top: var(--chakra-space-6);
+  font-size: var(--chakra-fontSizes-2xl) !important;
+}
+
+.grid {
+  padding: var(--chakra-space-6);
+  gap: var(--chakra-space-6);
 }
 
 /* Certificate Card */
 .card_title {
+  font-size: var(--chakra-fontSizes-md);
   font-weight: 600;
 }
+
 .card_platform {
+  font-size: var(--chakra-fontSizes-sm);
   font-style: italic;
   font-weight: 400;
+}
+
+.card_button {
+  padding: var(--chakra-space-10) var(--chakra-space-8) !important;
+}
+
+.card_wrapper {
+  gap: var(--chakra-space-2) !important;
+  align-items: stretch !important;
 }

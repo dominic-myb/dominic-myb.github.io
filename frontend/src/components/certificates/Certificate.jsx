@@ -4,10 +4,8 @@ import styles from "./Certificate.module.css";
 
 const Certificate = ({ cert }) => (
   <VStack>
-    <Heading mt={6} fontSize="2xl" className={styles.title}>
-      Certificates
-    </Heading>
-    <SimpleGrid columns={{ base: 1, md: 3 }} p={6} gap={6}>
+    <Heading className={styles.title}>Certificates</Heading>
+    <SimpleGrid columns={{ base: 1, md: 3 }} className={styles.grid}>
       {cert.map(({ title, platform, link }, idx) => (
         <CertificateCard
           key={idx}
