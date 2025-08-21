@@ -1,7 +1,7 @@
 import { VStack, HStack, Link, Text, Image, Tooltip } from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import ProjectImage from "./ProjectImage";
 import ProjectCardContainer from "./ProjectCardContainer";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { useThemeColors } from "@/assets/colors";
 // import styles from "./Projects.module.css";
 

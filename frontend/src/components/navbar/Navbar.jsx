@@ -4,11 +4,12 @@ import {
   useDisclosure,
   useColorMode,
 } from "@chakra-ui/react";
-import { useThemeColor } from "@/assets/colors";
 import NavLogo from "./NavLogo";
 import NavLinksContainer from "./NavLinksContainer";
 import NavbarDrawer from "./NavbarDrawer";
 import NavButtons from "./NavButtons";
+
+import { useThemeColor } from "@/assets/colors";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
