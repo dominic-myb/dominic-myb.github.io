@@ -3,6 +3,7 @@
   height: 100%;
   justify-content: center;
 }
+
 .wrapper {
   overflow: hidden;
   align-items: center;
@@ -22,9 +23,11 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
 .image_container:hover {
   border: 3px solid transparent;
 }
+
 .image_container:hover::before {
   content: "";
   position: absolute;
@@ -37,6 +40,7 @@
   border-top-color: greenyellow;
   animation: border-animation 1s ease-in infinite;
 }
+
 .image_avatar {
   border-radius: 100%;
   object-fit: cover;
@@ -49,6 +53,7 @@
   animation: wave-animation 2.5s;
   transform-origin: 70% 70%;
 }
+
 .hand:hover,
 .hand_wave {
   animation: wave-animation 2.5s infinite;

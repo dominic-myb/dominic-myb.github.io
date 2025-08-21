@@ -1,5 +1,5 @@
 import { VStack, Heading, SimpleGrid } from "@chakra-ui/react";
-import { CertificateCard } from "./";
+import CertificateCard from "./CertificateCard";
 import styles from "./Certificate.module.css";
 
 const Certificate = ({ cert }) => (
@@ -19,4 +19,5 @@ const Certificate = ({ cert }) => (
     </SimpleGrid>
   </VStack>
 );
+
 export default Certificate;
