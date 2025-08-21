@@ -6,9 +6,9 @@ import {
   Icon,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { IoMdDownload } from "react-icons/io";
+import { DownloadIcon } from "@chakra-ui/icons";
+import { SiGithub, SiLinkedin, SiLeetcode } from "react-icons/si";
 import { handleDownload } from "@/utils/downloads";
-import { iconMap } from "@/assets/icons";
 import styles from "./Namecard.module.css";
 
 const DownloadPDFButton = () => {
@@ -19,7 +19,7 @@ const DownloadPDFButton = () => {
   return (
     <Tooltip label="Download my resume (PDF)" placement="bottom" hasArrow>
       <Button onClick={() => handleDownload(download)}>
-        <IoMdDownload />
+        <DownloadIcon />
         <Text>&nbsp;Resumé</Text>
       </Button>
     </Tooltip>
@@ -38,6 +38,11 @@ const SocialLink = ({ label, icon, link }) => {
 };
 
 const NamecardButtons = ({ socialLinks }) => {
+  const iconMap = {
+    SiLinkedin,
+    SiGithub,
+    SiLeetcode,
+  };
   const socials = socialLinks.map(({ label, icon, link }) => ({
     label,
     icon: iconMap[icon],

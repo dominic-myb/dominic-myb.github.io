@@ -1,7 +1,5 @@
-import { HStack, Heading, Text, Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { AiFillCode } from "react-icons/ai";
-import { FaLocationDot } from "react-icons/fa6";
+import { HStack, Heading, Text, Box } from "@chakra-ui/react";
 import { useThemeColor } from "@/assets/colors";
 import styles from "./Namecard.module.css";
 
@@ -28,14 +26,12 @@ const NamecardTextContent = ({ textContent }) => {
           </Box>
         </Heading>
       </HStack>
-      <HStack spacing={1}>
-        <FaLocationDot size={15} />
+      <HStack spacing={2}>
         <Text fontSize="md" color={bodyFont} className="fw-300">
           {textContent.location}
         </Text>
       </HStack>
-      <HStack spacing={1}>
-        <AiFillCode size={15} />
+      <HStack spacing={2}>
         <Text fontSize="md" color={bodyFont} className="fw-300">
           {textContent.profession}
         </Text>
