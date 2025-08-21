@@ -1,4 +1,1 @@
-import TechstackIcons from "./TechstackIcons";
-import Techstacks from "./Techstacks";
-
-export { TechstackIcons, Techstacks };
+export {default as Techstacks } from "./Techstacks";

@@ -1,4 +1,1 @@
-import Certificate from "./Certificate";
-import CertificateCard from "./CertificateCard";
-
-export { Certificate, CertificateCard };
+export {default as Certificate} from "./Certificate";

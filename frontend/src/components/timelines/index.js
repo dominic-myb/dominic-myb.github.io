@@ -1,3 +1,1 @@
-import Timeline from "./Timeline";
-
-export { Timeline };
+export { default as Timeline } from "./Timeline";
