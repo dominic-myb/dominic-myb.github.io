@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import { AiFillCode } from "react-icons/ai";
 import { FaLocationDot } from "react-icons/fa6";
 import { useThemeColor } from "@/assets/colors";
+import styles from "./Namecard.module.css";
 
-export default function NamecardTextContent({ textContent }) {
+const NamecardTextContent = ({ textContent }) => {
   const [titleFont, bodyFont] = useThemeColor(["titleFont", "bodyFont"]);
   const [isWaving, setIsWaving] = useState(true);
   useEffect(() => {
@@ -17,13 +18,11 @@ export default function NamecardTextContent({ textContent }) {
   return (
     <>
       <HStack>
-        <Heading as="h1" fontSize="32px" color={titleFont} fontWeight={600}>
+        <Heading as="h1" className="fw-600" fontSize="3xl" color={titleFont}>
           {textContent.greet}
           <Box
             as="span"
-            cursor="pointer"
-            className={`wave ${isWaving ? "hand-wave" : ""}`}
-            fontSize="32px"
+            className={`${styles.hand} ${isWaving ? styles.hand_wave : ""}`}
           >
             {textContent.icon}
           </Box>
@@ -31,16 +30,18 @@ export default function NamecardTextContent({ textContent }) {
       </HStack>
       <HStack spacing={1}>
         <FaLocationDot size={15} />
-        <Text fontSize={{ base: "16px" }} color={bodyFont} fontWeight={300}>
+        <Text fontSize="md" color={bodyFont} className="fw-300">
           {textContent.location}
         </Text>
       </HStack>
       <HStack spacing={1}>
         <AiFillCode size={15} />
-        <Text fontSize={{ base: "16px" }} color={bodyFont} fontWeight={300}>
+        <Text fontSize="md" color={bodyFont} className="fw-300">
           {textContent.profession}
         </Text>
       </HStack>
     </>
   );
-}
+};
+
+export default NamecardTextContent;
