@@ -1,0 +1,27 @@
+.contact_container {
+  max-width: var(--chakra-sizes-container-lg) !important;
+  scroll-margin-top: 75px;
+}
+
+.contact_wrapper {
+  max-width: var(--chakra-sizes-container-lg);
+  border-radius: var(--chakra-radii-xl);
+  box-shadow: var(--chakra-shadows-lg);
+}
+
+.contact_header {
+  margin-top: var(--chakra-space-8);
+  gap: var(--chakra-space-4);
+}
+
+.subtitle {
+  width: 60%;
+  text-align: center;
+  font-weight: 300;
+}
+
+.contact_body {
+  margin: var(--chakra-space-10) auto;
+  padding: var(--chakra-space-6);
+  border-radius: var(--chakra-radii-xl);
+}
