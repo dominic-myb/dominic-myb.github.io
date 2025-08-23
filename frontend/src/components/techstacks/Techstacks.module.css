@@ -1,4 +1,19 @@
-/* start of techstacks css */
+.techstacks_container {
+  padding: var(--chakra-space-4);
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}
+
+.techstacks_heading {
+  font-size: var(--chakra-fontSizes-2xl) !important;
+  font-weight: 500 !important;
+}
+
+.techstacks_grid {
+  gap: var(--chakra-space-4) !important;
+  place-items: center !important;
+}
+
 .techstack {
   align-items: center;
   justify-content: center;
