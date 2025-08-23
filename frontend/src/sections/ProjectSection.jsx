@@ -1,15 +1,21 @@
-import { Container } from "@chakra-ui/react";
-import { Projects } from "@/components/projects";
+import { ProjectsContainer, Card } from "@/components/projects";
+import projectData from "@/assets/data/projects-test.json";
 
-const ProjectSection = () => (
-  <Container
-    as="section"
-    id="projects"
-    maxW="container.lg"
-    scrollMarginTop="75px"
-  >
-    <Projects />
-  </Container>
-);
+const ProjectSection = () => {
+  console.log(projectData);
+  return (
+    <ProjectsContainer>
+      {projectData.map(({ image, title, desc, tools }, idx) => (
+        <Card
+          key={idx}
+          image={image}
+          title={title}
+          desc={desc}
+          tools={tools}
+        />
+      ))}
+    </ProjectsContainer>
+  );
+};
 
 export default ProjectSection;
