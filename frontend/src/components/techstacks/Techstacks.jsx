@@ -29,11 +29,11 @@ const Techstacks = () => {
   ];
 
   return (
-    <VStack mx="auto" p={4}>
-      <Heading fontSize="2xl" className="fw-500">
+    <VStack className={styles.techstacks_container}>
+      <Heading className={`${styles.techstacks_heading}`}>
         Techstacks
       </Heading>
-      <SimpleGrid columns={4} gap={4} placeItems="center">
+      <SimpleGrid columns={4} className={styles.techstacks_grid}>
         {toolNames.map((img, idx) => (
           <TechstackIcons
             key={img}
@@ -47,6 +47,6 @@ const Techstacks = () => {
       </SimpleGrid>
     </VStack>
   );
-}
+};
 
 export default Techstacks;
