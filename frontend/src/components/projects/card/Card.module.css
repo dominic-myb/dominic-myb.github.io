@@ -1,0 +1,35 @@
+.card_container {
+  padding: var(--chakra-space-6) !important;
+  gap: var(--chakra-space-2) !important;
+  border-radius: var(--chakra-radii-xl) !important;
+  box-shadow: var(--chakra-shadows-lg) !important;
+  align-items: stretch !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.image {
+  margin-bottom: var(--chakra-space-2);
+  object-fit: cover !important;
+  border-radius: var(--chakra-radii-xl) !important;
+}
+
+/* wraps title, desc, icons as VStack */
+.card_wrapper {
+  gap: var(--chakra-space-1) !important;
+  align-items: stretch !important;
+}
+
+.card_title {
+  font-weight: bold !important;
+  font-size: var(--chakra-fontSizes-xl) !important;
+}
+
+.card_title_icon {
+  margin: -4px var(--chakra-space-1) 0 var(--chakra-space-1) !important;
+}
+
+.card_desc,
+.built_with {
+  font-size: var(--chakra-fontSizes-sm) !important;
+  font-weight: 300 !important;
+}
