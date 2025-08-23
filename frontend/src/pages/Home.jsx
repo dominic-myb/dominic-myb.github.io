@@ -1,12 +1,11 @@
 import MainLayout from "@/layouts/MainLayout";
-import { AboutSection, ProjectSection } from "@/sections/";
-import Contact from "@/sections/Contact";
+import { AboutSection, ProjectSection, ContactSection } from "@/sections/";
 
 const Home = () => (
   <MainLayout>
     <AboutSection />
     <ProjectSection />
-    <Contact />
+    <ContactSection />
   </MainLayout>
 );
 
