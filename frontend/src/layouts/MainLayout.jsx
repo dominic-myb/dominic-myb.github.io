@@ -1,6 +1,6 @@
 import { Container, VStack } from "@chakra-ui/react";
 import { Navbar } from "@/components/navbar/";
-import MainFooter from "@/components/MainFooter";
+import { Footer } from "@/components/footer";
 import { useThemeColor } from "@/assets/colors";
 
 const MainLayout = ({ children }) => {
@@ -10,7 +10,7 @@ const MainLayout = ({ children }) => {
       <VStack as="main" gap={4}>
         {children}
       </VStack>
-      <MainFooter />
+      <Footer />
     </Container>
   );
 };
