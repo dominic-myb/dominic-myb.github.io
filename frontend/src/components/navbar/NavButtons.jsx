@@ -1,6 +1,5 @@
 import { HStack, IconButton } from "@chakra-ui/react";
 import { SunIcon, MoonIcon, HamburgerIcon } from "@chakra-ui/icons";
-// change icons to react icons
 
 const NavButtons = ({ colorMode, onToggleColorMode, onOpenDrawer }) => (
   <HStack>
