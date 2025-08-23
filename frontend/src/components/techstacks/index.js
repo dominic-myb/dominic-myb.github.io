@@ -1,1 +1,1 @@
-export {default as Techstacks } from "./Techstacks";
+export { default as Techstacks } from "./Techstacks";
