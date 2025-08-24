@@ -1,3 +1,23 @@
+:root {
+  --primary: hsl(197, 33%, 52%);
+  --secondary: hsl(197, 42%, 74%);
+  --accent: hsl(197, 52%, 62%);
+
+  --bg: hsl(204, 33%, 95%);
+  --text: hsl(195, 13%, 10%);
+  --muted: hsl(195, 13%, 45%);
+}
+
+[data-theme="dark"] {
+  --primary: hsl(197, 33%, 48%);
+  --secondary: hsl(197, 42%, 26%);
+  --accent: hsl(197, 52%, 38%);
+
+  --bg: hsl(204, 33%, 10%);
+  --text: hsl(195, 13%, 95%);
+  --muted: hsl(195, 13%, 55%);
+}
+
 * {
   font-family: Inter !important;
 }
