@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Container,
   HStack,
@@ -15,6 +16,10 @@ import styles from "./Navbar.module.css";
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", colorMode);
+  }, [colorMode]);
 
   return (
     <Container
