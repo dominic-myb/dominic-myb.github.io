@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { VStack, useToast } from "@chakra-ui/react";
+import { VStack, Text, useToast } from "@chakra-ui/react";
+import styles from "./ContactForm.module.css";
 
 import EmailField from "./EmailField";
 import SubjectField from "./SubjectField";
@@ -45,7 +46,8 @@ const ContactForm = () => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <VStack alignItems="stretch" spacing={4}>
+      <VStack className={styles.form_wrapper}>
+        <Text className={styles.form_title}>Send a Message</Text>
         <EmailField
           isTouched={isTouched}
           setIsTouched={setIsTouched}
