@@ -60,46 +60,5 @@
       "platform": "freeCodeCamp",
       "link": "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design"
     }
-  ],
-  "gridCellSpan": [
-    {
-      "rowSpan": { "base": 1, "md": 2, "lg": 1 },
-      "colSpan": { "base": 1, "md": 2, "lg": 3 }
-    },
-    {
-      "rowSpan": { "base": 1, "md": 2, "lg": 1 },
-      "colSpan": { "base": 1, "md": 2, "lg": 2 }
-    },
-    {
-      "rowSpan": { "base": 2, "md": 4, "lg": 2 },
-      "colSpan": { "base": 1, "md": 4, "lg": 5 }
-    },
-    {
-      "rowSpan": { "base": 1, "md": 1, "lg": 1 },
-      "colSpan": { "base": 1, "md": 4, "lg": 5 }
-    }
-  ],
-  "socialLinks": [
-    {
-      "label": "Github",
-      "icon": "SiGithub",
-      "link": "https://github.com/dominic-myb"
-    },
-    {
-      "label": "Leetcode",
-      "icon": "SiLeetcode",
-      "link": "https://leetcode.com/desguerra246/"
-    },
-    {
-      "label": "LinkedIn",
-      "icon": "SiLinkedin",
-      "link": "https://www.linkedin.com/in/dominic-esguerra/"
-    }
-  ],
-  "textContent": {
-    "greet": "Hi, I'm Dominic",
-    "icon": "👋",
-    "location": "From Cavite, Philippines",
-    "profession": "IT Grad, Web Development"
-  }
+  ]
 }
