@@ -7,14 +7,14 @@ import {
   DrawerBody,
 } from "@chakra-ui/react";
 import NavLink from "./NavLink";
-import { useThemeColor } from "@/assets/colors";
+import styles from "./Navbar.module.css";
 
 const NavbarDrawer = ({ isOpen, onClose }) => (
   <Drawer
     placement="right"
     onClose={onClose}
     isOpen={isOpen}
-    bg={useThemeColor("bg")}
+    className={styles.navbar_drawer}
   >
     <DrawerOverlay />
     <DrawerContent bg={"rgba(255, 255, 255, 0.08)"} backdropFilter="blur(30px)">
