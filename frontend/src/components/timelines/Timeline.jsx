@@ -1,31 +1,16 @@
-import { Container, Box, VStack, Heading, Text } from "@chakra-ui/react";
-import TimelineCard from "./TimelineCard";
-import { useThemeColor } from "@/assets/colors";
+import { Container, GridItem } from "@chakra-ui/react";
+import TimelineHeader from "./TimelineHeader";
+import TimelineContainer from "./TimelineContainer";
+import TimelineCard from "./card/TimelineCard";
 import styles from "./Timeline.module.css";
 
-const TimelineHeader = ({ title, subtitle }) => (
-  <VStack textAlign="center" my={6}>
-    <Heading as="h2" fontSize="3xl" fontWeight={600}>
-      {title}
-    </Heading>
-    <Text as="p" fontSize="md" fontWeight={300}>
-      {subtitle}
-    </Text>
-  </VStack>
-);
-
-const TimelineContainer = ({ children }) => {
-  const accentCol = useThemeColor("accent");
-  return (
-    <Box className={styles.container} my={4} _after={{ bg: accentCol }}>
-      {children}
-    </Box>
-  );
-};
-
-const Timeline = ({ title, subtitle, timeline }) => {
-  return (
-    <Container maxW="container.lg">
+const Timeline = ({ title, subtitle, timeline }) => (
+  <GridItem
+    colSpan={{ base: 4, md: 4, lg: 5 }}
+    rowSpan={{ base: 2, md: 4, lg: 2 }}
+    className={styles.main_container}
+  >
+    <Container className={styles.wrapper}>
       <TimelineHeader title={title} subtitle={subtitle} />
       <TimelineContainer>
         {timeline.map((item, idx) => (
@@ -33,7 +18,7 @@ const Timeline = ({ title, subtitle, timeline }) => {
         ))}
       </TimelineContainer>
     </Container>
-  );
-};
+  </GridItem>
+);
 
 export default Timeline;

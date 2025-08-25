@@ -1,36 +1,41 @@
-import { VStack, Stack } from "@chakra-ui/react";
+import { VStack, Stack, GridItem } from "@chakra-ui/react";
 import NamecardImage from "./NamecardImage";
 import NamecardButtons from "./NamecardButtons";
 import NamecardTextContent from "./NamecardTextContent";
 import styles from "./Namecard.module.css";
 
-const Namecard = ({ avatar, textContent, socialLinks }) => (
-  <VStack className={styles.container} p={4}>
-    <Stack
-      className={`${styles.wrapper} no-select`}
-      gap={4}
-      direction={{
-        base: "column",
-        sm: "row",
-        md: "column",
-        lg: "row",
-      }}
-    >
-      <NamecardImage avatar={avatar} />
-      <VStack
-        alignItems={{
-          base: "center",
-          sm: "flex-start",
-          md: "center",
-          lg: "flex-start",
+const Namecard = ({ avatar }) => (
+  <GridItem
+    colSpan={{ base: 4, md: 2, lg: 3 }}
+    rowSpan={{ base: 1, md: 2, lg: 1 }}
+    className={styles.main_container}
+  >
+    <VStack className={styles.container}>
+      <Stack
+        className={`${styles.wrapper} no-select`}
+        direction={{
+          base: "column",
+          sm: "row",
+          md: "column",
+          lg: "row",
         }}
-        gap={1}
       >
-        <NamecardTextContent textContent={textContent} />
-        <NamecardButtons socialLinks={socialLinks} />
-      </VStack>
-    </Stack>
-  </VStack>
+        <NamecardImage avatar={avatar} />
+        <VStack
+          alignItems={{
+            base: "center",
+            sm: "flex-start",
+            md: "center",
+            lg: "flex-start",
+          }}
+          gap={1}
+        >
+          <NamecardTextContent />
+          <NamecardButtons />
+        </VStack>
+      </Stack>
+    </VStack>
+  </GridItem>
 );
 
 export default Namecard;
