@@ -1,9 +1,8 @@
 import {
   HStack,
   Button,
-  Text,
   Tooltip,
-  Icon,
+  IconButton,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { DownloadIcon } from "@chakra-ui/icons";
@@ -18,41 +17,55 @@ const DownloadPDFButton = () => {
   };
   return (
     <Tooltip label="Download my resume (PDF)" placement="bottom" hasArrow>
-      <Button onClick={() => handleDownload(download)}>
-        <DownloadIcon />
-        <Text>&nbsp;Resumé</Text>
+      <Button
+        onClick={() => handleDownload(download)}
+        leftIcon={<DownloadIcon />}
+      >
+        Resumé
       </Button>
     </Tooltip>
   );
 };
 
-const SocialLink = ({ label, icon, link }) => {
-  const size = useBreakpointValue({ base: 3, md: 4 });
-  return (
-    <Tooltip label={label} placement="bottom" hasArrow>
-      <Button onClick={() => window.open(link, "_blank")}>
-        <Icon as={icon} boxSize={size} />
-      </Button>
-    </Tooltip>
-  );
-};
+const NamecardButton = ({ label, icon, link }) => (
+  <Tooltip label={label}>
+    <IconButton
+      onClick={() => window.open(link, "_blank")}
+      icon={icon}
+      boxSize={useBreakpointValue({ base: 10, md: 10 })}
+    />
+  </Tooltip>
+);
 
-const NamecardButtons = ({ socialLinks }) => {
+const NamecardButtons = () => {
   const iconMap = {
-    SiLinkedin,
-    SiGithub,
-    SiLeetcode,
+    Github: <SiGithub />,
+    LeetCode: <SiLeetcode />,
+    LinkedIn: <SiLinkedin />,
   };
-  const socials = socialLinks.map(({ label, icon, link }) => ({
-    label,
-    icon: iconMap[icon],
-    link,
-  }));
-
+  const data = [
+    {
+      label: "Github",
+      link: "https://github.com/dominic-myb",
+    },
+    {
+      label: "LeetCode",
+      link: "https://leetcode.com/desguerra246/",
+    },
+    {
+      label: "LinkedIn",
+      link: "https://www.linkedin.com/in/dominic-esguerra/",
+    },
+  ];
   return (
-    <HStack className={styles.buttons_container} gap={2} pt={2}>
-      {socials.map(({ label, icon, link }) => (
-        <SocialLink key={label} label={label} icon={icon} link={link} />
+    <HStack className={styles.buttons_container}>
+      {data.map(({ label, link }, idx) => (
+        <NamecardButton
+          key={idx}
+          label={label}
+          icon={iconMap[label]}
+          link={link}
+        />
       ))}
       <DownloadPDFButton />
     </HStack>
