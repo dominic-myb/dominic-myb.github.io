@@ -1,13 +1,13 @@
 import { Container, VStack } from "@chakra-ui/react";
 import { Navbar } from "@/components/navbar/";
 import { Footer } from "@/components/footer";
-import { useThemeColor } from "@/assets/colors";
+import styles from "./MainLayout.module.css";
 
 const MainLayout = ({ children }) => {
   return (
-    <Container maxW="container.xxl" bg={useThemeColor("bg")}>
+    <Container className={styles.mainlayout}>
       <Navbar />
-      <VStack as="main" gap={4}>
+      <VStack as="main" className={styles.main}>
         {children}
       </VStack>
       <Footer />
