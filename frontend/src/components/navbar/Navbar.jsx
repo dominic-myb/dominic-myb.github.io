@@ -7,10 +7,8 @@ import {
 } from "@chakra-ui/react";
 import NavLogo from "./NavLogo";
 import NavLinksContainer from "./NavLinksContainer";
-import NavbarDrawer from "./NavbarDrawer";
 import NavButtons from "./NavButtons";
-
-import { useThemeColor } from "@/assets/colors";
+import NavbarDrawer from "./NavbarDrawer";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
@@ -22,13 +20,9 @@ const Navbar = () => {
   }, [colorMode]);
 
   return (
-    <Container
-      className={styles.navbar}
-      maxW="container.xxl"
-      bg={useThemeColor("bg")}
-    >
-      <Container maxW="container.lg" py={4}>
-        <HStack className={styles.navbar_wrapper}>
+    <Container as="nav" className={styles.navbar}>
+      <Container className={styles.navbar_wrapper}>
+        <HStack className={styles.navbar_stack}>
           <NavLogo />
           <HStack gap={6}>
             <NavLinksContainer />
