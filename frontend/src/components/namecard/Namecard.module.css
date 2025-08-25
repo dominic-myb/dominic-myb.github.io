@@ -1,12 +1,20 @@
+.main_container {
+  border-radius: var(--chakra-radii-xl) !important;
+  border: 1px solid var(--border);
+  box-shadow: var(--chakra-shadows-md) !important;
+}
+
 /* Namecard */
 .container {
   height: 100%;
   justify-content: center;
+  padding: var(--chakra-space-4) !important;
 }
 
 .wrapper {
   overflow: hidden;
   align-items: center;
+  gap: var(--chakra-space-4) !important;
 }
 
 /* Buttons */
@@ -14,6 +22,8 @@
   width: 100%;
   flex-direction: row;
   align-items: center;
+  gap: var(--chakra-space-2) !important;
+  padding-top: var(--chakra-space-2) !important;
 }
 
 /* Image */
@@ -37,16 +47,33 @@
   bottom: -3px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: greenyellow;
+  border-top-color: var(--primary);
   animation: border-animation 1s ease-in infinite;
 }
 
 .image_avatar {
   border-radius: 100%;
   object-fit: cover;
+  max-width: 150px !important;
 }
 
 /* TextContent */
+.greet {
+  font-weight: 600;
+  font-size: var(--chakra-fontSizes-3xl) !important;
+  color: var(--text);
+}
+
+.text_container {
+  gap: var(--chakra-space-2) !important;
+}
+
+.text {
+  font-size: var(--chakra-fontSizes-md) !important;
+  font-weight: 300;
+  color: var(--text);
+}
+
 .hand {
   display: inline-block;
   cursor: pointer;

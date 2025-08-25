@@ -1,8 +1,18 @@
 .footer {
   padding: var(--chakra-space-4) 0;
   text-align: center;
+  background-color: var(--bg);
 }
 
-.copyright, .credit_line {
+.copyright,
+.credit_line {
   font-size: var(--chakra-fontSizes-sm);
+}
+
+.copyright {
+  color: var(--text);
+}
+
+.credit_line {
+  color: var(--muted);
 }

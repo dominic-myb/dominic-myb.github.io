@@ -1,0 +1,19 @@
+.send_button {
+  border-radius: var(--chakra-radii-xl) !important;
+  background-color: var(--primary) !important;
+  color: var(--text);
+}
+
+.send_button:hover {
+  background-color: var(--accent);
+}
+
+.form_title {
+  font-weight: 600;
+  font-size: var(--chakra-fontSizes-2xl) !important;
+}
+
+.form_wrapper {
+  align-items: stretch !important;
+  gap: var(--chakra-space-4) !important;
+}

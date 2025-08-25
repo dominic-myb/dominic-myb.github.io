@@ -1,3 +1,9 @@
+.main_container {
+  border-radius: var(--chakra-radii-xl) !important;
+  box-shadow: var(--chakra-shadows-md) !important;
+  background-color: var(--surface) !important;
+}
+
 /* Certificate */
 .title {
   font-weight: 600;
@@ -14,12 +20,13 @@
 .card_title {
   font-size: var(--chakra-fontSizes-md);
   font-weight: 600;
+  color: var(--text);
 }
 
 .card_platform {
   font-size: var(--chakra-fontSizes-sm);
-  font-style: italic;
   font-weight: 400;
+  color: var(--muted);
 }
 
 .card_button {

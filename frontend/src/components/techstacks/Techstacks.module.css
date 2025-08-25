@@ -1,3 +1,9 @@
+.main_container {
+  border-radius: var(--chakra-radii-xl) !important;
+  border: 1px solid var(--border);
+  box-shadow: var(--chakra-shadows-md) !important;
+}
+
 .techstacks_container {
   padding: var(--chakra-space-4);
   margin-inline-start: auto;
@@ -31,6 +37,17 @@
 }
 
 /* Techstack Icons */
+.tooltip {
+  font-weight: 600;
+  font-style: italic;
+}
+
+.image_wrapper {
+  padding: var(--chakra-space-2) !important;
+  border-radius: var(--chakra-radii-md) !important;
+  background-color: var(--accent);
+}
+
 .icon_image {
   object-fit: contain;
 }

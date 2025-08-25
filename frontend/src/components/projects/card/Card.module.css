@@ -5,6 +5,7 @@
   box-shadow: var(--chakra-shadows-lg) !important;
   align-items: stretch !important;
   backdrop-filter: blur(10px) !important;
+  border: 1px solid var(--border);
 }
 
 .image {
@@ -22,6 +23,7 @@
 .card_title {
   font-weight: bold !important;
   font-size: var(--chakra-fontSizes-xl) !important;
+  color: var(--text);
 }
 
 .card_title_icon {
@@ -32,4 +34,12 @@
 .built_with {
   font-size: var(--chakra-fontSizes-sm) !important;
   font-weight: 300 !important;
+}
+
+.card_desc {
+  color: var(--text);
+}
+
+.built_with {
+  color: var(--muted);
 }

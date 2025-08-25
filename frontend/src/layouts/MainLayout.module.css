@@ -1,0 +1,8 @@
+.mainlayout {
+  max-width: var(--chakra-sizes-container-xxl) !important;
+  background-color: var(--bg);
+}
+
+.main {
+  gap: var(--chakra-space-4);
+}
