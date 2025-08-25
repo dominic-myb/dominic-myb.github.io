@@ -3,9 +3,22 @@
   --secondary: hsl(197, 42%, 74%);
   --accent: hsl(197, 52%, 62%);
 
-  --bg: hsl(204, 33%, 95%);
+  --bg: hsl(204, 33%, 97%);
+  --surface: hsl(204, 33%, 100%);
   --text: hsl(195, 13%, 10%);
   --muted: hsl(195, 13%, 45%);
+
+  --navbtn-bg-hover: hsl(0, 0%, 5%);
+  --navbtn-color-hover: hsl(195, 13%, 95%);
+
+  --border: hsla(0, 0%, 10%, 0.125);
+
+  --logo: linear-gradient(
+    to right,
+    var(--primary),
+    var(--secondary),
+    var(--accent)
+  );
 }
 
 [data-theme="dark"] {
@@ -13,9 +26,22 @@
   --secondary: hsl(197, 42%, 26%);
   --accent: hsl(197, 52%, 38%);
 
-  --bg: hsl(204, 33%, 10%);
+  --bg: hsl(204, 33%, 3%);
+  --surface: 	hsl(195, 10%, 7%);
   --text: hsl(195, 13%, 95%);
   --muted: hsl(195, 13%, 55%);
+
+  --navbtn-bg-hover: hsl(0, 0%, 95%);
+  --navbtn-color-hover: hsl(195, 13%, 10%);
+
+  --border: hsla(0, 0%, 90%, 0.125);
+
+  --logo: linear-gradient(
+    to right,
+    var(--primary),
+    var(--secondary),
+    var(--accent)
+  );
 }
 
 * {
