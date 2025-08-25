@@ -1,21 +1,16 @@
 import { Tooltip, Flex, Image } from "@chakra-ui/react";
-import { useThemeColor } from "@/assets/colors";
 import { toCapitalize } from "@/utils/formatters";
 import styles from "./Techstacks.module.css";
 
 const TechstackIcons = ({ imgPath, imgName, imgAlt, imgIdx, flexClass }) => {
-  const btnBg = useThemeColor("btnBg");
   const flexStyles = {
-    className: flexClass,
-    p: 2,
+    className: `${flexClass} ${styles.image_wrapper}`,
     boxSize: 20,
-    borderRadius: "md",
-    bg: btnBg,
     style: { animationDelay: `${imgIdx}00ms` },
   };
   return (
     <Tooltip
-      className="fw-600 italic"
+      className={styles.tooltip}
       label={toCapitalize(imgName)}
       placement="top"
       hasArrow
