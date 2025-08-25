@@ -8,7 +8,6 @@ const NamecardImage = ({ avatar }) => (
       alt="My Avatar"
       loading="lazy"
       className={styles.image_avatar}
-      maxWidth={150}
       boxSize={{ base: "100px", md: "150px" }}
     />
   </Box>
