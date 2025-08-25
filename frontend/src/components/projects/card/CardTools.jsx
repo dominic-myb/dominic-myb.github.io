@@ -1,5 +1,4 @@
 import { HStack, Text, Tooltip, Image } from "@chakra-ui/react";
-import { useThemeColor } from "@/assets/colors";
 import { toCapitalize } from "@/utils/formatters";
 import styles from "./Card.module.css";
 
@@ -8,9 +7,7 @@ import styles from "./Card.module.css";
 
 const CardTools = ({ tools }) => (
   <HStack spacing={2}>
-    <Text className={styles.built_with} color={useThemeColor("smallFont")}>
-      Built with:
-    </Text>
+    <Text className={styles.built_with}>Built with:</Text>
     {tools.map((tool, idx) => (
       <Tooltip key={idx} label={toCapitalize(tool)} hasArrow>
         <Image src={`/assets/icons/${tool}.svg`} boxSize={5} />
