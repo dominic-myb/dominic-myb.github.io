@@ -4,5 +4,5 @@
 }
 
 .main {
-  gap: var(--chakra-space-4);
+  gap: var(--chakra-space-4) !important;
 }

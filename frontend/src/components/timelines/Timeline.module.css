@@ -6,16 +6,18 @@
 
 .wrapper {
   max-width: var(--chakra-sizes-container-lg) !important;
+  padding: var(--chakra-space-6) !important;
 }
 
 .header {
   text-align: center;
-  margin: var(--chakra-space-6) 0 !important;
+  gap: var(--chakra-space-1) !important;
 }
 
 .title {
-  font-size: var(--chakra-fontSizes-3xl) !important;
-  font-weight: 600;
+  font-size: var(--chakra-fontSizes-2xl) !important;
+  margin: var(--chakra-space-2) 0 !important;
+  text-align: center;
 }
 
 .subtitle {

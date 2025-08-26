@@ -8,16 +8,18 @@
   padding: var(--chakra-space-4);
   margin-inline-start: auto;
   margin-inline-end: auto;
+  gap: var(--chakra-space-4) !important;
 }
 
 .techstacks_heading {
   font-size: var(--chakra-fontSizes-2xl) !important;
-  font-weight: 500 !important;
 }
 
-.techstacks_grid {
+.techstacks_flex {
   gap: var(--chakra-space-4) !important;
   place-items: center !important;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .techstack {
