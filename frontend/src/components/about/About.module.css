@@ -1,6 +1,8 @@
 .about_container {
   max-width: var(--chakra-sizes-container-lg) !important;
   scroll-margin-top: 75px;
+  margin-top: var(--chakra-space-2) !important;
 }
+
 
 
