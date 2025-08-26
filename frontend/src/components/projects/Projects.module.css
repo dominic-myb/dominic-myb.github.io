@@ -3,14 +3,22 @@
   scroll-margin-top: 75px !important;
 }
 
+.wrapper {
+  border: 1px solid var(--border);
+  border-radius: var(--chakra-radii-xl) !important;
+  padding: var(--chakra-space-6) !important;
+  box-shadow: var(--chakra-shadows-lg);
+  gap: var(--chakra-space-4) !important;
+}
+
 .heading {
-  margin: var(--chakra-space-2) 0 var(--chakra-space-6) 0 !important;
-  font-size: var(--chakra-fontSizes-3xl) !important;
-  text-align: center !important;
+  margin: var(--chakra-space-2) 0 !important;
+  font-size: var(--chakra-fontSizes-2xl) !important;
+  margin-left: var(--chakra-space-0) !important;
   color: var(--text);
 }
 
 .grid {
-  margin: var(--chakra-space-6) 0 !important;
+  /* margin: var(--chakra-space-6) 0 !important; */
   gap: var(--chakra-space-6) !important;
 }
