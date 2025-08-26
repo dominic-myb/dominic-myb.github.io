@@ -1,5 +1,5 @@
 import { ProjectsContainer, Card } from "@/components/projects";
-import projectData from "@/assets/data/projects-test.json";
+import projectData from "@/assets/data/projects.json";
 
 const ProjectSection = () => {
   return (
