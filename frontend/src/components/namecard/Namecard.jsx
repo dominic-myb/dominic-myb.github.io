@@ -7,7 +7,6 @@ import styles from "./Namecard.module.css";
 const Namecard = ({ avatar }) => (
   <GridItem
     colSpan={{ base: 4, md: 2, lg: 3 }}
-    rowSpan={{ base: 1, md: 2, lg: 1 }}
     className={styles.main_container}
   >
     <VStack className={styles.container}>

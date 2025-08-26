@@ -1,4 +1,4 @@
-import { VStack, Heading, SimpleGrid, GridItem } from "@chakra-ui/react";
+import { VStack, Heading, GridItem, Flex } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import TechstackIcons from "./TechstackIcons";
 import styles from "./Techstacks.module.css";
@@ -31,12 +31,11 @@ const Techstacks = () => {
   return (
     <GridItem
       colSpan={{ base: 4, md: 2, lg: 2 }}
-      rowSpan={{ base: 1, md: 2, lg: 1 }}
       className={styles.main_container}
     >
       <VStack className={styles.techstacks_container}>
-        <Heading className={`${styles.techstacks_heading}`}>Techstacks</Heading>
-        <SimpleGrid columns={4} className={styles.techstacks_grid}>
+        <Heading className={`${styles.techstacks_heading}`}>🛠️Techstacks</Heading>
+        <Flex className={styles.techstacks_flex}>
           {toolNames.map((img, idx) => (
             <TechstackIcons
               key={img}
@@ -49,7 +48,7 @@ const Techstacks = () => {
               imgIdx={idx}
             />
           ))}
-        </SimpleGrid>
+        </Flex>
       </VStack>
     </GridItem>
   );

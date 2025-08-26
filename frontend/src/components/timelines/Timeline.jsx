@@ -7,7 +7,6 @@ import styles from "./Timeline.module.css";
 const Timeline = ({ title, subtitle, timeline }) => (
   <GridItem
     colSpan={{ base: 4, md: 4, lg: 5 }}
-    rowSpan={{ base: 2, md: 4, lg: 2 }}
     className={styles.main_container}
   >
     <Container className={styles.wrapper}>
