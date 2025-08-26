@@ -4,25 +4,25 @@
     "subtitle": "Education & Professional Timeline",
     "timeline": [
       {
-        "date": 2024,
+        "date": "2024 | 4 yrs",
         "title": "BS Information Technology",
         "subtitle": "Cavite State University - CCAT",
         "description": "Graduated Cum Laude"
       },
       {
-        "date": 2024,
+        "date": "2024 | 3 mos",
         "title": "IT Lab Support",
         "subtitle": "Department of Computer Studies (DCS)",
         "description": "Assisted with computer setup, basic troubleshooting, and software installation in lab sessions."
       },
       {
-        "date": 2020,
+        "date": "2020 | 2 yrs",
         "title": "Senior High School – Computer System Servicing",
         "subtitle": "Amaya School of Home Industries",
         "description": "Graduated with Honors"
       },
       {
-        "date": 2019,
+        "date": "2019 | 2 mos",
         "title": "Data Encoder",
         "subtitle": "Department of Agriculture - Tanza LGU",
         "description": "Encoded farmer and crop data into the database and supported basic office documentation tasks."
@@ -30,31 +30,6 @@
     ]
   },
   "certificates": [
-    {
-      "title": "Responsive Web Design",
-      "platform": "freeCodeCamp",
-      "link": "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design"
-    },
-    {
-      "title": "Responsive Web Design",
-      "platform": "freeCodeCamp",
-      "link": "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design"
-    },
-    {
-      "title": "Responsive Web Design",
-      "platform": "freeCodeCamp",
-      "link": "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design"
-    },
-    {
-      "title": "Responsive Web Design",
-      "platform": "freeCodeCamp",
-      "link": "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design"
-    },
-    {
-      "title": "Responsive Web Design",
-      "platform": "freeCodeCamp",
-      "link": "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design"
-    },
     {
       "title": "Responsive Web Design",
       "platform": "freeCodeCamp",
