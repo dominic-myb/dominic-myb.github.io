@@ -20,6 +20,7 @@ const DownloadPDFButton = () => {
       <Button
         onClick={() => handleDownload(download)}
         leftIcon={<DownloadIcon />}
+        className={styles.download_icon}
       >
         Resumé
       </Button>
@@ -33,6 +34,7 @@ const NamecardButton = ({ label, icon, link }) => (
       onClick={() => window.open(link, "_blank")}
       icon={icon}
       boxSize={useBreakpointValue({ base: 10, md: 10 })}
+      className={styles.platform_icon}
     />
   </Tooltip>
 );
