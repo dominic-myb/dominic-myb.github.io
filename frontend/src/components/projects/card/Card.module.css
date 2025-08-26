@@ -1,17 +1,34 @@
 .card_container {
   padding: var(--chakra-space-6) !important;
   gap: var(--chakra-space-2) !important;
-  border-radius: var(--chakra-radii-xl) !important;
+  border-radius: var(--chakra-radii-2xl) !important;
   box-shadow: var(--chakra-shadows-lg) !important;
   align-items: stretch !important;
   backdrop-filter: blur(10px) !important;
+  /* background-color: var(--surface); */
   border: 1px solid var(--border);
+}
+
+.image_wrapper {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--chakra-radii-xl) !important;
+  cursor: pointer;
 }
 
 .image {
   margin-bottom: var(--chakra-space-2);
   object-fit: cover !important;
   border-radius: var(--chakra-radii-xl) !important;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3 ease !important;
+}
+
+.image:hover {
+  opacity: 0 !important;
 }
 
 /* wraps title, desc, icons as VStack */
@@ -42,4 +59,14 @@
 
 .built_with {
   color: var(--muted);
+}
+
+.card_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: "none";
 }
