@@ -1,19 +1,25 @@
 .main_container {
   border-radius: var(--chakra-radii-xl) !important;
   box-shadow: var(--chakra-shadows-md) !important;
-  background-color: var(--surface) !important;
+  border: 1px solid var(--border);
+  padding: var(--chakra-space-6) !important;
+}
+
+.stack_wrapper {
+  margin-bottom: var(--chakra-space-4) !important;
+  gap: var(--chakra-space-4) !important;
 }
 
 /* Certificate */
 .title {
-  font-weight: 600;
-  margin-top: var(--chakra-space-6);
+  margin: var(--chakra-space-2) 0 !important;
   font-size: var(--chakra-fontSizes-2xl) !important;
 }
 
-.grid {
-  padding: var(--chakra-space-6);
+.flex {
   gap: var(--chakra-space-6);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Certificate Card */
@@ -30,10 +36,27 @@
 }
 
 .card_button {
-  padding: var(--chakra-space-10) var(--chakra-space-8) !important;
+  padding: var(--chakra-space-10) var(--chakra-space-4) !important;
+  background-color: var(--surface) !important;
+}
+
+.card_button:hover {
+  transform: translate(0, -3px);
 }
 
 .card_wrapper {
   gap: var(--chakra-space-2) !important;
   align-items: stretch !important;
+}
+
+[data-theme="light"] {
+  .card_icon {
+    filter: invert(0);
+  }
+}
+
+[data-theme="dark"] {
+  .card_icon {
+    filter: invert(1);
+  }
 }
