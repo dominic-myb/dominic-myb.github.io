@@ -37,6 +37,7 @@
   font-weight: 600;
   border-radius: var(--chakra-radii-xl);
   text-decoration: none !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
 }
 
 .navlink:hover {
@@ -46,4 +47,9 @@
 
 .navbar_drawer {
   background-color: var(--bg);
+}
+
+.navlink.active {
+  background-color: var(--navbtn-bg-hover) !important;
+  color: var(--navbtn-color-hover) !important;
 }
