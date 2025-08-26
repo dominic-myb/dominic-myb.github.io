@@ -1,11 +1,12 @@
 .send_button {
-  border-radius: var(--chakra-radii-xl) !important;
+  border-radius: var(--chakra-radii-lg) !important;
   background-color: var(--primary) !important;
   color: var(--text);
+  font-weight: 300;
 }
 
 .send_button:hover {
-  background-color: var(--accent);
+  background-color: var(--accent) !important;
 }
 
 .form_title {
