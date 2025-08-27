@@ -10,7 +10,7 @@ import styles from "./Card.module.css";
 const Card = ({ image, title, desc, tools }) => (
   <CardContainer>
     <CardImageWrapper>
-      <CardImage image={image} />
+      <CardImage image={image} alt={title} />
     </CardImageWrapper>
     <VStack className={styles.card_wrapper}>
       <CardTitle title={title} />

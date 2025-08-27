@@ -3,10 +3,10 @@ import styles from "./Card.module.css";
 
 // TODO: add another param for the alt labeling
 
-const CardImage = ({ image }) => (
+const CardImage = ({ image, alt }) => (
   <Image
     src={`/assets/projects/${image}.jpg`}
-    alt={"sample"}
+    alt={`Image of my project ${alt}`}
     className={styles.image}
   />
 );
