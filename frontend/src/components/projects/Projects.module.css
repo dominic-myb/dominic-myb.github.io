@@ -19,6 +19,5 @@
 }
 
 .grid {
-  /* margin: var(--chakra-space-6) 0 !important; */
   gap: var(--chakra-space-6) !important;
 }
