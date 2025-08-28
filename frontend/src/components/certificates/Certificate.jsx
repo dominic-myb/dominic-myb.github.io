@@ -1,4 +1,4 @@
-import { VStack, Heading, SimpleGrid, GridItem, Flex } from "@chakra-ui/react";
+import { VStack, Heading, GridItem, Flex } from "@chakra-ui/react";
 import CertificateCard from "./CertificateCard";
 import styles from "./Certificate.module.css";
 
