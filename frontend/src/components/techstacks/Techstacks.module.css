@@ -47,8 +47,8 @@
 .image_wrapper {
   padding: var(--chakra-space-2) !important;
   border-radius: var(--chakra-radii-md) !important;
-  background-color: var(--accent);
 }
+
 
 .icon_image {
   object-fit: contain;
@@ -63,5 +63,17 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+[data-theme="light"] {
+  .image_wrapper {
+    background-color: #d6e4eb;
+  }
+}
+
+[data-theme="dark"] {
+  .image_wrapper {
+    background-color: #50656d;
   }
 }
