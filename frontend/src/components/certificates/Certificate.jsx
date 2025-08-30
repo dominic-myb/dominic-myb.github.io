@@ -10,11 +10,12 @@ const Certificate = ({ cert }) => (
     <VStack className={styles.stack_wrapper}>
       <Heading className={styles.title}>📜 Certificates</Heading>
       <Flex className={styles.flex}>
-        {cert.map(({ title, platform, link }, idx) => (
+        {cert.map(({ title, platform, desc, link }, idx) => (
           <CertificateCard
             key={idx}
             title={title}
             platform={platform}
+            desc={desc}
             link={link}
           />
         ))}
