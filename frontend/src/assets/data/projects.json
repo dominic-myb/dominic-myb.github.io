@@ -2,18 +2,7 @@
   {
     "title": "The Adventures of Dara",
     "image": "p1-thumbnail",
-    "desc": "A 2d mobile game inspired from Cagayan folklore, made using Godot",
-    "tools": ["godot"]
-  },
-  {
-    "title": "The Adventures of Dara",
-    "image": "p1-thumbnail",
-    "desc": "A 2d mobile game inspired from Cagayan folklore, made using Godot",
-    "tools": ["godot"]
-  },
-  {
-    "title": "The Adventures of Dara",
-    "image": "p1-thumbnail",
+    "video": "p1-video",
     "desc": "A 2d mobile game inspired from Cagayan folklore, made using Godot",
     "tools": ["godot"]
   }
