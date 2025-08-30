@@ -24,8 +24,8 @@
 
 /* Certificate Card */
 .card_title {
-  font-size: var(--chakra-fontSizes-md);
-  font-weight: 600;
+  font-size: var(--chakra-fontSizes-lg);
+  font-weight: 700;
   color: var(--text);
 }
 
@@ -35,9 +35,17 @@
   color: var(--muted);
 }
 
+.card_desc {
+  color: var(--muted);
+  font-size: var(--chakra-fontSizes-sm) !important;
+  font-weight: 500;
+}
+
 .card_button {
-  padding: var(--chakra-space-10) var(--chakra-space-4) !important;
+  padding: var(--chakra-space-5) var(--chakra-space-4) !important;
   background-color: var(--surface) !important;
+  border-radius: var(--chakra-radii-xl);
+  max-width: 500px;
 }
 
 .card_button:hover {
