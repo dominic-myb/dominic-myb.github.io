@@ -1,11 +1,11 @@
 {
   "name": "dominic-myb.github.io",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "backend/index.js",
   "scripts": {
     "dev": "concurrently \"NODE_ENV=development\" \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
-    "build": "npm install && npm install --prefix frontend; npm run build --prefix frontend",
-    "start": "NODE_ENV=production node backend/",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "NODE_ENV=production node backend/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
