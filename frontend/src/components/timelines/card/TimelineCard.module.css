@@ -118,7 +118,7 @@
   .card_item::before {
     left: 60px;
     border-width: 10px 10px 10px 0;
-    border-color: transparent var(--secondary) transparent transparent;
+    border-color: transparent var(--surface) transparent transparent;
   }
 
   .left::after,
