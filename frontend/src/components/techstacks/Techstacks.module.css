@@ -77,3 +77,26 @@
     background-color: #50656d;
   }
 }
+
+.item {
+  background-color: #262626;
+  font-size: var(--chakra-fontSizes-xs) !important;
+  font-weight: 600;
+  padding-top: var(--chakra-space-1) !important;
+  padding-bottom: var(--chakra-space-1) !important;
+  padding-inline-start: var(--chakra-space-2) !important;
+  padding-inline-end: var(--chakra-space-2) !important;
+  border-radius: 50px !important;
+}
+
+[data-theme="light"] {
+  .item {
+    background-color: #d9d9d9;
+  }
+}
+
+[data-theme="dark"] {
+  .item {
+    background-color: #262626;
+  }
+}
