@@ -10,7 +10,7 @@ const Techstacks = () => {
       "GDScript",
     ],
     Frontend: ["React.js", "TailwindCSS", "Bootstrap", "ChakraUI", "HTML/CSS"],
-    Backend: ["Node.js","Express.js", "MongoDB", "MySQL"],
+    Backend: ["Node.js", "Express.js", "MongoDB", "MySQL"],
     Tools: ["Git", "Github", "Postman", "Godot", "VSCode"],
   };
   return (
@@ -22,34 +22,23 @@ const Techstacks = () => {
         <Heading className={`${styles.techstacks_heading}`}>
           🛠️Technical Skills
         </Heading>
-        <Box>
+        <div>
           {Object.entries(data).map(([category, items]) => (
-            <Box key={category} mb={2}>
-              <Text fontSize="md" fontWeight={800}>
-                {category}:&nbsp;
-              </Text>
-              {items.map((item, idx) => (
-                <Box
-                  as="span"
-                  key={idx}
-                  className={styles.item}
-                  mr={idx < items.length - 1 ? 1 : 0}
-                >
-                  {item}
-                </Box>
-              ))}
-            </Box>
+            <Flex key={category} className={styles.wrapper}>
+              <Text className={styles.category}>{category}:&nbsp;</Text>
+              <Flex className={styles.items_wrapper}>
+                {items.map((item, idx) => (
+                  <Box as="span" key={idx} className={styles.item}>
+                    {item}
+                  </Box>
+                ))}
+              </Flex>
+            </Flex>
           ))}
-        </Box>
+        </div>
       </VStack>
     </GridItem>
   );
 };
-
-const Item = (item) => (
-  <Box as="span" border="1px solid white">
-    {item}
-  </Box>
-);
 
 export default Techstacks;
