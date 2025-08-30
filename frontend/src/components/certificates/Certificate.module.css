@@ -41,11 +41,24 @@
   font-weight: 500;
 }
 
+.card_desc button {
+  display: inline;
+  margin: 0;
+  border: none;
+  padding: 0;
+  height: 0;
+  color: gray;
+  cursor: pointer;
+  font: inherit;
+  vertical-align: baseline;
+  font-size: var(--chakra-fontSizes-sm);
+}
+
 .card_button {
   padding: var(--chakra-space-5) var(--chakra-space-4) !important;
   background-color: var(--surface) !important;
   border-radius: var(--chakra-radii-xl);
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .card_button:hover {
@@ -55,6 +68,10 @@
 .card_wrapper {
   gap: var(--chakra-space-2) !important;
   align-items: stretch !important;
+}
+
+.card_wrapper > *:last-child {
+  margin-top: var(--chakra-space-1);
 }
 
 [data-theme="light"] {
