@@ -23,7 +23,7 @@ const ContactForm = () => {
 
     if (isEmailInvalid || !subject || !message) return;
 
-    const promise = fetch("http://localhost:5000/api/contact", {
+    const promise = fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, subject, message }),
