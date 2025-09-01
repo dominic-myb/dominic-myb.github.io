@@ -1,6 +1,6 @@
 import express from "express";
 import nodemailer from "nodemailer";
-import DOMPurify from "isomorphic-dompurify";
+import validator from "validator";
 
 const router = express.Router();
 
@@ -8,12 +8,25 @@ router.post("/contact", async (req, res) => {
   const { email, subject, message } = req.body;
 
   // Validate required fields
+  // Required field checks
   if (!email || !subject || !message) {
-    return res.status(400).json({
-      success: false,
-      message:
-        "Missing required fields: email, subject, and message are required",
-    });
+    return res
+      .status(400)
+      .json({ success: false, message: "All fields are required." });
+  }
+
+  // Email validation
+  if (!validator.isEmail(email)) {
+    return res
+      .status(400)
+      .json({ success: false, message: "Invalid email address." });
+  }
+
+  // Length limits
+  if (subject.length > 150 || message.length > 2000) {
+    return res
+      .status(400)
+      .json({ success: false, message: "Subject or message too long." });
   }
 
   // Check if environment variables are set
@@ -28,9 +41,7 @@ router.post("/contact", async (req, res) => {
     });
   }
 
-  const cleanMessage = DOMPurify.sanitize(message);
-  const cleanSubject = DOMPurify.sanitize(subject);
-  const cleanEmail = DOMPurify.sanitize(email);
+  const cleanEmail = validator.normalizeEmail(email);
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -40,32 +51,20 @@ router.post("/contact", async (req, res) => {
     },
   });
 
-  // Verify transporter configuration
-  try {
-    await transporter.verify();
-    console.log("Email transporter verified successfully");
-  } catch (verifyError) {
-    console.error("Email transporter verification failed:", verifyError);
-    return res.status(500).json({
-      success: false,
-      message: "Email service configuration error",
-    });
-  }
-
   try {
     await transporter.sendMail({
       from: `"Portfolio Contact Form" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
       replyTo: cleanEmail,
-      subject: `Portfolio Contact: ${cleanSubject}`,
+      subject: `Portfolio Contact: ${subject}`,
       html: `
       <div style="padding: 24px; background-color: #f9f9f9; font-family: Arial, sans-serif;">
         <div style="max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 6px rgba(0,0,0,0.1);">
           <h2 style="margin-top: 0;">You’ve got a new message!</h2>
           <p><strong>From:</strong> ${cleanEmail}</p>
-          <p><strong>Subject:</strong> ${cleanSubject}</p>
+          <p><strong>Subject:</strong> ${subject}</p>
           <hr>
-          <p>${cleanMessage}</p>
+          <p>${message}</p>
           <hr>
           <p style="font-size: 12px; color: #888;">Sent via your portfolio website.</p>
         </div>
@@ -74,7 +73,6 @@ router.post("/contact", async (req, res) => {
     });
     res.status(200).json({ success: true, message: "Email sent!" });
   } catch (error) {
-    console.error("Contact form error:", error);
     console.error("Error details:", {
       message: error.message,
       stack: error.stack,
