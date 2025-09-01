@@ -1,12 +1,14 @@
 {
   "name": "dominic-myb.github.io",
   "version": "1.0.0",
-  "main": "backend/index.js",
+  "main": "api/index.js",
   "scripts": {
-    "dev": "concurrently \"NODE_ENV=development\" \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "nodemon api/index.js",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
     "vercel-build": "cd frontend && npm install && npm run build",
-    "start": "NODE_ENV=production node backend/index.js",
+    "start": "NODE_ENV=production node api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +24,14 @@
   "homepage": "https://github.com/dominic-myb/dominic-myb.github.io#readme",
   "description": "",
   "devDependencies": {
-    "concurrently": "^9.2.0"
+    "concurrently": "^9.2.0",
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "isomorphic-dompurify": "^2.26.0",
+    "nodemailer": "^7.0.6"
   }
 }

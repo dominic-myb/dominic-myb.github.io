@@ -10,14 +10,14 @@
       }
     },
     {
-      "src": "backend/index.js",
+      "src": "api/index.js",
       "use": "@vercel/node"
     }
   ],
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "backend/index.js"
+      "destination": "api/index.js"
     },
     {
       "source": "/(.*)",
