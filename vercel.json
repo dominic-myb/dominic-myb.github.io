@@ -6,7 +6,7 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "frontend/dist",
-        "buildCommand": "npm run build --prefix frontend"
+        "buildCommand": "npm run vercel-build"
       }
     },
     {
