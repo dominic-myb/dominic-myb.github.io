@@ -20,8 +20,5 @@
     "url": "https://github.com/dominic-myb/dominic-myb.github.io/issues"
   },
   "homepage": "https://github.com/dominic-myb/dominic-myb.github.io#readme",
-  "description": "",
-  "engines": {
-    "node": ">=18"
-  }
+  "description": ""
 }
