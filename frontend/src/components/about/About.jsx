@@ -1,10 +1,12 @@
-import AboutContainer from "./AboutContainer";
-import AboutGrid from "./AboutGrid";
+import { Container, Grid } from "@chakra-ui/react";
+import styles from "./About.module.css";
 
 const About = ({ children }) => (
-  <AboutContainer>
-    <AboutGrid>{children}</AboutGrid>
-  </AboutContainer>
+  <Container as="section" id="about" className={styles.about_container}>
+    <Grid templateColumns="repeat(auto-fit, auto)" gap={4}>
+      {children}
+    </Grid>
+  </Container>
 );
 
 export default About;

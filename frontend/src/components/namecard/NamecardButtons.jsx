@@ -1,10 +1,4 @@
-import {
-  HStack,
-  Button,
-  Tooltip,
-  IconButton,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { HStack, Button, Tooltip, IconButton } from "@chakra-ui/react";
 import { DownloadIcon } from "@chakra-ui/icons";
 import { SiGithub, SiLinkedin, SiLeetcode } from "react-icons/si";
 import { handleDownload } from "@/utils/downloads";
@@ -29,11 +23,11 @@ const DownloadPDFButton = () => {
 };
 
 const NamecardButton = ({ label, icon, link }) => (
-  <Tooltip label={label}>
+  <Tooltip label={label} placement="bottom" hasArrow>
     <IconButton
       onClick={() => window.open(link, "_blank")}
       icon={icon}
-      boxSize={useBreakpointValue({ base: 10, md: 10 })}
+      boxSize={10}
       className={styles.platform_icon}
     />
   </Tooltip>

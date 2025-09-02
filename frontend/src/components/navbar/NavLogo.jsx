@@ -7,7 +7,7 @@ const NavLogo = ({ ...props }) => (
     fontSize={useBreakpointValue({ base: 24, md: 28 })}
     {...props}
   >
-    _dominic
+    @dominic-esguerra
   </Heading>
 );
 

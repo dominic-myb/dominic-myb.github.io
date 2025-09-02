@@ -9,9 +9,9 @@ const Techstacks = () => {
       "C++",
       "GDScript",
     ],
-    Frontend: ["React.js", "TailwindCSS", "Bootstrap", "ChakraUI", "HTML/CSS"],
+    Frontend: ["React.js", "TailwindCSS", "Bootstrap", "ChakraUI", "HTML", "CSS"],
     Backend: ["Node.js", "Express.js", "MongoDB", "MySQL"],
-    Tools: ["Git", "Github", "Postman", "Godot", "VSCode"],
+    Tools: ["Git", "Github", "Postman", "Godot"],
   };
   return (
     <GridItem

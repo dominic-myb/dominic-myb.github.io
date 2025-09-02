@@ -9,28 +9,29 @@
   box-shadow: var(--chakra-shadows-lg);
   /* background-color: var(--surface); */
   border: 1px solid var(--border);
+  padding: var(--chakra-space-8);
+  gap: var(--chakra-space-8) !important;
 }
 
 .contact_header {
-  margin-top: var(--chakra-space-8);
   gap: var(--chakra-space-4);
 }
 
 .title {
   color: var(--text);
   font-size: var(--chakra-fontSizes-3xl) !important;
+  font-weight: 700;
+  text-align: center;
 }
 
 .subtitle {
-  width: 60%;
   text-align: center;
   font-weight: 300;
   color: var(--text);
 }
 
-.contact_body {
-  margin: var(--chakra-space-10) auto;
+/* .contact_body {
   padding: var(--chakra-space-6);
   border-radius: var(--chakra-radii-xl);
   border: 1px solid var(--border);
-}
+} */

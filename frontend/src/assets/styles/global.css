@@ -59,7 +59,8 @@ html {
 }
 
 body {
-  min-width: 480px;
+  /* min-width: 480px; */
+  word-wrap: break-word;
 }
 
 .no-select {
