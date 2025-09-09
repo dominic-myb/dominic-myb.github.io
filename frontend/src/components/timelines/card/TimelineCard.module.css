@@ -108,6 +108,19 @@
   color: var(--muted);
 }
 
+.card_desc button {
+  display: inline;
+  margin: 0;
+  border: none;
+  padding: 0;
+  height: 0;
+  color: gray;
+  cursor: pointer;
+  font: inherit;
+  vertical-align: baseline;
+  font-size: var(--chakra-fontSizes-sm);
+}
+
 @media screen and (max-width: 768px) {
   .card_item {
     width: 100%;
