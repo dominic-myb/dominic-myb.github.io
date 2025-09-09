@@ -3,37 +3,57 @@ import {
   VStack,
   HStack,
   Text,
-  Icon,
   Tooltip,
+  IconButton,
 } from "@chakra-ui/react";
 import { SiLinkedin, SiGithub, SiGmail } from "react-icons/si";
 import styles from "./Contacts.module.css";
 
-const Contact = () => (
-  <Container as="section" id="contact" className={styles.contact_container}>
-    <VStack className={styles.contact_wrapper}>
-      <VStack className={styles.contact_header}>
-        <Text as="h2" className={styles.title}>
-          Let's Connect
-        </Text>
-        <Text className={styles.subtitle} fontSize={16}>
-          Find me on LinkedIn, check out my GitHub, or reach me by email or
-          phone.
-        </Text>
+const Contact = () => {
+  const data = [
+    {
+      label: "LinkedIn",
+      component: <SiLinkedin size={35} />,
+      link: "https://www.linkedin.com/in/dominic-esguerra/",
+    },
+    {
+      label: "Github",
+      component: <SiGithub size={35} />,
+      link: "https://github.com/dominic-myb",
+    },
+    {
+      label: "Email Me",
+      component: <SiGmail size={35} />,
+      link: "mailto:dominic.arenal.esguerra@gmail.com",
+    },
+  ];
+  return (
+    <Container as="section" id="contact" className={styles.contact_container}>
+      <VStack className={styles.contact_wrapper}>
+        <VStack className={styles.contact_header}>
+          <Text as="h2" className={styles.title}>
+            Let's Connect
+          </Text>
+          <Text className={styles.subtitle} fontSize={16}>
+            Find me on LinkedIn, check out my GitHub, or reach me by email or
+            phone.
+          </Text>
+        </VStack>
+        <HStack gap={10} wrap="wrap" justifyContent="center">
+          {data.map((icon, idx) => (
+            <Tooltip key={idx} label={icon.label} placement="bottom" hasArrow>
+              <IconButton
+                onClick={() =>
+                  window.open(icon.link, "_blank", "noopener,noreferrer")
+                }
+                icon={icon.component}
+              />
+            </Tooltip>
+          ))}
+        </HStack>
       </VStack>
-      <HStack gap={10} wrap="wrap" justifyContent="center">
-        <ContactIcon label={"LinkedIn"} iconSize={6} component={SiLinkedin} />
-        <ContactIcon label={"Github"} iconSize={6} component={SiGithub} />
-        <ContactIcon label={"Email Me"} iconSize={6} component={SiGmail} />
-      </HStack>
-    </VStack>
-  </Container>
-);
-
-const ContactIcon = ({ label, iconSize, component: Component }) => (
-  <Tooltip label={label} placement="bottom" hasArrow>
-    <Icon as={Component} boxSize={iconSize} />
-  </Tooltip>
-);
+    </Container>
+  );
+};
 
 export default Contact;
