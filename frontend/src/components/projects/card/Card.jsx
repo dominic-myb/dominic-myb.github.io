@@ -1,12 +1,15 @@
 import { useRef } from "react";
-import { VStack } from "@chakra-ui/react";
-import CardContainer from "./CardContainer";
-import CardImageWrapper from "./CardImageWrapper";
-import CardImage from "./CardImage";
-import CardTitle from "./CardTitle";
-import CardDesc from "./CardDesc";
-import CardTools from "./CardTools";
-import CardVideoPreview from "./CardVideoPreview";
+import {
+  VStack,
+  HStack,
+  Box,
+  Image,
+  Link,
+  Text,
+  Tooltip,
+} from "@chakra-ui/react";
+import { toCapitalize } from "@/utils/formatters";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import styles from "./Card.module.css";
 
 const Card = ({ image, title, desc, src, tools }) => {
@@ -31,20 +34,48 @@ const Card = ({ image, title, desc, src, tools }) => {
     }
   };
   return (
-    <CardContainer>
-      <CardImageWrapper
-        handleMouseEnter={handleMouseEnter}
-        handleMouseLeave={handleMouseLeave}
+    <VStack className={styles.card_container}>
+      <Box
+        className={styles.image_wrapper}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
-        <CardImage image={image} alt={title} />
-        <CardVideoPreview src={src} ref={videoRef} />
-      </CardImageWrapper>
+        <Image
+          className={styles.image}
+          src={`/assets/projects/${image}.jpg`}
+          alt={`Image of my project ${title}`}
+        />
+        <Box
+          as="video"
+          ref={videoRef}
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className={styles.card_video}
+        >
+          <source src={`/assets/projects/${src}.webm`} type="video/webm" />
+          <source src={`/assets/projects/${src}.mp4`} type="video/mp4" />
+        </Box>
+      </Box>
       <VStack className={styles.card_wrapper}>
-        <CardTitle title={title} />
-        <CardDesc desc={desc} />
-        <CardTools tools={tools} />
+        <HStack>
+          <Link className={styles.card_title}>
+            {title}
+            <ExternalLinkIcon className={styles.card_title_icon} boxSize={4} />
+          </Link>
+        </HStack>
+        <Text className={styles.card_desc}>{desc}</Text>
+        <HStack spacing={2}>
+          <Text className={styles.built_with}>Built with:</Text>
+          {tools.map((tool, idx) => (
+            <Tooltip key={idx} label={toCapitalize(tool)} hasArrow>
+              <Image src={`/assets/icons/${tool}.svg`} boxSize={5} />
+            </Tooltip>
+          ))}
+        </HStack>
       </VStack>
-    </CardContainer>
+    </VStack>
   );
 };
 
