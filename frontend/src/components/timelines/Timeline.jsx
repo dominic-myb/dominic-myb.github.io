@@ -1,6 +1,11 @@
-import { Container, GridItem } from "@chakra-ui/react";
-import TimelineHeader from "./TimelineHeader";
-import TimelineContainer from "./TimelineContainer";
+import {
+  Container,
+  GridItem,
+  Box,
+  VStack,
+  Heading,
+  Text,
+} from "@chakra-ui/react";
 import TimelineCard from "./card/TimelineCard";
 import styles from "./Timeline.module.css";
 
@@ -10,12 +15,15 @@ const Timeline = ({ title, subtitle, timeline }) => (
     className={styles.main_container}
   >
     <Container className={styles.wrapper}>
-      <TimelineHeader title={title} subtitle={subtitle} />
-      <TimelineContainer>
+      <VStack className={styles.header}>
+        <Heading className={styles.title}>{`🌱${title}`}</Heading>
+        <Text className={styles.subtitle}>{subtitle}</Text>
+      </VStack>
+      <Box className={styles.container}>
         {timeline.map((item, idx) => (
           <TimelineCard key={idx} idx={idx} timeline={item}></TimelineCard>
         ))}
-      </TimelineContainer>
+      </Box>
     </Container>
   </GridItem>
 );
