@@ -4,8 +4,15 @@ import projectData from "@/assets/data/projects.json";
 const ProjectSection = () => {
   return (
     <ProjectsContainer>
-      {projectData.map(({ image, title, desc, video, tools }, idx) => (
-        <Card key={idx} image={image} title={title} desc={desc} src={video} tools={tools} />
+      {projectData.map((project, idx) => (
+        <Card
+          key={idx}
+          image={project.image}
+          title={project.title}
+          desc={project.desc}
+          src={project.video}
+          tools={project.tools}
+        />
       ))}
     </ProjectsContainer>
   );
