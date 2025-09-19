@@ -1,0 +1,103 @@
+.project_container {
+  max-width: var(--chakra-sizes-container-lg) !important;
+  scroll-margin-top: 75px !important;
+}
+
+.wrapper {
+  border: 1px solid var(--border);
+  border-radius: var(--chakra-radii-xl) !important;
+  padding: var(--chakra-space-6) !important;
+  box-shadow: var(--chakra-shadows-lg);
+  gap: var(--chakra-space-4) !important;
+}
+
+.heading {
+  margin: var(--chakra-space-2) 0 !important;
+  font-size: var(--chakra-fontSizes-2xl) !important;
+  margin-left: var(--chakra-space-0) !important;
+  color: var(--text);
+}
+
+.grid {
+  gap: var(--chakra-space-6) !important;
+}
+
+/* PROJECT CARD STYLING */
+.card_container {
+  padding: var(--chakra-space-6) !important;
+  gap: var(--chakra-space-2) !important;
+  border-radius: var(--chakra-radii-2xl) !important;
+  box-shadow: var(--chakra-shadows-lg) !important;
+  align-items: stretch !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+}
+
+.image_wrapper {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--chakra-radii-xl) !important;
+  cursor: pointer;
+}
+
+.image {
+  width: 400px;
+  height: 200px;
+  margin-bottom: var(--chakra-space-2);
+  object-fit: cover !important;
+  border-radius: var(--chakra-radii-xl) !important;
+  transition: opacity 0.3 ease !important;
+}
+
+.image:hover {
+  opacity: 0 !important;
+}
+
+/* wraps title, desc, icons as VStack */
+.card_wrapper {
+  gap: var(--chakra-space-1) !important;
+  align-items: stretch !important;
+}
+
+.card_title {
+  font-weight: bold !important;
+  font-size: var(--chakra-fontSizes-xl) !important;
+  color: var(--text);
+}
+
+.card_title_icon {
+  margin: -4px var(--chakra-space-1) 0 var(--chakra-space-1) !important;
+}
+
+.card_desc,
+.built_with {
+  font-size: var(--chakra-fontSizes-sm) !important;
+  font-weight: 300 !important;
+}
+
+.card_desc {
+  color: var(--text);
+}
+
+.built_with {
+  color: var(--muted);
+}
+
+.card_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease !important;
+}
+
+.image_wrapper:hover .card_video {
+  opacity: 1 !important;
+}
