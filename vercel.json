@@ -1,5 +1,24 @@
 {
   "buildCommand": "npm run build --prefix frontend",
   "outputDirectory": "frontend/dist",
-  "installCommand": "npm install && npm install --prefix frontend"
+  "installCommand": "npm install && npm install --prefix frontend",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31536000, immutable"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'none';"
+        }
+      ]
+    }
+  ]
 }
