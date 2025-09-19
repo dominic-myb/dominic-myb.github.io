@@ -1,12 +1,14 @@
 import MainLayout from "@/layouts/MainLayout";
-import { AboutSection, ProjectSection, ContactSection } from "@/sections/";
+import AboutSection from "@/sections/AboutSection";
+import ProjectSection from "@/sections/ProjectSection";
+import ContactSection from "@/sections/ContactSection";
 
-const Home = () => (
-  <MainLayout>
-    <AboutSection />
-    <ProjectSection />
-    <ContactSection />
-  </MainLayout>
-);
-
-export default Home;
+export default function Home() {
+  return (
+    <MainLayout>
+      <AboutSection />
+      <ProjectSection />
+      <ContactSection />
+    </MainLayout>
+  );
+}

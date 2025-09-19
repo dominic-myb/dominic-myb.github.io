@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import "@/assets/styles/global.css";
+import "./app.css";
 
-const App = () => (
-  <Routes>
-    <Route path={"/"} element={<Home />}></Route>
-  </Routes>
-);
-
-export default App;
+export default function App() {
+  return (
+    <Routes>
+      <Route path={"/"} element={<Home />}></Route>
+    </Routes>
+  );
+}

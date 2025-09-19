@@ -1,15 +1,17 @@
 import { VStack, Heading, GridItem, Flex, Box, Text } from "@chakra-ui/react";
 import styles from "./Techstacks.module.css";
 
-const Techstacks = () => {
+export default function Techstacks() {
   const data = {
-    "Programming Languages": [
-      "JavaScript/TypeScript",
-      "Python",
-      "C++",
-      "GDScript",
+    "Programming Languages": ["JavaScript", "Python", "C++", "GDScript"],
+    Frontend: [
+      "React.js",
+      "TailwindCSS",
+      "Bootstrap",
+      "ChakraUI",
+      "HTML",
+      "CSS",
     ],
-    Frontend: ["React.js", "TailwindCSS", "Bootstrap", "ChakraUI", "HTML", "CSS"],
     Backend: ["Node.js", "Express.js", "MongoDB", "MySQL"],
     Tools: ["Git", "Github", "Postman", "Godot"],
   };
@@ -39,6 +41,4 @@ const Techstacks = () => {
       </VStack>
     </GridItem>
   );
-};
-
-export default Techstacks;
+}

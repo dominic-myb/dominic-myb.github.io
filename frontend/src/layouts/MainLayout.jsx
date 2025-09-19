@@ -1,9 +1,9 @@
 import { Container, VStack } from "@chakra-ui/react";
-import { Navbar } from "@/components/navbar/";
-import { Footer } from "@/components/footer";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 import styles from "./MainLayout.module.css";
 
-const MainLayout = ({ children }) => {
+export default function MainLayout({ children }) {
   return (
     <Container className={styles.mainlayout}>
       <Navbar />
@@ -13,6 +13,4 @@ const MainLayout = ({ children }) => {
       <Footer />
     </Container>
   );
-};
-
-export default MainLayout;
+}
