@@ -1,27 +1,29 @@
-import { About } from "@/components/about";
-import { Namecard } from "@/components/namecard";
-import { Techstacks } from "@/components/techstacks";
-import { Timeline } from "@/components/timelines/";
-import { Certificate } from "@/components/certificates";
+import { Container, Grid } from "@chakra-ui/react";
+import Namecard from "@/components/namecard/Namecard";
+import Techstacks from "@/components/techstacks/Techstacks";
+import Timeline from "@/components/timelines/Timeline";
+import Certificate from "@/components/certificates/Certificate";
+import styles from "./AboutSection.module.css";
 
-import aboutData from "@/assets/data/about.json";
+import aboutData from "@/assets/data/timeline.json";
 
-const AboutSection = () => {
-  const avatar = "/assets/images/avatar.jpg";
-  const background = aboutData.background;
-  const certs = aboutData.certificates;
+export default function AboutSection() {
+  const certificates = [
+    {
+      title: "Responsive Web Design",
+      platform: "freeCodeCamp",
+      desc: "Demonstrated proficiency in HTML, CSS, and modern design principles including accessibility, mobile-first design, and responsive layouts.",
+      link: "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design",
+    },
+  ];
   return (
-    <About>
-      <Namecard avatar={avatar} />
-      <Techstacks />
-      <Timeline
-        title={background.title}
-        subtitle={background.subtitle}
-        timeline={background.timeline}
-      />
-      <Certificate cert={certs} />
-    </About>
+    <Container as="section" id="about" className={styles.about_container}>
+      <Grid templateColumns="repeat(auto-fit, auto)" gap={4}>
+        <Namecard />
+        <Techstacks />
+        <Timeline timeline={aboutData.timeline} />
+        <Certificate cert={certificates} />
+      </Grid>
+    </Container>
   );
-};
-
-export default AboutSection;
+}
