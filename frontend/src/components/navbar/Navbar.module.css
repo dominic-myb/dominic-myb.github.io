@@ -17,13 +17,15 @@
 }
 
 .logo {
-  -webkit-background-clip: text;
-  color: transparent;
+  background: var(--primary) !important; 
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
   cursor: pointer;
   text-transform: lowercase;
   text-align: center;
-  background: var(--logo);
-  background-clip: text;
+  font-weight: bold;
+  text-decoration: none !important;
 }
 
 .navlinks_container {
