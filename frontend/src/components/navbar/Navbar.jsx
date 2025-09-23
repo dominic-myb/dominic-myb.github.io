@@ -3,7 +3,6 @@ import {
   Container,
   VStack,
   HStack,
-  Heading,
   IconButton,
   Link,
   Drawer,
@@ -22,12 +21,13 @@ const links = ["about", "projects", "contact"];
 
 function NavLogo() {
   return (
-    <Heading
+    <Link
       className={`${styles.logo} no-select`}
       fontSize={useBreakpointValue({ base: 24, md: 28 })}
+      href="/"
     >
       dominic
-    </Heading>
+    </Link>
   );
 }
 
