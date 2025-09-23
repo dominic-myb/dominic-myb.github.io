@@ -74,7 +74,7 @@ function Card({ image, title, desc, src, tools }) {
           <Text className={styles.built_with}>Built with:</Text>
           {tools.map((tool, idx) => (
             <Tooltip key={idx} label={toCapitalize(tool)} hasArrow>
-              <Image src={`/assets/icons/${tool}.svg`} boxSize={5} alt={tool} />
+              <Image src={`/assets/icons/${tool}.svg`} boxSize={5} alt={`Logo of ${tool}`} />
             </Tooltip>
           ))}
         </HStack>
