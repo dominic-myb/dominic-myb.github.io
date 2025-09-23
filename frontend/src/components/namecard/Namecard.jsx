@@ -5,7 +5,6 @@ import {
   HStack,
   GridItem,
   Box,
-  Heading,
   Text,
   Image,
   Tooltip,
@@ -44,7 +43,7 @@ function NamecardTextContent() {
   return (
     <>
       <HStack>
-        <Heading as="h1" className={styles.greet}>
+        <Text as="p" className={styles.greet}>
           Hi, I'm Dominic
           <Box
             as="span"
@@ -52,7 +51,7 @@ function NamecardTextContent() {
           >
             👋
           </Box>
-        </Heading>
+        </Text>
       </HStack>
       <HStack className={styles.text_container}>
         <Text className={styles.text}>From Cavite, Philippines</Text>
