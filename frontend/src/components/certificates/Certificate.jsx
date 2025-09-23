@@ -26,7 +26,7 @@ function Card({ cert }) {
           className={styles.card_icon}
           src={`/assets/icons/${platform.toLowerCase()}.svg`}
           boxSize="50px"
-          alt={platform}
+          alt={`Logo of ${platform}`}
         />
         <VStack className={styles.card_wrapper}>
           <Box>
