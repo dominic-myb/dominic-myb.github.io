@@ -14,6 +14,8 @@
     "@chakra-ui/react": "^2.10.3",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "diff": "^8.0.3",
+    "jsdiff": "^1.1.1",
     "npm": "^11.5.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
