@@ -57,7 +57,7 @@ function NamecardTextContent() {
         <Text className={styles.text}>From Cavite, Philippines</Text>
       </HStack>
       <HStack className={styles.text_container}>
-        <Text className={styles.text}>IT Grad, Web Development</Text>
+        <Text className={styles.text}>IT Grad, Web Developer</Text>
       </HStack>
     </>
   );
