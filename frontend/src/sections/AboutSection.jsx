@@ -15,6 +15,12 @@ export default function AboutSection() {
       desc: "Demonstrated proficiency in HTML, CSS, and modern design principles including accessibility, mobile-first design, and responsive layouts.",
       link: "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design",
     },
+    {
+      title: "Javascript Certification",
+      platform: "Codingame",
+      desc: "Recognized for proficiency in JavaScript problem-solving through successfully solving programming challenges using logic and JavaScript on CodinGame.",
+      link: "https://www.codingame.com/certification/lP-uo3L1Mh2LBvYtr-1H_Q",
+    },
   ];
   return (
     <Container as="section" id="about" className={styles.about_container}>
