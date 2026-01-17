@@ -14,7 +14,7 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 import styles from "./Certificate.module.css";
 
 function Card({ cert }) {
-  const { title, platform, desc, link } = cert;
+  const { title, platform, desc, link, canInvert } = cert;
   const [expanded, setExpanded] = useState(false);
   const maxChars = 100;
   const isLong = desc.length > maxChars;
@@ -23,7 +23,7 @@ function Card({ cert }) {
     <Box className={styles.card_button}>
       <HStack align="start">
         <Image
-          className={styles.card_icon}
+          className={canInvert ? styles.card_icon_invert : ""}
           src={`/assets/icons/${platform.toLowerCase()}.svg`}
           boxSize="50px"
           alt={`Logo of ${platform}`}

@@ -14,12 +14,14 @@ export default function AboutSection() {
       platform: "freeCodeCamp",
       desc: "Demonstrated proficiency in HTML, CSS, and modern design principles including accessibility, mobile-first design, and responsive layouts.",
       link: "https://www.freecodecamp.org/certification/dominic-esguerra/responsive-web-design",
+      canInvert: true,
     },
     {
       title: "Javascript Certification",
       platform: "Codingame",
       desc: "Recognized for proficiency in JavaScript problem-solving through successfully solving programming challenges using logic and JavaScript on CodinGame.",
       link: "https://www.codingame.com/certification/lP-uo3L1Mh2LBvYtr-1H_Q",
+      canInvert: false,
     },
   ];
   return (

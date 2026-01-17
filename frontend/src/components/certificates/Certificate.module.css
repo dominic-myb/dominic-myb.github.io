@@ -75,13 +75,13 @@
 }
 
 [data-theme="light"] {
-  .card_icon {
+  .card_icon_invert {
     filter: invert(0);
   }
 }
 
 [data-theme="dark"] {
-  .card_icon {
+  .card_icon_invert {
     filter: invert(1);
   }
 }
