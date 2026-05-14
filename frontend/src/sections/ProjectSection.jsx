@@ -74,7 +74,11 @@ function Card({ image, title, desc, src, tools }) {
           <Text className={styles.built_with}>Built with:</Text>
           {tools.map((tool, idx) => (
             <Tooltip key={idx} label={toCapitalize(tool)} hasArrow>
-              <Image src={`/assets/icons/${tool}.svg`} boxSize={5} alt={`Logo of ${tool}`} />
+              <Image
+                src={`/assets/icons/${tool}.svg`}
+                boxSize={5}
+                alt={`Logo of ${tool}`}
+              />
             </Tooltip>
           ))}
         </HStack>
@@ -91,6 +95,28 @@ export default function ProjectSection() {
       video: "p1-video",
       desc: "A 2d mobile game inspired from Cagayan folklore, made using Godot",
       tools: ["godot"],
+    },
+    {
+      title: "Café Blk&Brwn",
+      image: "p2-thumbnail",
+      video: "p2-video",
+      desc: "A modern café website with responsive design, optimized performance, and clean user interface implementation using modern frontend technologies.",
+      tools: ["react", "tailwind", "typescript"],
+    },
+    {
+      title: "Focus Tracker",
+      image: "p3-thumbnail",
+      video: "p3-video",
+      desc: "A productivity web application featuring Pomodoro timer functionality, task tracking, and progress monitoring to help users improve focus and study efficiency.",
+      tools: [
+        "nextjs",
+        "prisma",
+        "supabase",
+        "postgres",
+        "react",
+        "tailwind",
+        "typescript",
+      ],
     },
   ];
   return (
