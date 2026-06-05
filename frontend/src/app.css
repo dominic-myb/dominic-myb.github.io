@@ -1,15 +1,17 @@
 @import "tailwindcss";
 
-:root {
-  --primary: #5c96ad;
-}
-
 @theme {
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 @theme inline {
-  --color-primary: var(--primary);
+  --color-primary: hsla(190, 84%, 29%, 1); /* Cerulean */
+  --color-secondary: hsla(183, 81%, 35%, 1); /* Dark Cyan */
+  --color-accent: hsla(189, 65%, 22%, 1); /* Dark Teal */
+
+  /* Neutrals */
+  --color-neutral-dark: hsla(0, 0%, 2%, 1); /* Black */
+  --color-neutral-light: hsla(71, 13%, 83%, 1); /* Dust Grey */
 }
 
 @font-face {
@@ -38,4 +40,8 @@ html,
 body {
   font-family: var(--font-sans);
   @apply antialiased;
+}
+
+.audiowide {
+  font-family: Audiowide;
 }
