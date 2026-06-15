@@ -1,5 +1,8 @@
-import { Header } from "@/components/ui/Header";
+import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
+import { Projects } from "@/components/sections/Projects";
+// import { Certificate } from "@/components/sections/Certificate";
+// import { Footer } from "@/components/sections/Footer";
 
 function App() {
   return (
@@ -7,7 +10,10 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <Projects />
+        {/* <Certificate /> */}
       </main>
+      {/* <Footer /> */}
     </div>
   );
 }
