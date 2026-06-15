@@ -12,7 +12,7 @@ function Header() {
         )}
       >
         <div className="flex items-center space-x-4">
-          <span className="text-white font-bold tracking-tight max-sm:text-base text-lg">
+          <span className="text-neutral-dark font-bold tracking-tight max-sm:text-base text-lg">
             Dominic Esguerra<span className="text-red-500">.</span>
           </span>
           <div className="h-5 w-px bg-white/20" />
