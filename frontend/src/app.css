@@ -1,10 +1,8 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-}
-
 @theme inline {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
   --color-primary: hsla(190, 84%, 29%, 1); /* Cerulean */
   --color-secondary: hsla(183, 81%, 35%, 1); /* Dark Cyan */
   --color-accent: hsla(189, 65%, 22%, 1); /* Dark Teal */
@@ -30,16 +28,34 @@
   src: url("/fonts/inter-bold.woff2") format("woff2");
 }
 
-html,
-::before,
-::after {
-  box-sizing: border-box;
-}
+@layer base {
+  html,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
 
-html,
-body {
-  font-family: var(--font-sans);
-  @apply antialiased;
+  html {
+    scroll-behavior: smooth;
+
+    /* Cross-browser scrollbar hiding */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  /* Chrome, Safari, and Opera scrollbar hiding */
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    @apply bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-50;
+
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
 }
 
 .audiowide {
