@@ -51,6 +51,7 @@
   body {
     font-family: var(--font-sans);
     @apply bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-50;
+    @apply antialiased;
 
     transition:
       background-color 0.2s ease,
