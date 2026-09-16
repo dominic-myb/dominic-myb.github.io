@@ -6,14 +6,15 @@ import {
   Tooltip,
   IconButton,
 } from "@chakra-ui/react";
-import { SiLinkedin, SiGithub, SiGmail } from "react-icons/si";
+import { SiGithub, SiGmail } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import styles from "./ContactSection.module.css";
 
 export default function ContactSection() {
   const data = [
     {
       label: "LinkedIn",
-      component: <SiLinkedin size={35} />,
+      component: <FaLinkedin size={35} />,
       link: "https://www.linkedin.com/in/dominic-esguerra/",
       ariaLabel: "Connect with Dominic on LinkedIn"
     },
