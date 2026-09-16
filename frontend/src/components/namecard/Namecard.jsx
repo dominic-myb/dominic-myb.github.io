@@ -12,7 +12,8 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { DownloadIcon } from "@chakra-ui/icons";
-import { SiGithub, SiLinkedin, SiLeetcode } from "react-icons/si";
+import { SiGithub, SiLeetcode } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import { handleDownload } from "@/utils/downloads";
 import styles from "./Namecard.module.css";
 
@@ -67,7 +68,7 @@ function NamecardButtons() {
   const iconMap = {
     Github: <SiGithub />,
     LeetCode: <SiLeetcode />,
-    LinkedIn: <SiLinkedin />,
+    LinkedIn: <FaLinkedin />,
   };
   const data = [
     {
